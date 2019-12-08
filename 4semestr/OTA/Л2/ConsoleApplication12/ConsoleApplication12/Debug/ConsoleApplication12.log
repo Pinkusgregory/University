@@ -1,0 +1,5 @@
+﻿  ConsoleApplication12.cpp
+c:\users\севгу\source\repos\consoleapplication12\consoleapplication12\consoleapplication12.cpp(51): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\севгу\source\repos\consoleapplication12\consoleapplication12\consoleapplication12.cpp(79): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  ConsoleApplication12.vcxproj -> C:\Users\СевГУ\source\repos\ConsoleApplication12\Debug\ConsoleApplication12.exe
+  ConsoleApplication12.vcxproj -> C:\Users\СевГУ\source\repos\ConsoleApplication12\Debug\ConsoleApplication12.pdb (Partial PDB)
