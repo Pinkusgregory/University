@@ -1,0 +1,29 @@
+name "calc-sum"
+
+org 100h
+
+
+mov cx, 5
+
+mov al, 0
+
+mov bx, 0
+
+next: add al, vector[bx]
+
+inc bx
+
+loop next
+
+
+
+ret
+
+vector db 5, 4, 3, 2, 1
+m db 0
+
+
+
+
+
+; [SOURCE]: C:\emu8086\examples\1_sample.asm

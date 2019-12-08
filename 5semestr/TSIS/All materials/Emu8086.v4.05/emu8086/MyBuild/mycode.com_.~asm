@@ -1,0 +1,23 @@
+name "mycode"
+
+org  100h
+
+mov ax, 1003h
+mov bx, 0
+
+
+; add your code here
+
+
+ret   ; return to the operating system.
+
+msg         db "press any key..."
+msg_size =  $ - offset msg
+
+
+
+
+
+
+
+
