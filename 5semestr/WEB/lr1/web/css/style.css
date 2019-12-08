@@ -1,0 +1,339 @@
+body {
+    min-width: 1040px;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Arial", sans-serif;
+    color: #404040;
+    background-color: white;
+}
+
+.container {
+    width: 1020px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.page-header {
+    min-height: 100px;
+    padding-top: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.page-header,
+.page-footer {
+    color: #c3c3c3;
+    background-color: #363636;
+}
+
+.header-nav {
+	text-align: center;
+    margin: 18px auto;
+    padding: 0;
+    list-style: none;
+}
+
+.header-nav li {
+	display: inline-block;
+    margin-right: 130px;
+    text-transform: uppercase;
+}
+
+.header-nav li:first-child {
+    margin-left: 110px;
+}
+
+.header-nav li:last-child {
+    margin-right: 0;
+}
+
+.header-nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+}
+
+.header-nav a:active {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.main-nav {
+    margin: 0;
+    margin-top: 18px;
+    padding: 0;
+    list-style: circle;
+}
+
+.main-nav a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.main-nav a:active {
+    color: rgba(12, 2, 255, 0.3);
+}
+
+.main {
+    padding-top: 70px;
+    padding-bottom: 90px;
+    background-color: #f2f2f2;
+}
+
+.main .container {
+    position: relative;
+    width: 800px;
+	min-height: 600px;
+}
+
+.section-title {
+    margin: 0;
+    margin-right: 0px;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 55px;
+    font-family: "Georgia", serif;
+    color: #a38b70;
+}
+
+.bigtext {
+    display: block;
+    font-size: 24px;
+}
+
+.main img {
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.page-footer {
+    padding-top: 45px;
+    padding-bottom: 50px;
+}
+
+.footer-menu h3 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Georgia", serif;
+    color: #a38b70;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 30px;
+}
+
+.table th {
+    font-weight: normal;
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.table td {
+    border: 1px solid #d8d8d8;
+}
+
+.table th,
+.table td {
+    padding: 5px 10px;
+}
+
+.table .table-top th{
+    text-align: center;
+}
+
+.photo-wrap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-height: 1100px;
+}
+
+.photo-wrap img {
+    margin: 10px;
+    border: 3px solid #000;
+    box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.feedback-form-group {
+    margin-bottom: 15px;
+}
+
+.feedback-form-group label {
+    display: inline-block;
+    padding: 5px 0;
+    padding-left: 17px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.feedback-form input[type="text"],
+.feedback-form select,
+.feedback-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 54px;
+    padding: 9px 15px;
+    font: inherit;
+    color: inherit;
+    border: 2px solid #d5d5d5;
+}
+
+.feedback-form input[type="text"]:hover,
+.feedback-form select:hover,
+.feedback-form textarea:hover {
+    border-color: #bebebe;
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: #8d745a;
+}
+
+.feedback-form textarea {
+    display: block;
+    min-height: 120px;
+}
+
+.radio-area {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 17px;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.radio-area input[type="radio"] {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.feedback-form .btn {
+    margin-top: 40px;
+    color: #ffffff;
+    background-color: #a38b70;
+}
+
+.feedback-form .btn:hover {
+    background-color: #8d745a;
+}
+
+.feedback-form .btn:active {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    width: 146px;
+    padding: 10px;
+    font: inherit;
+    vertical-align: top;
+    text-align: center;
+    color: #a38b70;
+    text-transform: uppercase;
+    text-decoration: none;
+    word-wrap: break-word;
+    border: 2px solid #a38b70;
+    border-radius: 2px;
+	margin-right: 20px;
+}
+
+.test-form-group {
+    margin-bottom: 15px;    
+}
+
+.test-form-group label {
+    display: inline-block;
+    padding: 5px 0;
+    padding-left: 17px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.test-form input[type="text"],
+.test-form select,
+.test-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 54px;
+    padding: 9px 15px;
+    font: inherit;
+    color: inherit;
+    border: 2px solid #d5d5d5;
+}
+
+.test input[type="text"]:hover,
+.test select:hover,
+.test textarea:hover {
+    border-color: #bebebe;
+}
+
+.test input[type="text"]:focus,
+.test select:focus,
+.test textarea:focus {
+    border-color: #8d745a;
+}
+
+.test textarea {
+    display: block;
+    min-height: 120px;
+}
+
+.checkbox-area {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 17px;
+}
+
+.checkbox-area input[type="checkbox"] {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.checkbox-area label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px 0;
+
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.test-form .btn {
+    margin-top: 40px;
+    color: #ffffff;
+    background-color: #a38b70;
+}
+
+.test-form .btn:hover {
+    background-color: #8d745a;
+}
+
+.test-form .btn:active {
+    color: rgba(255, 255, 255, 0.3);
+}
