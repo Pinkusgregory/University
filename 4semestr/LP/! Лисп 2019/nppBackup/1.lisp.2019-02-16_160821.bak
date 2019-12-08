@@ -1,0 +1,2 @@
+(setq x 1)
+(setq y (* x 2))

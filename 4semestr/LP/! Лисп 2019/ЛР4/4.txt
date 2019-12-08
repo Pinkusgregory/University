@@ -1,0 +1,7 @@
+(cadddr '(1 2 3 a 4)))
+(car (cddddr '(1 2 3 4 a)))
+(caaddr '((1) (2 3) (a 4)))
+(cadr (cdaadr '((1) ((2 3 a) (4)))))
+(cadr (cdaadr '((1) ((2 3 a 4)))))
+(cadadr (caddar (cadadr '(1 (2 ((3 4 (5 (6 a)))))))))
+

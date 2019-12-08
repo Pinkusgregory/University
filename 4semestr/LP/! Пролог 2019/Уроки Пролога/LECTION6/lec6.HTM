@@ -1,0 +1,2012 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="lec6.files/filelist.xml">
+<link rel=Edit-Time-Data href="lec6.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Логическое и функциональное программирование. Лекция 6</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>DimonD</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>19</o:TotalTime>
+  <o:Created>2009-07-30T10:33:00Z</o:Created>
+  <o:Pages>5</o:Pages>
+  <o:Words>1654</o:Words>
+  <o:Characters>9433</o:Characters>
+  <o:Company>Grizli777</o:Company>
+  <o:Lines>78</o:Lines>
+  <o:Paragraphs>22</o:Paragraphs>
+  <o:CharactersWithSpaces>11065</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="lec6.files/themedata.thmx">
+<link rel=colorSchemeMapping href="lec6.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>90</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627400839 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536881799 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610611985 1073750091 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 1 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+pre
+	{mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+span.1
+	{mso-style-name:"Заголовок 1 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Стандартный HTML";
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	color:black;}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;
+	color:black;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:330840054;
+	mso-list-template-ids:-1622219486;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:531386193;
+	mso-list-template-ids:876751078;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:589314027;
+	mso-list-template-ids:-193825622;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1885023047;
+	mso-list-template-ids:232051496;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#C7D4EA" lang=RU link=purple vlink=purple style='tab-interval:
+35.4pt' alink="#0000FF">
+
+<div class=Section1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=10 style='width:6.0pt;background:#8181C0;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="65%" style='width:65.0%;background:#8181C0;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><i><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman";color:#C6C6FF'>Лекция 6</span></i></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:12.0pt'>
+<!-- Row 2 -->
+  <td width=10 style='width:6.0pt;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'></td>
+  <td width="65%" style='width:65.0%;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman";color:#004080'>Встроенные
+  предикаты ввода-вывода . Поиск на Прологе.</span></i></b><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman";color:#004080'>
+  </span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+ </tr>
+</table>
+
+</div>
+
+<h2><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:#004080'>Cодержание</span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img width=13
+height=13 id="_x0000_i1059" src=blueball-3.gif></span><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.1">6.1 Отрицание как неудача. (not as failure).</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1058" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.3">6.2 Чтение и запись информации с файлов.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1057" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.3.1">6.2.1 Обработка входных потоков.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1056" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.3.2">6.2.2 Обработка выходных потоков.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1055" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.4">6.3 Обработка символов.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1054" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.4.1">6.3.1 put(X)</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1053" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.4.2">6.3.2 get(X)</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1025" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.4.3">6.3.3 get0(X)</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=13 height=13 id="_x0000_i1052" src=blueball-3.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L6.2">6.4 Алгоритм поиска на Прологе.</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1051"
+src=saqual-4.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><a name=L6.1><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'>6.1
+Отрицание как неудача<span style='mso-spacerun:yes'>  </span>(not as failure)</span></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h2>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1050"
+src=saqual-4.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Рассмотрим сначала пример.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Пусть
+  некоторая Мэри любит всех животных.<o:p></o:p></span></p>
+  <p>Это записывается<span lang=EN-US style='mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+  <p><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>likes(mary,X):-animal(X).</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=8 style='border:none'></td>
+  <td width=7 style='border:none'></td>
+  <td width=585 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-family:"Arial CYR","sans-serif";
+display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Мэри</span><span
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> </span><span
+  style='mso-fareast-font-family:"Times New Roman"'>не</span><span
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> </span><span
+  style='mso-fareast-font-family:"Times New Roman"'>любит</span><span
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> </span><span
+  style='mso-fareast-font-family:"Times New Roman"'>змей</span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'>:<o:p></o:p></span></p>
+  <p><b><!--IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><span lang=EN-US
+  style='mso-ansi-language:EN-US'>likes(mary,X):-snake(X),!,fail.</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  <p><br>
+  <b><span style='color:purple'>fail </span></b>- специальная цель, встроенный предикат,<br>
+  который всегда терпит неудачу.</p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=32 height=32 id="_x0000_i1049"
+  src=L67.GIF></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Графически предикат
+изображается:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=274 height=150 id="_x0000_i1048"
+  src=L68.GIF></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Можно
+  записать в виде одного правила, используя <o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:36.0pt'><span style='mso-fareast-font-family:
+  "Times New Roman"'><a href="Дизъюнкция">дизъюнкцию<span style='mso-ansi-language:
+  EN-US'> </span>целей<span lang=EN-US style='mso-ansi-language:EN-US'>.</span></a></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  <p><b><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><span lang=EN-US
+  style='mso-ansi-language:EN-US'>likes(mary,X):-snake(X),!,fail;<br>
+  animal(X).</span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Посмотрим другой пример.<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Отношение <b>different(X,Y)</b>
+будет истина,если <b>X</b> и <b>Y </b>различны. (</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>не сопоставимы</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>).<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF" ></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>different(X,X):-!,fail.</span></b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'><br>
+  </span><span style='mso-fareast-font-family:"Times New Roman"'>или</span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'><br>
+  <b>different(X,Y):-X=Y,!,fail.<br>
+  different(X,Y).</b><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=12 style='border:none'></td>
+  <td width=10 style='border:none'></td>
+  <td width=578 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Если <b>X </b>и <b>Y </b></span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>сопоставимы</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>, то цель <b>different </b>терпит неудачу.<br>
+Иначе <b>X </b>и <b>Y </b>различны, и цель <b>different </b>успешна.<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Или в одном предложении<o:p></o:p></span></p>
+
+<p><!-- IMG SRC="YELLOW.GIF" ALIGN=LEFT></IMG --><b><span style='font-family:
+"Arial CYR","sans-serif"'>different(X,Y):-X=Y,!,fail;true.</span></b><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'><br>
+Здесь <b>true </b>- встроенный педикат, который всегда истина.<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>И в том и другом случае
+более удобно указывать, что отношение истинно, если цель ложна.<br>
+Для этой цели используется предикат <b>not</b>.<o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>not(Goal).</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> -истина, если <b>Goal </b>-ложь,
+и наоборот <b>not(Goal) </b>ложно, если <b>Goal</b> успешна.<br>
+Это можно записать:<o:p></o:p></span></p>
+
+<p><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><b><span style='font-family:
+"Arial CYR","sans-serif"'>not(Goal):-Goal,!,fail;true.</span></b><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'><br>
+Запись аналогична сделанным, поэтому наши примеры можно переписать:<o:p></o:p></span></p>
+
+<p><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><b><span lang=EN-US
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>likes(mary,X):-annimal(X),not(snake(X)).</span></b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'><br>
+</span><span style='font-family:"Arial CYR","sans-serif"'>или</span><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'><br>
+<b>different(X,Y):-not(X=Y).</b><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <h1><span style='mso-fareast-font-family:"Times New Roman";color:maroon'>!<o:p></o:p></span></h1>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Использование
+  <b>not </b>требует осторожности, т.к. определяется через <o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:36.0pt'><span style='mso-fareast-font-family:
+  "Times New Roman";color:#7030A0'>от<a href="Сечение"><span style='color:#7030A0'>сечение.<br>
+  </span></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Рассмотрим пример:<o:p></o:p></span></p>
+
+<p><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><b><span lang=EN-US
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>r(a).<br>
+g(b).<br>
+p(X):-not(r(X)).</span></b><span lang=EN-US style='font-family:"Arial CYR","sans-serif";
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:maroon;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>g(X),p(X).<br>
+  yes <br>
+  </span></b><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:maroon;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>p(X),g(X).<br>
+  no.</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=20 style='border:none'></td>
+  <td width=19 style='border:none'></td>
+  <td width=561 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=8 id="_x0000_i1047" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.3><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.2 Чтение и запись информации с файлов.</span></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h2>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=8 id="_x0000_i1046" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>При
+вводе и выводе информации в прологе используется понятие </span><b><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:purple'>потоков</span></b><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>.<br>
+Файлы для чтения - это </span><b><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:purple'>входные потоки</span></b><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>.<br>
+Файлы для записи - это </span><b><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:purple'>выходные потоки</span></b><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Для пользователя определены </span><span
+style='font-family:"Arial CYR","sans-serif";color:navy'>два потока:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>информация
+  вводимая с клавиатуры - </span><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:purple'>входной поток</span></b><span style='mso-fareast-font-family:
+  "Times New Roman"'>. <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=186 height=119 id="_x0000_i1045"
+  src=L69.GIF></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p style='margin:0cm;margin-bottom:.0001pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=122 height=118 id="_x0000_i1044"
+  src=L610.GIF></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>информация
+  выводимая на монитор - </span><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:purple'>выходной поток</span></b><span style='mso-fareast-font-family:
+  "Times New Roman"'>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Эти потоки являются </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>псевдофайлами</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> с именем <b>user</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>В каждый момент времени для
+пролога активны </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>два файла:</span></b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>для
+  ввода </span></b><span style='mso-fareast-font-family:"Times New Roman"'>-</span><span
+  style='mso-fareast-font-family:"Times New Roman";color:purple'> текущий входной
+  поток</span><span style='mso-fareast-font-family:"Times New Roman"'>. <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p style='margin:0cm;margin-bottom:.0001pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>для
+  вывода </span></b><span style='mso-fareast-font-family:"Times New Roman"'>- </span><span
+  style='mso-fareast-font-family:"Times New Roman";color:purple'>текущий
+  выходной поток</span><span style='mso-fareast-font-family:"Times New Roman"'>.
+  <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>По умолчанию эти потоки -
+пользовательский терминал <b>user</b>.<o:p></o:p></span></p>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1043" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.3.1><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.2.1 Обработка входных потоков.</span></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1042" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Входные
+  потоки пролог </span><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:purple'>&quot;видит&quot;.</span></b><b><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></b></p>
+  <p>Поэтому определены следующие предикаты:</p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><b><span
+       style='mso-fareast-font-family:"Times New Roman"'>see(F) </span></b><span
+       style='mso-fareast-font-family:"Times New Roman"'>- открывает файл <b>F</b>,
+       например 'a.dat' и он становится текущим входным потоком. <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><b><span
+       style='mso-fareast-font-family:"Times New Roman"'>seeing(F)</span></b><span
+       style='mso-fareast-font-family:"Times New Roman"'> - связывает <b>F</b>
+       с именем файла, являющегося текущим входным потоком. <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><b><span
+       style='mso-fareast-font-family:"Times New Roman"'>seen </span></b><span
+       style='mso-fareast-font-family:"Times New Roman"'>- закрывает текущий
+       входной поток и связывает его с <b>user</b>.<o:p></o:p></span></li>
+  </ul>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Примеры:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>p1:-see('a.dat'),read(X),write(X),seen.<o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>p2:-see('a.dat'),seeing(F),write(F),seen,<br>
+  read(A),write(A).</span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=9 style='border:none'></td>
+  <td width=8 style='border:none'></td>
+  <td width=583 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1041" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.3.2><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.2.2 Обработка выходных потоков.</span></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1040" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>В
+  выходные потоки пролог </span><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:purple'>&quot;говорит&quot;</span></b><span style='mso-fareast-font-family:
+  "Times New Roman"'>.<o:p></o:p></span></p>
+  <ul type=disc>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><b><span
+       style='mso-fareast-font-family:"Times New Roman"'>tell(F)</span></b><span
+       style='mso-fareast-font-family:"Times New Roman"'> - открывает файл<b> F
+       </b>как текущий выходной поток. Если файла нет, то создает его. <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><b><span
+       style='mso-fareast-font-family:"Times New Roman"'>telling(F)</span></b><span
+       style='mso-fareast-font-family:"Times New Roman"'>- связывает <b>F</b> с
+       именем файла, являющимся текущим выходным потоком. <o:p></o:p></span></li>
+   <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><b><span
+       style='mso-fareast-font-family:"Times New Roman"'>told </span></b><span
+       style='mso-fareast-font-family:"Times New Roman"'>- закрывает файл, являющийся
+       текущим выходным потоком. Текущим выходным потоком становится <b>user</b>.<o:p></o:p></span></li>
+  </ul>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Пример</span><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><!-- IMG SRC="YELLOW.GIF" ALIGN=LEFT ></IMG --><b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>p3:-
+tell('a.dat'),write(a),told,write(a).</span></b><span lang=EN-US
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=8 id="_x0000_i1039" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.4><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.3 Обработка символов.</span></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h2>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=8 id="_x0000_i1038" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Пролог
+имеет несколько предикатов для обработки символов.<o:p></o:p></span></p>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1037" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.4.1><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.3.1 put(X)</span></a><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1036" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Символы
+записываются в текущий выходной поток при помощи предиката <b>put(C)</b>, где <br>
+<b>C</b> - символ, который нужно вывести, представленный в кодировке ASCII <i>(
+число от 0 до 127).</i><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Иллюстрация
+  PUT <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=14 style='border:none'></td>
+  <td width=13 style='border:none'></td>
+  <td width=559 style='border:none'></td>
+  <td width=14 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Пример</span><span lang=EN-US
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>:<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><!-- IMG SRC="YELLOW.GIF" ALIGN=LEFT ></IMG --><b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>p4:-put(65),put(66),put(67).</span></b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>
+<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:maroon'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>p4.<br>
+  ABC</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=39 style='border:none'></td>
+  <td width=38 style='border:none'></td>
+  <td width=524 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1035" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.4.2><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.3.2 get(X)</span></a><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1034" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Печатный
+  символ <i>(код по ASCII больше 31)</i> читается предикатом <b>get(X)</b>.
+  Аргумент<b> X </b>принимает числовое значение. Непечатный символ
+  игнорируется.<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1033" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name=L6.4.3><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:navy'>6.3.3 get0(X)</span></a><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img border=0
+width=600 height=6 id="_x0000_i1032" src=saqual-4.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Читает
+  любой <i>(печатный или нет)</i> символ.<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1031"
+src=saqual-4.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><a name=L6.2><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'>6.4
+Пример алгоритма поиска на Прологе.</span></a><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h2>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1030"
+src=saqual-4.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>( Логический подход к задаче о
+фермере, волке, козе и капусте.)</span></b><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif";color:purple'>Задача
+заключается в следующем:<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Фермер ( </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>Farmer</span></b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> </span><span
+style='font-family:"Arial CYR","sans-serif"'>), волк ( </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>Wolf</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> ), козел ( </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>Goat</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> ) и капуста ( </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>Cabbidge</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> ) находятся на одном берегу. Надо
+перебраться на другой берег на лодке. Лодка перевозит только двоих. Нельзя
+оставлять на одном берегу козу и капусту,козу и волка.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=346 height=166 id="_x0000_i1029"
+src=L61.GIF></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <h1><span style='mso-fareast-font-family:"Times New Roman";color:maroon'>!<o:p></o:p></span></h1>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  color:purple'>Главная проблема в формировании алгоритма </span><span
+  style='mso-fareast-font-family:"Times New Roman"'>- найти эффективное
+  представление структуры данных для задачи.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=7 style='border:none'></td>
+  <td width=6 style='border:none'></td>
+  <td width=18 style='border:none'></td>
+  <td width=570 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Процес перевозки может быть
+представлен последовательностью состояний. </span><b><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:purple'>Состояние
+</span></b><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman"'>представляется отношением <b>state </b>c 4 аргументами,
+каждый из которых отражает размещение обьектов <b>F</b>,<b>W</b>,<b>G</b>,<b>S </b>:<o:p></o:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=550
+ style='width:330.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 0cm 0cm 0cm' height=20>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=500 colspan=4 style='width:300.0pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  border=0 width=486 height=131 id="_x0000_i1028" src=L62.GIF></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:12.0pt'>
+  <td width=100 style='width:60.0pt;padding:0cm 0cm 0cm 0cm;height:12.0pt'
+  border=0 cellspacing=0 cellpadding=0>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";color:purple'>Farmer</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td width=200 style='width:120.0pt;padding:0cm 0cm 0cm 0cm;height:12.0pt'
+  border=0 cellspacing=0 cellpadding=0>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";color:purple'>Wolf</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td width=100 style='width:60.0pt;padding:0cm 0cm 0cm 0cm;height:12.0pt'
+  border=0 cellspacing=0 cellpadding=0>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";color:purple'>Goat</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td width=150 style='width:90.0pt;padding:0cm 0cm 0cm 0cm;height:12.0pt'
+  border=0 cellspacing=0 cellpadding=0>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";color:purple'>Cabbidge</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>     </span>state(e, w, e, w) - F,<b>G </b><span style='mso-spacerun:yes'> </span>in east side (<b>e - east</b>);<o:p></o:p></span></pre><pre><b><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>F W G C<span style='mso-spacerun:yes'>    </span>W</span></b><span
+lang=EN-US style='mso-ansi-language:EN-US'>,<b>C </b><span style='mso-spacerun:yes'> </span>in west side (<b>w - west</b>).<o:p></o:p></span></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-US style='font-size:10.0pt;font-family:"Courier New";mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Оставшаяся
+программа основывается на этих предикатах. В частности,они используются для
+реализации </span><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:purple'>четырех возможных действий фермера, выраженных
+в перевозе фермера через реку: <o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><b><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>самого
+     себя <o:p></o:p></span></b></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><b><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>W<o:p></o:p></span></b></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><b><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>G<o:p></o:p></span></b></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><b><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>C</span></b><span
+     style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->Предикат
+<b>opposite </b>( определена позже ) определяет новое размещение объектов,
+которые пересекли реку.<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>move(state(X,X,G,C),state(Y,Y,G,C)):-opposite(X,Y).
+  /* FARMER + WOLF */<br>
+  move(state(X,W,X,C),state(Y,W,Y,C)):-opposite(X,Y). /* FARMER + GOAT */<br>
+  move(state(X,W,G,X),state(Y,W,G,Y)):-opposite(X,Y). /*FARMER + CABBIDGE*/<br>
+  move(state(X,W,G,C),state(Y,W,G,C)):-opposite(X,Y). /* ONLY FARMER */<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=7 style='border:none'></td>
+  <td width=6 style='border:none'></td>
+  <td width=588 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=569 height=112 id="_x0000_i1027"
+src=L63.GIF></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Теперь можно определить предикат <b>opposite</b>,
+который определяет другую сторону.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG --><b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>opposite(east,west).<br>
+opposite(west,east).</span></b><span lang=EN-US style='font-family:"Arial CYR","sans-serif";
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Предикат <b>unsafe </b>определен
+для проверки </span><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>двух опасных состояний:</span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><b><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>F </span></b><span
+     style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>находится
+     на противоположном берегу от <b>W</b>,<b>G</b> <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><b><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>F </span></b><span
+     style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>находится
+     на противоположном берегу от <b>G </b>,<b>C</b>.<o:p></o:p></span></li>
+</ul>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG -->
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>unsafe( state(F,X,X,_) ):- opposite(F,X). <br>
+  /* The wolf eats the goat */</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=9 style='border:none'></td>
+  <td width=8 style='border:none'></td>
+  <td width=583 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+display:none;mso-hide:all'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ALIGN=LEFT></IMG -->
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>unsafe( state(F,_,X,X) ):- opposite(F,X). <br>
+  /* The goat eats the cabbage */</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=241 height=146 id="_x0000_i1026"
+  src=L65.GIF></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>path
+</span></b><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman"'>теперь определяется:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>path(S,G,L,L1):-<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>         </span>move(S,S1),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>         </span>not( unsafe(S1) ),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>         </span>not( member(S1,L) ),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>         </span>path( S1,G,[S1|L],L1),!.<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>path(G,G,T,T):-!.<span style='mso-spacerun:yes'>   </span>/* The final state is reached<span style='mso-spacerun:yes'>  </span>*/</span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></pre></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=7 style='border:none'></td>
+  <td width=6 style='border:none'></td>
+  <td width=588 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Для решения можно использовать:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>go:-<span style='mso-spacerun:yes'>  </span>go(state(east,east,east,east),state(west,west,west,west)).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'> <o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>go(S,G):-<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        </span>path(S,G,[S],L),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        </span>nl,write('A solution is:'),nl,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        </span>write_path(L),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        </span>fail.<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>go(_,_).<o:p></o:p></span></b></pre></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=7 style='border:none'></td>
+  <td width=6 style='border:none'></td>
+  <td width=588 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Для организации удобной формы
+вывода использованы </span><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>следующие процедуры:<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="YELLOW.GIF"  ></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>member(X,[X|_]).<br>
+  member(X,[_|L]):-member(X,L).<o:p></o:p></span></b></p>
+  <pre><b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>write_move( state(X,W,G,C), state(Y,W,G,C) ) :-!,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write('The farmer crosses the river from '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(X),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(' to '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(Y),nl. <o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>write_move( state(X,X,G,C), state(Y,Y,G,C) ) :-!,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write('The farmer takes the Wolf from '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(X),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(' of the river to '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(Y),nl.<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>write_move( state(X,W,X,C), state(Y,W,Y,C) ) :-!,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write('The farmer takes the Goat from' ),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(X),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(' of the river to '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(Y),nl.<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>write_move( state(X,W,G,X), state(Y,W,G,Y) ) :-!,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write('The farmer takes the cabbage from '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(X),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(' of the river to '),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write(Y),nl.<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-tab-count:2'>               </span><span style='mso-spacerun:yes'>       </span><o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span>write_path( [H1,H2|T] ) :- !,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>           </span>write_move(H1,H2),write_path([H2|T]).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>   </span></span>write_path( _ ).<o:p></o:p></b></pre></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=7 style='border:none'></td>
+  <td width=6 style='border:none'></td>
+  <td width=587 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='font-family:"Arial CYR","sans-serif"'>Сама программа намного короче
+программы на лиспе.<o:p></o:p></span></p>
+
+<p align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

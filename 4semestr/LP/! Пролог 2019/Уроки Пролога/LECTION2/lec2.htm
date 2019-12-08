@@ -1,0 +1,1414 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="lec2.files/filelist.xml">
+<link rel=Edit-Time-Data href="lec2.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Логическое и функциональное программирование. Лекция 2</title>
+<link rel=themeData href="lec2.files/themedata.thmx">
+<link rel=colorSchemeMapping href="lec2.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627400839 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610611985 1073750091 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+pre
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Стандартный HTML";
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	color:black;}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;
+	color:black;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:566764916;
+	mso-list-template-ids:-27240264;}
+@list l0:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:794719123;
+	mso-list-template-ids:1426232080;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1849783754;
+	mso-list-template-ids:629294304;}
+@list l3
+	{mso-list-id:1972317794;
+	mso-list-template-ids:1565837858;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#C7D4EA" lang=RU style='tab-interval:35.4pt' alink="#0000FF">
+
+<div class=Section1>
+
+<h2><span style='mso-fareast-font-family:"Times New Roman"'>Синтаксис ПРОЛОГА.<o:p></o:p></span></h2>
+
+<p><span style='font-family:"Arial","sans-serif"'>Программа на прологе состоит
+из </span><b><span style='font-family:"Arial","sans-serif";color:purple'>предложений</span></b><span
+style='font-family:"Arial","sans-serif";color:purple'> </span><span
+style='font-family:"Arial","sans-serif"'>. Предложения трех видов: </span><b><span
+style='font-family:"Arial","sans-serif";color:purple'>факты, правила, вопросы.</span></b><span
+style='font-family:"Arial","sans-serif"'> Все предложения строятся из термов.<o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='mso-no-proof:yes'><img
+width=254 height=290 id="_x0000_i1031" src=l21.gif></span><b><span
+style='font-family:"Arial","sans-serif";color:purple'>Терм </span></b><span
+style='font-family:"Arial","sans-serif"'>является синтаксической единицей.<o:p></o:p></span></p>
+
+<h3><a name="L2_1_1"></a><span style='mso-fareast-font-family:"Times New Roman"'>Константы.<o:p></o:p></span></h3>
+
+<p><b><span style='font-family:"Arial","sans-serif";color:purple'>Константы</span></b><span
+style='font-family:"Arial","sans-serif"'> - это поименованные конкретные
+объекты или отношения.<br>
+</span><b><span style='font-family:"Arial","sans-serif";color:purple'>Атомы</span></b><b><span
+style='font-family:"Arial","sans-serif"'> </span></b><span style='font-family:
+"Arial","sans-serif"'>- аналогичны атомам или символам в лиспе.<br>
+</span><b><span style='font-family:"Arial","sans-serif";color:purple'>Атомы</span></b><span
+style='font-family:"Arial","sans-serif"'> могут задаваться: <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>1) Цепочкой букв, цифр и
+символом подчеркивания '</span><b><span style='font-family:"Courier New"'>_</span></b><span
+style='font-family:"Arial","sans-serif"'>', начиная со строчной буквы. <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Courier New"'>a<br>
+sister<br>
+x_23 <o:p></o:p></span></b></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>2) специальными символами*: </span><span
+style='mso-tab-count:1'> </span><b><span style='font-family:"Courier New"'>====&gt;<o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Arial","sans-serif";color:purple'>Числа</span></b><b><span
+style='font-family:"Arial","sans-serif"'><br>
+</span></b><span style='font-family:"Arial","sans-serif"'>Целые ( диапазон
+-32768 32767)<br>
+Действительные ( диапазон 1Е-307 1Е+308)<o:p></o:p></span></p>
+
+<h3><a name="L2_1_2"></a><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Переменные.<o:p></o:p></span></h3>
+
+<p><b><span style='font-family:"Arial","sans-serif";color:purple'>Переменные</span></b><span
+style='font-family:"Arial","sans-serif"'> служат для обозначения объектов,
+значения которых меняются в ходе выполнения программы. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>Имена </span><b><span
+style='font-family:"Arial","sans-serif";color:purple'>переменных</span></b><span
+style='font-family:"Arial","sans-serif"'> могут начинаться:<br>
+— или с прописной буквы<br>
+— или с символа подчеркивания <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Courier New"'>X <br>
+Y <br>
+Result<br>
+_result <o:p></o:p></span></b></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>Eсли значение переменной не
+интересует, то можно использовать<b> </b></span><b><span style='font-family:
+"Arial","sans-serif";color:purple'>анонимные</span></b><span style='font-family:
+"Arial","sans-serif"'> переменные в виде символа подчеркивания '</span><b><span
+style='font-family:"Courier New"'>_</span></b><span style='font-family:"Arial","sans-serif"'>'.
+<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>Например</span><span
+lang=EN-US style='font-family:"Arial","sans-serif";mso-ansi-language:EN-US'>, <o:p></o:p></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>haschild(X):-parent(X,
+Y). <o:p></o:p></span></b></p>
+
+<p><span style='font-family:"Arial","sans-serif"'><br>
+Здесь значение<b> Y</b> не интересует, можно записaть <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Courier New"'>haschald(X):-parent(X, _). <o:p></o:p></span></b></p>
+
+<p><span style='font-family:"Arial","sans-serif"'><br>
+Значение анонимной переменной не выводится на печать. Если несколько анонимных
+переменных, то они все разные. Использование анонимных переменных позволяет не
+выдумывать имена переменных, когда не надо. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>Пусть задано отношение
+parents для двух родителей. <o:p></o:p></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>parents(ann,
+tom, bob).<o:p></o:p></span></b></p>
+
+<p><span lang=EN-US style='font-family:"Arial","sans-serif";mso-ansi-language:
+EN-US'><br>
+</span><span style='font-family:"Arial","sans-serif"'>Тогда</span><span
+style='font-family:"Arial","sans-serif";mso-ansi-language:EN-US'> </span><span
+style='font-family:"Arial","sans-serif"'>в</span><span style='font-family:"Arial","sans-serif";
+mso-ansi-language:EN-US'> </span><span style='font-family:"Arial","sans-serif"'>правиле</span><span
+lang=EN-US style='font-family:"Arial","sans-serif";mso-ansi-language:EN-US'>: <o:p></o:p></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>child(X):-parents(_,
+_, X). <o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Courier New"'><br>
+Y Z <o:p></o:p></span></b></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>обе анонимные переменные
+разные. <o:p></o:p></span></p>
+
+<p><span style='font-size:24.0pt;font-family:"Arial","sans-serif";color:maroon'>!</span><span
+style='font-size:13.5pt;font-family:"Arial","sans-serif";color:maroon'>
+Внимание. </span><span style='font-size:13.5pt;font-family:"Arial","sans-serif";
+color:purple'>Область действия переменных - одно предложение.</span><span
+style='font-size:13.5pt;font-family:"Arial","sans-serif";color:maroon'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial","sans-serif"'>Одноименные переменные в
+разных предложениях могут иметь разные значения. <o:p></o:p></span></p>
+
+<h3><a name="L2_1_3"></a><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Структуры.<o:p></o:p></span></h3>
+
+<p><b><span style='font-family:"Arial","sans-serif";color:purple'>Структура</span></b><span
+style='font-family:"Arial","sans-serif"'> — это единый объект состоящий из
+совокупности других объектов, называемых компонентами.<br>
+Компоненты в свою очередь могут быть также структурами.</span> </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=618
+ style='width:370.8pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="58%" style='width:58.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><span style='mso-no-proof:yes'><img
+  width=306 height=226 id="_x0000_i1030" src=l2133.gif></span></p>
+  </td>
+  <td width="42%" style='width:42.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><span style='font-family:"Arial","sans-serif"'>Структура </span><b><span
+  style='font-family:"Courier New"'>data</span></b><span style='font-family:
+  "Arial","sans-serif"'>: <o:p></o:p></span></p>
+  <p><span style='font-family:"Arial","sans-serif"'>Название структуры стоит
+  перед скобками,а компоненты внутри скобок, через запятую.</span> </p>
+  <p><span style='font-family:"Arial","sans-serif"'>Название структуры — </span><b><span
+  style='font-family:"Arial","sans-serif";color:purple'>ФУНКТОР</span></b><span
+  style='font-family:"Arial","sans-serif"'>.</span> </p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial","sans-serif"'>Структуры можно изображать в
+виде деревьев: <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Courier New"'>&nbsp;<o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Courier New"'>data<o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Courier New"'>/ | \<o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Courier New"'>27 april 1992<o:p></o:p></span></b></p>
+
+<p>Структура с компонентами - структурами <b><span style='font-family:"Courier New"'>owns(bob,
+book(moby_dick, mell_will))</span>.</b> </p>
+
+<p>Структуры можно использовать для представления геометрических фигур. </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=684
+ style='width:410.4pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><b><span style='font-size:10.0pt;
+  font-family:"Arial","sans-serif"'>Объекты:</span></b><span style='font-size:
+  10.0pt;font-family:"Arial","sans-serif"'> <o:p></o:p></span></p>
+  <p><b><span style='font-family:"Courier New"'>точка Р1=point(1, 1)<br>
+  точка Р2=point(3, 3)<br>
+  отрезок </span></b><span style='font-family:"Courier New"'>seg(P1, P2)<o:p></o:p></span></p>
+  <p align=center style='text-align:center'>или<span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+  EN-US'>seg(point(1, 1), point(3, 3))<o:p></o:p></span></b></p>
+  <p align=center style='text-align:center'>треугольник<span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+  EN-US'>triangle(point(2, 5), point(2, 8), point(5, 8)) </span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><span style='mso-no-proof:yes'><img
+  width=246 height=246 id="_x0000_i1029" src=l2131.gif></span></p>
+  </td>
+ </tr>
+</table>
+
+<p>Cтруктуру можно представить в виде дерева </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="57%" style='width:57.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><span style='mso-no-proof:yes'><img
+  width=305 height=230 id="_x0000_i1028" src=l2132.gif></span></p>
+  </td>
+  <td width="43%" style='width:43.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>Корень дерева — главный функтор. </p>
+  </td>
+ </tr>
+</table>
+
+<p>Если точка трехмерного пространства: <b><span style='font-family:"Courier New"'>point3(X,
+Y, Z)</span><br>
+</b>Можно записать : <b><span style='font-family:"Courier New"'>point(X, Y, Z)</span><br>
+</b>Получается: <b><span style='font-family:"Courier New"'>point(X, Y, Z)</span>
+и </b><b><span style='font-family:"Courier New"'>point(X, Y)</span></b> </p>
+
+<p>Это разные термы, т.к. каждый функтор различается двумя параметрами: </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
+     "Times New Roman"'>именем,<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
+     "Times New Roman"'>арностью - т.е. числом аргументов. <o:p></o:p></span></li>
+</ul>
+
+<p>Поэтому пишут: </p>
+
+<p><b><span style='font-family:"Courier New"'>point/2<br>
+point/3 <o:p></o:p></span></b></p>
+
+<p>Например, если написано: Отношение <b><span style='font-family:"Courier New"'>point/2</span></b>
+задано ....<br>
+Это означает, что задано <b><span style='font-family:"Courier New"'>point(_,_)</span></b>
+,<br>
+а не <b><span style='font-family:"Courier New"'>point/2(_,_)</span></b>. </p>
+
+<p><span style='font-size:13.5pt;font-family:"Arial","sans-serif";color:maroon'>!!!
+Это типичная ошибка. <o:p></o:p></span></p>
+
+<h3><a name="L2_1_4"></a><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Операторы — тоже функторы.<o:p></o:p></span></h3>
+
+<p>Некоторые функторы удобнее записывать, как операторы.<br>
+Например, можно записать </p>
+
+<p><b><span style='font-family:"Courier New"'>+(1, 2) <o:p></o:p></span></b></p>
+
+<p>или </p>
+
+<p><b><span style='font-family:"Courier New"'>+<o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Courier New"'>/ \<o:p></o:p></span></b></p>
+
+<p><b><span style='font-family:"Courier New"'>1 2<o:p></o:p></span></b></p>
+
+<p>Удобнее записать <b><span style='font-family:"Courier New"'>1+2</span></b>,
+т.е. в виде оператора. Причем надо понимать, что это не операция сложения, а
+операторная запись структуры. Такие операторы называются <b><span
+style='color:purple'>инфиксными</span>.</b> </p>
+
+<p>Аналогично операторная запись </p>
+
+<p><b><span style='font-family:"Courier New"'>2*a+b*c <o:p></o:p></span></b></p>
+
+<p>может быть представлена в виде структуры: </p>
+
+<p><b><span style='font-family:"Courier New"'>+( *(2, a), *(b, c)) <o:p></o:p></span></b></p>
+
+<p>Это и производит пролог при трансляции операторных выражений. Надо четко
+понимать, что операторы - это другая форма записи структуры. </p>
+
+<h2><a name="L2_2"></a><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Арифметика.<o:p></o:p></span></h2>
+
+<p>В прологе выполняются следующие операции: </p>
+
+<p><span style='font-family:"Courier New";color:purple'>+<br>
+-<br>
+*<br>
+/<br>
+mod</span><b><span style='font-family:"Courier New"'> </span></b>— остаток от
+целочисленного деления.<b><span style='font-family:"Courier New"'> <o:p></o:p></span></b></p>
+
+<p><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Если
+записать: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=599
+ style='width:359.4pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="54%" style='width:54.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="46%" style='width:46.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?-</span></b><b><span
+  style='font-family:"Courier New"'>X = 2+1. <br>
+  X=2+1</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p>т.к. это просто сопоставление переменной и структуры. </p>
+
+<p><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Чтобы
+арифметическое выраж</span>е<span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>ние
+рассчитывалось, необходимо использовать встроенный оператор <b>is</b>, который
+заставляет выполнять арифметические операции. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="49%" valign=top style='width:49.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="51%" style='width:51.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?-</span></b><b><span
+  style='font-family:"Courier New"'>X is 2+1.<br>
+  X=3 <o:p></o:p></span></b></p>
+  <p><b><span style='font-family:"Courier New";color:purple'>?-</span></b><b><span
+  style='font-family:"Courier New"'>Y is 2*(5+6).<br>
+  Y=22</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p>Могут быть переменные, но они должны иметь значение к моменту вычисления. </p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>f(X,
+Y, Z):-Z is X*X + Y*Y. <o:p></o:p></span></b></p>
+
+<p><span lang=EN-US style='mso-ansi-language:EN-US'><br>
+</span>и задать вопрос</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=599
+ style='width:359.4pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="50%" style='width:50.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?- </span></b><b><span
+  style='font-family:"Courier New"'>f(2, 3, R).<br>
+  R=13</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p>Если определить: </p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>sum(X1,
+X2, X):-X is X1 + X2.<o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="28%" valign=top style='width:28.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="72%" style='width:72.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'>sum(2, 3, X).<br>
+  X=5 <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'> sum(1, 1, X1), sum(X1, X1, X).<br>
+  4. </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><a name="L2_3"></a><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>2.3 Операции сравнения.<o:p></o:p></span></h2>
+
+<p>Используются при сравнении чисел<br>
+Есть операции </p>
+
+<p><b><span style='font-family:"Courier New"'>X</span></b><b><span
+style='font-family:"Courier New";color:navy'> &gt;</span></b><b><span
+style='font-family:"Courier New"'> Y<br>
+X</span></b><b><span style='font-family:"Courier New";color:navy'> &lt;</span></b><b><span
+style='font-family:"Courier New"'> Y<br>
+X </span></b><b><span style='font-family:"Courier New";color:navy'>&gt;= </span></b><b><span
+style='font-family:"Courier New"'>Y<br>
+X </span></b><b><span style='font-family:"Courier New";color:navy'>=&lt;</span></b><b><span
+style='font-family:"Courier New"'> Y <o:p></o:p></span></b></p>
+
+<p>равенство для любых термов </p>
+
+<p><span style='font-family:"Courier New"'>X</span><span style='font-family:
+"Courier New";color:navy'> = </span><span style='font-family:"Courier New"'>Y<br>
+X</span><span style='font-family:"Courier New";color:navy'> \= </span><span
+style='font-family:"Courier New"'>Y<o:p></o:p></span></p>
+
+<p><i>(с побочным эффектом) <o:p></o:p></i></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="56%" style='width:56.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="44%" style='width:44.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?- </span></b><b><span
+  style='font-family:"Courier New"'>100 4.<br>
+  yes</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>age(mary,
+20).<br>
+age(ann , 23).<br>
+age(bob , 25).<o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="35%" valign=top style='width:35.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="65%" style='width:65.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?- </span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'>age(X , Y), Y&gt;21.<br>
+  X=ann;<br>
+  X=bob; <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'> age(X , Y), Y&gt;21, Y&lt;=23.<br>
+  X=ann ; </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p>Определим отношение &quot;выше&quot; <b><span style='font-family:"Courier New"'>higher/2</span>
+<o:p></o:p></b></p>
+
+<p><b><span style='font-family:"Courier New"'>higher(point(X1, Y1), point(X2,
+Y2):-Y1&gt;Y2.<o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="23%" style='width:23.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="77%" style='width:77.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?-</span></b><b><span
+  style='font-family:"Courier New"'> higher(point( 1, 1), point( 2, 2).<br>
+  no</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p>Если наоборот - то будет<b> </b><b><span style='font-family:"Courier New"'>yes</span></b>.</p>
+
+<p><span style='mso-no-proof:yes'><img width=158 height=167 id="_x0000_i1027"
+src=l23.gif></span></p>
+
+<h2><a name="L2_4"></a><span style='mso-fareast-font-family:"Times New Roman"'>Сопоставление.<o:p></o:p></span></h2>
+
+<p><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Главной
+операцией </span>в<span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>
+процессе выполнения пролог -программы, является </span><b><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif";color:purple'>сопоставление</span></b><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'> (согласование,
+унификация) термов. <o:p></o:p></span></p>
+
+<p>Например, </p>
+
+<p><b><span style='font-family:"Courier New"'>рarent(pam, bob). <o:p></o:p></span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=599
+ style='width:359.4pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="43%" style='width:43.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="57%" style='width:57.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?-</span></b><b><span
+  style='font-family:"Courier New"'> parent(pam, bob).<br>
+  Yes</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p>Цель согласуется. </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=599
+ style='width:359.4pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="43%" style='width:43.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="57%" style='width:57.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'>parent(pam, X).<br>
+  X=bob</span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p>Tоже согласуются, но<b> X</b> конкретизируется и принимает значение<b> </b><b><span
+style='font-family:"Courier New"'>bob</span></b> </p>
+
+<p>Но если взять два составных терма -структуры. </p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>a(b,
+C, d(e, F, g(h, i, J)))<br>
+a(B, c, d(E, f, g(H, I, j))) <o:p></o:p></span></b></p>
+
+<p><i><span style='font-family:"Arial","sans-serif"'>cогласуются ли они? Что
+будет с переменными после согласования? Как они будут конкретизированны?</span></i><span
+style='font-family:"Arial","sans-serif"'> <o:p></o:p></span></p>
+
+<p><b><span style='color:purple'>Сопоставление</span></b> -это процесс, на вход
+которого подаются два терма, а он проверяет, соответствуют ли эти термы друг
+другу. </p>
+
+<p>Если термы не сопоставимы, значит сопоставление терпит неудачу.<br>
+Если термы сопоставимы, тогда пpоцесс сопоставления находит конкретизацию
+переменных, делающих эти термы тождественными, и завершается удачей. </p>
+
+<p align=center style='text-align:center'><span style='mso-no-proof:yes'><img
+width=480 height=144 id="_x0000_i1026" src=l24.gif></span></p>
+
+<p>Какие же правила определяют сопоставимость двух термов<b><span
+style='color:maroon'> S</span></b> и<b><span style='color:maroon'> Т </span></b>?
+</p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
+     "Times New Roman"'>Если</span><b><span style='mso-fareast-font-family:
+     "Times New Roman";color:maroon'> S</span></b><span style='mso-fareast-font-family:
+     "Times New Roman"'> и </span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'>Т</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+     константы , то</span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'> S</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+     и</span><span style='mso-fareast-font-family:"Times New Roman";color:maroon'>
+     <b>Т</b></span><span style='mso-fareast-font-family:"Times New Roman"'> cопоставимы,
+     только, если они являются одним и тем же объектом.<br>
+     т.е.:<br>
+     <b>2</b> сопоставляется с <b>2<br>
+     bob</b> сопоставляется с <b>bob</b> <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
+     "Times New Roman"'>Если </span><b><span style='mso-fareast-font-family:
+     "Times New Roman";color:maroon'>S</span></b><span style='mso-fareast-font-family:
+     "Times New Roman"'> переменная, а </span><b><span style='mso-fareast-font-family:
+     "Times New Roman";color:maroon'>Т</span></b><span style='mso-fareast-font-family:
+     "Times New Roman"'> -произвольный объект, то они сопоставимы и </span><b><span
+     style='mso-fareast-font-family:"Times New Roman";color:maroon'>S</span></b><span
+     style='mso-fareast-font-family:"Times New Roman"'> приписывается значение </span><b><span
+     style='mso-fareast-font-family:"Times New Roman";color:maroon'>T</span></b><span
+     style='mso-fareast-font-family:"Times New Roman"'>. Наоборот, если<b> </b></span><b><span
+     style='mso-fareast-font-family:"Times New Roman";color:maroon'>Т</span></b><span
+     style='mso-fareast-font-family:"Times New Roman"'> -переменная, а</span><b><span
+     style='mso-fareast-font-family:"Times New Roman";color:maroon'> S</span></b><span
+     style='mso-fareast-font-family:"Times New Roman"'> -произвольный объект,
+     то</span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'> T</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+     приписывается значение</span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'> S</span></b><span style='mso-fareast-font-family:"Times New Roman"'>.<br>
+     Говорят,что</span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'> T</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+     конкретизируется значением </span><b><span style='mso-fareast-font-family:
+     "Times New Roman";color:maroon'>S</span></b><span style='mso-fareast-font-family:
+     "Times New Roman"'>.<br>
+     т.е.: <br>
+     <span style='mso-tab-count:1'>            </span></span><b><span
+     style='font-family:"Courier New";mso-fareast-font-family:"Times New Roman"'>data(M,
+     D, 1992).<br>
+     </span></b><span style='font-family:"Courier New";mso-fareast-font-family:
+     "Times New Roman"'><span style='mso-tab-count:1'>     </span><b>data(may,
+     3, Y).</b></span><b><span style='mso-fareast-font-family:"Times New Roman"'><br>
+     </span></b><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+     "Times New Roman"'>Сопоставимы, переменные конкретизируются:<br>
+     </span><b><span style='font-family:"Courier New";mso-fareast-font-family:
+     "Times New Roman"'>М=may<br>
+     D=3<br>
+     Y=1992<br>
+     </span></b><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+     "Times New Roman"'>в обоих термах. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list 36.0pt'><span style='mso-fareast-font-family:
+     "Times New Roman"'>Если</span><b><span style='mso-fareast-font-family:
+     "Times New Roman";color:maroon'> S</span></b><span style='mso-fareast-font-family:
+     "Times New Roman"'> и</span><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'> <b>Т</b></span><span style='mso-fareast-font-family:"Times New Roman"'>
+     — структуры, то они сопоставимы, если<br>
+     (а) </span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'>S</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+     и </span><b><span style='mso-fareast-font-family:"Times New Roman";
+     color:maroon'>Т</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+     имеют одинаковый главный функтор<br>
+     и<br>
+     (b) все их соответствующие компоненты сопоставимы.<br>
+     Результирующая конкретизация определяется сопоставлением компонент. <o:p></o:p></span></li>
+</ol>
+
+<p><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Если
+сопостав</span>и<span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>ть
+структуры <o:p></o:p></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>a(b,
+C, d(e, F, g(h, i, J)))<br>
+a(B, c, d(E, f, g(H, I, j))) <o:p></o:p></span></b></p>
+
+<p>то<span style='mso-ansi-language:EN-US'> </span>получим<span
+style='mso-ansi-language:EN-US'> <span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>B=b<br>
+C=c<br>
+E=e<br>
+F=f<br>
+H=h<br>
+I=i<br>
+J=j <o:p></o:p></span></b></p>
+
+<p>Рассмотрим более сложный пример: </p>
+
+<p><b><span style='font-family:"Courier New"'>triangle(point(2, 5), A, point(B,
+8))<o:p></o:p></span></b></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>triangle(X,
+point(2, 8), point(5, 8))<o:p></o:p></span></b></p>
+
+<p>После<span style='mso-ansi-language:EN-US'> </span>конкретизации<span
+style='mso-ansi-language:EN-US'> <span lang=EN-US><o:p></o:p></span></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>X=point(2,
+5)<br>
+A=point(2, 8)<br>
+B=5 <o:p></o:p></span></b></p>
+
+<p>Еще один пример: </p>
+
+<p><b>конкретизированная переменная Х=2<o:p></o:p></b></p>
+
+<pre><b><o:p>&nbsp;</o:p></b></pre><pre><b><span style='mso-spacerun:yes'>  </span><span style='mso-spacerun:yes'>                             </span></b><b><span
+lang=EN-US style='mso-ansi-language:EN-US'>!<o:p></o:p></span></b></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+lang=EN-US style='font-family:"Courier New";mso-ansi-language:EN-US'>triangle(point(X,
+5), point(X, 8), point(5, Z))<o:p></o:p></span></b></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>неконкретизированная
+переменная Y<o:p></o:p></span></b></p>
+
+<pre><b><o:p>&nbsp;</o:p></b></pre><pre><b><span style='mso-spacerun:yes'>                               </span>!<o:p></o:p></b></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+style='font-family:"Courier New"'>triangle(point(2, 5), point(Y, 8), point(5,
+A))<o:p></o:p></span></b></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Если
+<b>Y</b> представляет собой неконкретизированную переменную, а переменная <b>X</b>
+конкретизированную, то <b>X</b> и <b>Y</b> согласуются и <b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='mso-ansi-language:EN-US'>Y</span></b><span
+lang=EN-US> </span>принимает значение <b>Х</b>.<br>
+т.е. </p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+style='font-family:"Courier New"'>X=2<br>
+Y=2 <o:p></o:p></span></b></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Переменные
+<b>Z </b>и <b>A</b> обе не конкретизированы. Они согласуются и становятся <b><span
+style='color:purple'>связаными</span></b>.<br>
+Если две переменные сцеплены, то при конкретизации одной из них, второй переменной
+автоматически будет присвоено тоже самое<span style='mso-spacerun:yes'> 
+</span>значение, что и первой. Как это было с <b>X </b>и <b>Y</b>. </p>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name="L2_5"></a><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+"Times New Roman"'>Второ</span><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>e</span><span
+style='font-family:"Arial","sans-serif";mso-fareast-font-family:"Times New Roman"'>
+применение операции = в Прологе.<o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>В
+прологе операция<b><span style='color:navy'> <span
+style='mso-spacerun:yes'> </span>=</span></b> <span
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span>кроме
+сравнения выполняет сопоставление двух термов, с конкретизацией переменных. </p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Если
+термы согласуются, то результат истина. </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="35%" valign=top style='width:35.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="65%" style='width:65.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'>a(B,c(x,D))=a(d,c(X,3)). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+  EN-US'>Yes<br>
+  B=d<br>
+  X=x<br>
+  D=3</span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Аналогично,<b>
+/= </b>дает истину, если термы не согласуются. </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=599
+ style='width:359.4pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width="51%" style='width:51.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="49%" style='width:49.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span style='font-family:"Courier New";color:purple'>?-</span></b><b><span
+  style='font-family:"Courier New"'>a(x)/=a(d).<br>
+  Yes</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name="L2_6"></a><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+"Times New Roman"'>2.6 Примеры сопоставления структур.<o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>Рассмотрим
+структуры, описывающие отрезки </p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=757
+ style='width:454.2pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width="29%" rowspan=2 style='width:29.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p align=center style='text-align:center'><span style='mso-no-proof:yes'><img
+  width=230 height=214 id="_x0000_i1025" src=l26.gif></span></p>
+  </td>
+  <td width="71%" colspan=2 style='width:71.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p>Два факта ,описывающие свойство вертикальность<br>
+  и горизонтальность. </p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";mso-ansi-language:
+  EN-US'>vertical(seg(point(X,Y),point(X,Y1))).<br>
+  horiz(seg(point(X,Y),point(X1,Y))).</span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td width="8%" valign=top style='width:8.0%;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="63%" style='width:63.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'>vertical(seg(point(2,2),point(2,5))).<br>
+  Yes <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'> horiz(seg(point(1,4),point(2,4))).<br>
+  Yes <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='font-family:"Courier New";color:purple;
+  mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US style='font-family:
+  "Courier New";mso-ansi-language:EN-US'>horiz(seg(point(1,4),point(2,X))).<br>
+  </span></b><b><span style='font-family:"Courier New"'>X=4</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+style='mso-fareast-font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

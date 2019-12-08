@@ -1,0 +1,452 @@
+<HTML>
+<HEAD><TITLE>lec97.htm</Title></HEAD>
+
+<BODY Bgcolor="#C7D4EA">
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 10.
+<P>
+<FONT COLOR=#100000>
+<CENTER> Чтение и запись информации в файлы </CENTER>
+</FONT>
+<P> <BR> <CENTER> Содержание  </CENTER>
+</FONT>
+</H2>
+</FONT>
+
+<A NAME="SOD">
+<B>
+<FONT SIZE=+1>
+<DL>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.1"> 
+    10.1 Задание параметров при определении функций. </A>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.1.1"> 
+    10.1.1 Необязательные параметры &optional 
+ </A>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.1.2"> 
+    10.1.2 Переменное количество аргументов &rest
+ </A>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.1.3"> 
+    10.1.3 Ключевые параметры
+ </A>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.2"> 
+    10.2 Входные и выходные потоки. </A>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.3">
+    10.3 Определение выходных и входных потоков. </A>
+<DD>
+    <IMG SRC="blueball-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/blueball.gif">
+    <A HREF="#L10.4">
+    10.4 Чтение символов из файла</A>
+</DL>
+</FONT>
+</B>
+</A>
+
+
+<BR><P> <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  <BR> 
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L10.1"> 10.1 Задание параметров при определении функций. </A></H2><P>
+</FONT>
+<P>
+
+При определении функции можно использовать механизм
+ключевых слов для того чтобы при вызове функций
+аргументы  трактовать по разному.
+<p>
+С помощью ключевых слов в лямбда-списке можно выделить
+<br>
+<ul>
+<li> необязательные аргументы (optional)
+<li> параметр, связываемый с хвостом списка аргументов изменяющейся
+  длины (rest)
+<li> ключевые параметры (key)
+</ul>
+</p>
+Ключевые слова начинаются с символа & и их записывают перед 
+соответствующими параметрами в лямбда-списке.
+<br>
+Действие ключевого слова распростроняется до следующего ключевого
+слова.
+<br>
+Параметры, перечисленные в лямбда-списке до первого ключевого
+слова, являются обязательными.
+
+
+
+<BR><P> <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  <BR> 
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L10.1.1"> 10.1.1 Необязательные параметры &optional</A></H2><P>
+</FONT>
+<P>
+Вы можете определить необязательные аргументы для вашей функции.
+Любой аргумент после символа &optional необязательный:
+<p> <b>
+<pre><FONT COLOR=#008000 SIZE=+2>
+* ( Defun bar ( x &optional y) ( if y x 0 ))
+bar
+* ( Defun baaz ( &optional ( x 3 ) ( z 10 )) ( + x z) )
+BAAZ
+* ( bar 5 )
+0
+* ( bar 5 t)
+5
+* ( Baaz 5 )
+15
+* ( Baaz 5 6 )
+11
+* (Baaz)
+13
+</font></b>
+</pre></p>
+
+Можно вызывать функцию bar или с одним или с двумя  аргументами.
+Если  она вызвана с одним аргументом, x будет связано со значением этого 
+аргумента и незаданный аргумент y будет связан с nil;
+если она вызвана с двумя аргументами,x и y будут свя-
+заны со значениями первого и второго аргумента, соответственно.
+<br>
+Функция baaz имеет два необязательных аргумента. 
+Кроме этого она определяет недостающие знaчения для каждого из них:
+если пользователь определит только один аргумент,
+z будет связано с 10 вместо nil, 
+и если  пользователь  не  определит
+никаких аргументов, x будет связана с 3 и z с 10.
+<br>
+Такое определение значений называется определение по умолчанию.
+
+
+<BR><P> <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  <BR> 
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L10.1.2"> 10.1.2 Переменное количество аргументов &rest</A></H2><P>
+</FONT>
+<P>
+Вы  можете задавать вашу функцию принимающей любое число аргументов,
+заканчивая список аргументов &rest параметром.
+<br>
+LISP будет  собирать все аргументы  не попавшие в обязательные
+параметры в список и связывать &rest параметр с этем списком.
+<br>
+ Итак:
+
+<p> <b>
+<pre><FONT COLOR=#008000 SIZE=+2>
+* ( Defun foo ( x &rest y) y)
+
+FOO
+
+* ( Foo 3 )
+
+NIL
+
+* ( Foo 4 5 6 )
+
+(5 6)
+
+* ( defun fn ( x &optional y &rest z))
+     (list x y z))
+fn
+
+* (fn 'a)
+
+(A NIL NIL)
+
+* ( a b (c d))
+</b> </font>
+</pre> </p>
+
+
+<BR><P> <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  <BR> 
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L10.1.3"> 10.1.3 Ключевые параметры</A></H2><P>
+</FONT>
+<P>
+
+
+Можно задать функции другой вид необязательного аргумента
+называемого аргументом ключевого слова. Пользователь может задавать
+эти аргументы в последующем в любом порядке,
+потому что они маркированы ключевыми словами.
+<p>
+Символы t и nil называются  константами-символами, потому-что
+они при выполнении дают  сами себя. 
+</p>
+Существует  целый  класс  таких 
+символов, которые называются ключевыми словами; 
+любой символ, чье имя начинается с двоеточия является
+ ключевым словом.
+<br>
+(Ниже приведены  некоторые
+использования ключевых слов). <br>
+Примеры:
+
+<p> <b>
+<pre><FONT COLOR=#008000 SIZE=+2>
+* :this-is-a-keyword
+
+:THIS-IS-A-KEYWORD
+
+* :so-is-this
+:SO-IS-THIS
+
+* :me-too
+:ME-TOO
+
+ ( Defun foo ( &key x y) ( cons x y) )
+
+FOO
+
+* ( Foo :x 5 :y 3 )
+
+(5 . 3)
+
+* ( Foo :y 3 :x 5 )
+
+(5 . 3)
+
+* ( Foo :y 3 )
+
+( NIL. 3 )
+
+* (Foo)
+
+(NIL)
+
+&key параметр может иметь также значение по умолчанию:
+
+* ( Defun foo ( &key ( x 5 )) x )
+
+FOO
+
+* ( Foo :x 7 )
+
+7
+
+* (Foo)
+
+5
+
+
+(defun test ( x &optional (y 3) (z 4) &rest  a)
+(cons z ( list x a y)))
+
+(test 1 2 3)
+
+(test 1)
+
+(test 3 4 5)
+
+(test 3 2 1 1 2 3)
+</b> </font>
+</pre> </p>
+
+<BR><P> <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  <BR> 
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L10.2">   10.2 Входные и выходные потоки. </A></H2><P>
+</FONT>
+<P>
+При вводе и выводе информации в Лиспе используется
+понятие потоков - stream
+<br>
+Для потока определены ИМЯ ,
+                      операции открытия open
+                      операции закрытия clouse
+                      направления output и input
+<p>
+ <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  
+<BR>
+</P>  
+
+
+<FONT COLOR=#100080>
+<H2><A NAME="L10.3"> 10.3 Определение выходных и входных потоков. </A></H2><P>
+</FONT>
+<P>
+
+Для открытия файла для записи задается его имя,
+производится операция open и указывается направление
+output:
+<br>
+<FONT COLOR=#008000 SIZE=+1>
+(setq our-output-stream (open "sesame" :direction :output))
+</FONT> 
+<br>
+<br>
+Зададим
+<br>
+<p><FONT COLOR=#008000 SIZE=+1>
+(setq s 'e) </font></p>
+
+Можно вывести это значение в файл <br>
+<p><FONT COLOR=#008000 SIZE=+1>
+(princ s our-output-stream) ;</font></p>
+
+Можно занести список
+<p><FONT COLOR=#008000 SIZE=+1>
+(print '(a b c d) our-output-stream) </font></p>
+
+Чтобы правильно закрыть поток необходимо в конец
+поместить <br>
+<p><FONT COLOR=#008000 SIZE=+1>
+(terpri our-output-stream) </font></p>
+
+Затем файл закрывается
+<p><FONT COLOR=#008000 SIZE=+1>
+(close our-output-stream) </font></p>
+
+
+Можно посмотреть информацию в файле.<br>
+
+Откроем файл для чтения:
+<p><FONT COLOR=#008000 SIZE=+1>
+(setq our-input-stream (open "sesame" :direction :input)) </font></p>
+
+Прочитае информацию
+<p><FONT COLOR=#008000 SIZE=+1>
+(read our-input-stream)</font></p>
+
+Закроем файл
+<p><FONT COLOR=#008000 SIZE=+1>
+(close our-input-stream)</font></p>
+
+<p>
+ <IMG SRC="line2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION10/line2.gif">  
+<BR>
+</P>  
+
+
+<FONT COLOR=#100080>
+<H2><A NAME="L10.4"> 10.4 Чтение символов из файла </A></H2><P>
+</FONT>
+<P>
+Предположим, что в файле хранится символьная информация,
+необходимая нам для обработки. Причем нас интересует
+каждый символ в файле. До сих пор мы могли вводить
+только атомы, числа и списки.
+<br>
+
+Сформируем файл
+<br>
+<br>
+Пусть
+
+<p><FONT COLOR=#008000 SIZE=+1>
+(setq s "---+++") <br>
+(setq p "+++---") <br>
+</font></p>
+
+Определим поток вывода
+
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+(setq our-output-stream (open "picture.spl" :direction :output))
+(princ s our-output-stream) ;</font> записываем первую стороку
+<FONT COLOR=#008000 SIZE=+2>(terpri our-output-stream) ; </font> заканчиваем ее 
+<FONT COLOR=#008000 SIZE=+2>(princ p our-output-stream) ; </font>записываем вторую строку 
+<FONT COLOR=#008000 SIZE=+2>(terpri our-output-stream) ; </font> заканчиваем файл 
+</font> </pre> </b>
+
+Тепрь файл закрывается
+<br>
+<p><FONT COLOR=#008000 SIZE=+1>
+(close our-output-stream) </font></p>
+
+
+В файле теперь находится
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+           ---+++
+           +++---
+</font> </pre> </b>
+
+Для чтения символов из файла будем использовать
+функцию
+<p><FONT COLOR=#008000 SIZE=+1>
+(READ-CHAR <входной поток>) </font></p>
+
+Данная функция позволяет читать печатные символы ( CHAR)
+из файла. В качестве значения получается десятичное
+представление кода символа.
+<br>
+
+Используе эту функцию для посимвольного ввода
+информации из файла для ее последующего анализа
+<br>
+Определим
+
+<p><FONT COLOR=#008000 SIZE=+1>
+(setq our-input-stream (open "picture.spl" :direction :input))
+</font></p>
+Для чтения символа используем
+<p><FONT COLOR=#008000 SIZE=+1>
+(read-char our-input-stream)
+</font></p>
+Будем получать последовательность
+значений
+<pre>
+43
+43
+43
+45
+45
+45
+10 и т.д.
+</pre>
+Для восстановления содежимого файла
+применяется перекодировка
+<p><FONT COLOR=#008000 SIZE=+1>
+(setq x  (read-char our-input-stream)
+</font></p>
+То содержимое x можно показать
+
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+ (cond (( = x 43) (prin1'+))
+       (( = x 45) (prin1 '-))
+       (( = x 10 ) (terpri)))
+</font> </pre> </b>       
+
+Можно представить информацию без искажений,
+если использовать цикл
+
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+(loop (progn   (setq x  (read-char our-input-stream) )
+          (cond (( = x 43) (prin1'+))
+               (( = x 45) (prin1 '-))
+                (( = x 10 ) (terpri))))))
+</font> </pre> </b>       
+
+После вывода имеем
+
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+           ---+++
+           +++---
+</font> </pre> </b>       
+
+Закрытие входного потока
+
+<p><FONT COLOR=#008000 SIZE=+1>
+(close our-input-stream)
+</font> </p>
+Для поиска конца файла можно анализировать ошибку чтения,
+но лучше знать длину файла до начала работы с ним.
+
+</BODY>
+</HTML>

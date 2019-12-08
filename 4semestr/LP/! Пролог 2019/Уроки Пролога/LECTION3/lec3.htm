@@ -1,0 +1,1073 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="lec3.files/filelist.xml">
+<link rel=Edit-Time-Data href="lec3.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title> Логическое и функциональное программирование. Лекция 3</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>DimonD</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>14</o:TotalTime>
+  <o:Created>2009-07-30T08:57:00Z</o:Created>
+  <o:Pages>4</o:Pages>
+  <o:Words>1062</o:Words>
+  <o:Characters>6054</o:Characters>
+  <o:Company>Grizli777</o:Company>
+  <o:Lines>50</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7102</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="lec3.files/themedata.thmx">
+<link rel=colorSchemeMapping href="lec3.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627400839 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536881799 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.body8
+	{mso-style-name:body8;
+	mso-style-unhide:no;}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;
+	color:black;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#C7D4EA" lang=RU link=blue vlink=purple style='tab-interval:
+35.4pt' alink="#0000FF">
+
+<div class=Section1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=10 style='width:6.0pt;background:#8181C0;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="65%" style='width:65.0%;background:#8181C0;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><i><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman";color:#C6C6FF'>Лекция 3</span></i></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:12.0pt'>
+<!-- Row 2 -->
+  <td width=10 style='width:6.0pt;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'></td>
+  <td width="65%" style='width:65.0%;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman";color:#004080'>Семантика
+  Пролога.</span></i></b><span style='font-size:18.0pt;mso-fareast-font-family:
+  "Times New Roman";color:#004080'> </span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+ </tr>
+</table>
+
+</div>
+
+<h2><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:#004080'>Cодержание</span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img width=12
+height=12 id="_x0000_i1047" src=blueball.gif></span><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L3.1">3.1 Декларативная семантика Пролог-программ</a> </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1046" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L3.2">3.2 Дизъюнкция целей</a> </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1045" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L3.3">3.3 Процедурная семантика</a> </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1044" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L3.3.1">3.3.1 Пример вычисления</a> </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1043" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L3.3.2">3.3.2 Формальное описание процедуры вычисления целей</a> </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1042" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#L3.4">3.4 Соотношение между процедурным и декларативным смыслом</a> </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1041"
+src=saqual.gif></span></p>
+
+<h2 align=center style='text-align:center'><a name=L3.1><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'>3.1
+Декларативная семантика Пролог-программ</span></a><span style='mso-bookmark:
+"L3\.1"'></span><span style='mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1040"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Различают</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> декларативную</span></b>
+<span style='font-family:"Arial CYR","sans-serif"'>и</span><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> <b>процедурную
+семантику</b></span><span style='font-family:"Arial CYR","sans-serif"'> (смысл,
+понимание) пролог-программ.<br>
+Рассмотрим декларативный смысл более подробно.<br>
+Декларативный смысл, касается только отношений, определенных в программе.</span>
+</p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Декларативная
+семантика</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+определяет, что должно быть результатом работы про- граммы, не вдаваясь в
+подробности, как это достигается.</span> </p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Пусть задано <b>P:-Q, R.</b></span>
+</p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>где <b>P, Q, R -термы.</b></span>
+</p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Тогда с точки зрения
+декларативного смысла это предложение читается:<b>&quot; P-истиино, если Q и R
+истинны.&quot;</b></span> <span style='font-family:"Arial CYR","sans-serif"'>Или
+<b>&quot; Из Q и R cледует Р.&quot;</b></span> <span style='font-family:"Arial CYR","sans-serif"'>Т.е.
+определяются логические связи между головой предложения и целями в его теле.</span>
+</p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Таким образом,</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> декларативный смысл
+программы</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+определяет, является ли данная цель истинной (достижимой), и если - да, то при
+каких значениях переменных она достигается.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Конкретизацией
+I предложения С </span></b><span style='font-family:"Arial CYR","sans-serif"'>называется
+результат подстановки в него на место каждой переменной некоторого терма.</span>
+</p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Заметим, что это
+отличается от конкретизации переменной.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Определение.</span></b>
+</p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Пусть дана некоторая
+программа и цель</span><b><span style='font-family:"Arial CYR","sans-serif";
+color:maroon'> G</span></b><span style='font-family:"Arial CYR","sans-serif"'>,
+тогда в соответствии с декларативной семантикой, можно утверждать, что:<br>
+Цель</span><b><span style='font-family:"Arial CYR","sans-serif";color:maroon'>
+G</span></b><span style='font-family:"Arial CYR","sans-serif"'> истинна (т, е.
+достижима или логически следует из программы) тогда и только тогда, когда<br>
+<b>(1)</b> В программе существует предложение<b> С</b>, такое, что<br>
+<b>(2)</b> существует такая его <b><span style='mso-spacerun:yes'> </span></b>конкретизация
+</span><b><span style='font-family:"Arial CYR","sans-serif";color:maroon'>I</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>, что<br>
+(а) голова</span><span style='font-family:"Arial CYR","sans-serif";color:maroon'>
+<b>I</b></span><span style='font-family:"Arial CYR","sans-serif"'> cовпадает с</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:maroon'> G </span></b><span
+style='font-family:"Arial CYR","sans-serif"'>и<br>
+(b) все цели в теле </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:maroon'>I</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+истинны.</span> </p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=200 style='border:none'></td>
+  <td width=199 style='border:none'></td>
+  <td width=200 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Пример <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>C(I):<br
+  style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]><o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>C:</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>female(ann).<br>
+  parent(ann, bob). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>mother(X) :-parent(X,
+  Y), female(X). <o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=39 style='border:none'></td>
+  <td width=37 style='border:none'></td>
+  <td width=524 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Arial CYR","sans-serif";display:none;mso-hide:all;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>
+  mother(ann). <o:p></o:p></span></b></p>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-ansi-language:EN-US'>mother(ann):-parent(ann,
+  Y), female(ann).</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=9 style='border:none'></td>
+  <td width=7 style='border:none'></td>
+  <td width=584 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'><span
+style='mso-spacerun:yes'> </span>В общем случае вопрос - список целей,
+разделенных запятыми.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Список
+целей называется истинным (достижимым)</span></b><span style='font-family:"Arial CYR","sans-serif"'>,
+если все цели в этом списке истинны, при одинаковых конкретизациях переменных.</span>
+</p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1039"
+src=saqual.gif></span></p>
+
+<h2 align=center style='text-align:center'><a name=L3.2><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'>3.2
+Дизъюнкция целей</span></a><span style='mso-bookmark:"L3\.2"'></span><span
+style='mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1038"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Возможна дизъюнкция
+целей: истинна должна быть по крайней мере одна из целей. <br>
+Дизъюнкция обозначается точкой с запятой &quot;</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:maroon'>;</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>&quot;.</span> </p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Например</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>P:-Q;R.</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> </span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Читается:<b> Р истина,
+если Q - истина или R - истинна.<br>
+</b>Т.е это то же самое, что </span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>P:-R.<br>
+P:-Q. </span></b></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Запятая связывает цели
+сильнее, чем точка с запятой.<br>
+Таким образом предложение </span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>P:-Q, R;S, T, U.</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> </span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>понимается как </span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>P:-(Q, R);(S, T, U).</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> </span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>и имеет смысл </span><b><o:p></o:p></b></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>P:-Q, R.<br>
+P:-S, T, U.</span> </b></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1037"
+src=saqual.gif></span><span style='color:navy'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><a name=L3.3><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'>3.3
+Процедурная семантика</span></a><span style='mso-bookmark:"L3\.3"'></span><span
+style='mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1036"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Процедурная
+семантика (процедурный смысл) пролог-программы</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> определяет , как пролог-программа
+отвечает на вопросы.<br>
+Ответитиь на вопрос -зто значит удовлетворить цели.</span> </p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Поэтому </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>процедурная семантика</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> пролога -это процедура вычисления
+списка целей с учетом программы.</span> </p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  border=0 width=320 height=200 id="_x0000_i1035" src=an27.gif></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=297 style='border:none'></td>
+  <td width=295 style='border:none'></td>
+  <td width=8 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1034"
+src=saqual.gif></span></p>
+
+<h3 align=center style='text-align:center'><a name=L3.3.1><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>3.3.1 Пример вычисления</span></a><span style='mso-bookmark:"L3\.3\.1"'></span><span
+style='mso-fareast-font-family:"Times New Roman";color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1033"
+src=saqual.gif></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Рассмотрим программу и на
+ее примере - процедуру вычисления списка целей.</span> </p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Программа 1.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>1.большой(медведь).<br>
+2.большой(слон).<br>
+3.маленький (кот).<br>
+4.бурый(медведь).<br>
+5.черный(кот).<br>
+6.серый(слон).<br>
+7.темный(Z):-черный(Z).<br>
+7.1<br>
+8.темный(Z):-бурый(Z).<br>
+8.1<br>
+9.?-темный(X),большой(X).<br>
+9.1 9.2</span></b> </p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Предложения пронумерованы
+для удобства</span> </p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=640 height=480 id="_x0000_i1032"
+src=tree.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Таким образом для вычисления целей
+потребовалось 7 сопоставлений и один откат. </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1031"
+src=saqual.gif></span></p>
+
+<h3 align=center style='text-align:center'><a name=L3.3.2><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>3.3.2 Формальное описание процедуры вычисления целей.</span></a><span
+style='mso-bookmark:"L3\.3\.2"'></span><span style='mso-fareast-font-family:
+"Times New Roman";color:navy'><o:p></o:p></span></h3>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1030"
+src=saqual.gif></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Пусть
+список целей</span><span style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=640 height=480 id="_x0000_i1029"
+src=l332.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>1</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>.Если список целей пуст,
+вычисление дает успех, если нет, то выполнятся пункт 2.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>2</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>.Берется первая цель </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:maroon'>G1</span></b> <span
+style='font-family:"Arial CYR","sans-serif"'>из списка. Пролог выбирает в базе
+данных, просматривая сначала, первое предложение</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:maroon'> С</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>,<br>
+</span><b><span style='font-family:"Arial CYR","sans-serif";color:maroon'>С: H
+:- B1, B2, ..., Bn</span></b><span style='font-family:"Arial CYR","sans-serif"'>.<br>
+голова которого, сопоставляется с целью</span><b><span style='font-family:"Arial CYR","sans-serif";
+color:maroon'> G1</span></b><span style='font-family:"Arial CYR","sans-serif"'>.<br>
+Если такого предложения нет, то неудача.<br>
+Если есть, то переменные конкретизируются и цель</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:maroon'> G1</span></b> <span
+style='font-family:"Arial CYR","sans-serif"'>заменяется на список целей </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=640 height=312 id="_x0000_i1028"
+src=l3321.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>с конкретизированными
+значениями переменных.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>3</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>.Рассматривается рекурсивно через
+п.2 новый список целей.</span> </p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=640 height=480 id="_x0000_i1027"
+src=l3322.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Если </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:maroon'>С</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> -факт, то новый список короче на
+одну цель.(n=0)<br>
+Если вычисление нового списка оканчивается успешно, то и исходный список целей
+выполняется успешно.<br>
+Если нет, то новый список целей отбрасывается, снимается конкретизация
+переменных и происходит возврат к просмотру программы, но начиная с предложения
+следующего за предложением</span><b><span style='font-family:"Arial CYR","sans-serif";
+color:maroon'> С</span></b><span style='font-family:"Arial CYR","sans-serif"'>.<br>
+Описанный процесс возврата называется </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>бэктрекинг</span></b><b><span style='font-family:"Arial CYR","sans-serif"'>.
+</span></b><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>(backtracking)</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>. </span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1026"
+src=saqual.gif></span></p>
+
+<h2 align=center style='text-align:center'><a name=L3.4><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";color:navy'>3.4
+Соотношение между процедурным и декларативным смыслом</span></a><span
+style='mso-bookmark:"L3\.4"'></span><span style='mso-fareast-font-family:"Times New Roman";
+color:navy'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1025"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Создавая пролог программы
+всегда надо помнить о </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>процедурном </span></b><span style='font-family:"Arial CYR","sans-serif"'>и</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> декларативном смысле</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>.</span> </p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Декларативный
+смысл</span></b> <span style='font-family:"Arial CYR","sans-serif"'>касается
+отношений , определенных в программе. Т.е. декларативный смысл определяет, что
+должно быть результатом программы.</span> </p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>С другой стороны,</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> процедурный смысл</span></b>
+<span style='font-family:"Arial CYR","sans-serif"'>определяет , как этот
+результат может быть достигнут, т.е., как реально отношения обрабатываются
+прологом.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

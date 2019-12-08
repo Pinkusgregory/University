@@ -1,0 +1,811 @@
+<HTML>
+<HEAD>
+
+
+<TITLE>lec5-99.htm</TITLE>
+</HEAD>
+<BODY Bgcolor="#C7D4EA">
+
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 5.
+<P>
+<FONT COLOR=#100000>
+<CENTER> 
+LET. ЦИКЛИЧЕСКИЕ ПРЕДЛОЖЕНИЯ
+</CENTER>
+</FONT>
+<A NAME="SOD">
+<P> <BR> <CENTER> Содержание  </CENTER></A>
+</FONT>
+</H2>
+</FONT>
+
+<B>
+<FONT SIZE=+1>
+<DL>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.1"> 
+    5.1 L E T.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.2">
+    5.2 Условный выход из функции: PROG RETURN.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.3">
+    5.3  Дополнительные функции печати.</A>
+ <DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.4">
+    5.4 Циклические предложения.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.4.1">
+    5.4.1   LOOP.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.4.1.1">
+    5.4.1.1   Применение LOOP для численных итераций.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.4.1.2">
+    5.4.1.2    Применение LOOP для  итераций co списками.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.5">
+    5.5  DO.</A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.5.1">
+    5.5.1   Обработка списков c DO. </A>
+<DD>
+    <IMG SRC="blueball-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/blueball.gif">
+    <A HREF="#L5.6">
+    5.6  DOTIMES.</A>
+</DL>
+</FONT>
+</B>
+
+<BR>
+<P>
+ <IMG SRC="IVYL.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/IVYL.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.1"> 5.1   L E T</A></H2><P>
+ </FONT>
+В том случае, когда используется вычисление
+последовательности форм, удобно бывает ввести
+локальные переменные, сохраняемые до  окончания
+вычислений. Это делается с помощью предложения
+<FONT COLOR=#FF80000 >   LET</FONT>.<BR>
+<P>
+      В общем виде <FONT COLOR=#FF80000 >LET </FONT> записывается
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>
+      (LET ((var1 знач1) (var2 знач2)...)  форма1    форма2    ...   формаN)
+</FONT>
+<P>   
+<FONT COLOR=#FF80000 >LET</FONT> вычисляется следующим образом:
+<BR>
+1. Локальные переменные var1, var2, ...varM
+связываются одновременно со знач1, знач2, ..., значМ.
+<BR>
+2. Вычисляются последовательно аргументы форма1, форма2,
+формаN.
+<BR>
+3. В качестве значения предложения принимается значение
+последнего аргумента (неявный <FONT COLOR=#FF80000> PROGN</FONT>).
+<BR>
+4. После выхода из предложения связи переменных var1,
+var2, ...varM ликвидируются.
+<P>
+Предложение <FONT COLOR=#FF80000 > LET </FONT> удобно использовать, когда надо временно
+сохранять промежуточные значения.<BR>
+<P>
+<B>       Пример.</B>
+       Рассмотрим функцию <FONT COLOR=#008000 SIZE=+1>rectangle,</FONT> которая имеет один
+       аргумент - список из двух элементов, задающих длину и ширину
+       прямоугольника. Функция рассчитывает и печатает площадь
+       периметр прямоугольника.
+<BR>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+           (defun rectangle (dim)
+<BR>                     (let ((len (car  dim)) (wid (cadr dim)))
+<BR>                 (print (list 'area  (* len wid)))
+<BR>                 (print (list 'perimeter (* (+ len wid) 2))))))
+<P>     * (rectangle '(4 5))
+<BR>       (area 20)
+<BR>       (perimetr 18)
+<BR>       (perimetr 18)
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+Можно сначала рассчитать площадь, т.е. определить<BR>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+         (defun rectangle (dim)
+<BR>              (let ((len (car dim)) (wid (cadr dim))
+<BR>                    (area (* len wid))
+<BR>                   (print ( 'area area))
+<BR>                   (print (list 'perimeter (* (+ len wid)))))))
+</FONT>
+<BR>
+ <P>     Обращение
+<FONT COLOR=#008000 SIZE=+1>
+<P>       * (rectangle '(4 5))
+</FONT>
+<BR>    даст ошибку, т.к значение <FONT COLOR=#008000 SIZE=+1> area </FONT> неопределено.
+</TD>
+</CENTER>
+</TABLE>
+
+<BR>      Надо использовать предложение <FONT COLOR=#FF80000 > LET* </FONT>, в котором
+      значение переменных задается последовательно.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       (defun rectangle (dim)
+<BR>              (let* ((len (car dim)) (wid (cadr dim))
+<BR>                    (area (* len wid)))
+<BR>                   (print (list  'area area))
+<BR>                   (print (list 'perimeter (* (+ len wid) 2)))))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<P>
+<FONT COLOR=#100080>
+ <H2><A NAME="L5.2"> <B> 5.2  Условный выход из функции: PROG RETURN</B></A></H2>
+</FONT>
+<P>  
+      Встречаются ситуации, когда из тела функции, представленного последовательностью форм,
+      требуется выйти, не доходя до последней формы. Это можно сделать используя предложения
+     <FONT COLOR=#FF80000 >PROG RETURN</FONT>, которые используются вместе.
+<P>
+      Рассмотрим <B>пример.</B>
+<P>
+      Необходимо написать функцию которая вводит два значения. Если это числа
+      функция печатает их сумму и разность.
+<BR>
+      Если хотя бы одно не является числом, печатается nil.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+<P>
+            * (defun s-d ()
+<BR>          (prog (x y); локальные переменные
+<BR>            (print '(type number))
+<BR>            (setq x (read))
+<BR>            (and (not (numberp x)) (return nil))
+<BR>            (print '(type number))
+<BR>            (setq y (read))
+<BR>            (and (not (numberp y)) (return nil))
+<BR>            (print (+ x y))
+<BR>            (print (- x y))))
+<P>
+            *  (s-d)
+<BR>       (type number)8
+<BR>       (type number) (1)
+<BR>       nil
+</TD>
+</CENTER>
+</TABLE>
+       <FONT COLOR=#008000 SIZE=+1>return</FONT>  возвращает результат для <FONT COLOR=#008000 SIZE=+1> prog</FONT>.
+<BR>
+<BR>       Если <FONT COLOR=#008000 SIZE=+1> return </FONT> не встретился - результат 
+<FONT COLOR=#008000 SIZE=+1> prog </FONT> будет <FONT COLOR=#008000 SIZE=+1> nil </FONT>.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       * (s-d)
+<BR>       (type number)8
+<BR>       (type number)1
+<BR>       9
+<BR>       7
+<BR>       nil
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P>
+       Если локальных переменных нет записывается <FONT COLOR=#008000 SIZE=+1> (prog ()...) </FONT>
+
+
+<BR>
+<BR>
+<P>
+<IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.3">   <B> 5.3   Дополнительные функции печати</B><P></A></H2>
+</FONT>  
+<FONT COLOR=#FF80000 >  PRINT </FONT> печатает значение аргумента без пробела и
+   перевода на другую строку:
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD><FONT COLOR=#008000 SIZE=+1>
+   * (progn (print 1) (print 2) (print 3))
+<BR>   123
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<FONT COLOR=#FF80000 >СТРОКИ</FONT> - последовательность знаков заключенная в кавычки.
+ <TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+  "string"
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P>
+<FONT COLOR=#FF80000 > СТРОКА </FONT>- специальный тип данных в лиспе. Это атом, 
+но  не может быть переменной. Как у числа  значение строки  сама строка.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+<BR>   * "(+ 1 2)"
+<BR>   "(+ 1 2)"
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+   Строки удобно использовать для вывода с помощью
+   оператора <FONT COLOR=#FF80000 >PRINC</FONT>. <P>
+   <FONT COLOR=#FF80000 > PRINC </FONT> печатает строки без "".<P>
+   <FONT COLOR=#FF80000 > PRINC </FONT> печатает аргумент без пробела и перевода строки
+<P>
+<B>   Пример</B>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+   * (progn (setq x 4) (princ " x = ") <BR> (prin1 x) (princ " m "))
+<BR>    x = 4 m
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P>
+"<FONT COLOR=#008000 SIZE=+1> m </FONT>": значение последнего аргумента.
+<P>
+     <FONT COLOR=#FF80000 >PRINC</FONT>  обеспечивает гибкий вывод.
+<P>
+ <FONT COLOR=#FF80000 > TERPRI </FONT>производит перевод строки. Как значение возвращает nil.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+         * (progn (setq x 4) (princ "xxx ") (terpri) (princ "xox "))
+ <BR>      xxx
+<BR>       xox
+<BR>      " xox"
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.4"><B> 5.4 Циклические предложения</B></A></H2>
+</FONT>
+      Циклические вычисления в лиспе выполняются или
+      с помощью <FONT COLOR=#FF80000 >итерационных  (циклических) предложений</FONT>
+      или <FONT COLOR=#FF80000 >рекурсивно</FONT>.
+
+      Познакомимся вначале с циклическими предложениями
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.4.1">   5.4.1   LOOP</A></H2>
+</FONT>
+<P>
+      Предложение <FONT COLOR=#FF80000 >LOOP</FONT> реализует бесконечный цикл
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>
+      (LOOP форма1 форма2 .....)
+</FONT>
+<P>
+      в которoм формы вычисляются до тех пор, пока
+
+      не встретится явный оператор завершения <FONT COLOR=#FF80000 >RETURN</FONT>.
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.4.1.1">    5.4.1.1   Применение LOOP для численных итераций.</A></H2>
+</FONT>
+<P>
+      Определим функцию <FONT COLOR=#008000 SIZE=+1>add-integer</FONT>,
+      которая будет брать один аргумент, являющийся
+      положительным целым, и возвращает сумму всех чисел между 1 и этим числом.
+<P>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+      1+2+3+4+ ... +N
+<BR>      1+2+3+4=10
+<P>    *  (add-integers 4)
+<BR>    10
+<P>      
+        (defun add-integers (last)
+<BR>          (let (( count 1) (total 1))
+<BR>                (loop
+<BR>                (cond (( equal count last) (return total)))
+<BR>                (setq count (+ 1 count))
+<BR>                (setq total (+ total count)))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P> 
+           Еще один <B>пример</B> численной итерационной функции.
+            Определим функцию выполняющую умножение двух
+            целых чисел через сложение. Т.е. умножение
+            x на y выполняется сложением x с самим собой
+            y раз.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+             Например, <FONT COLOR=#008000 SIZE=+1>
+3 x 4 </FONT>это <FONT COLOR=#008000 SIZE=+1>
+3 + 3 + 3 + 3 = 12
+<P>
+     * (int-multiply 3 4)
+<BR>        12
+<P>      (defun int-multiply (x y)
+<BR>          (let ((result 0)( count 0))
+<BR>                (loop
+<BR>                (cond (( equal count y) (return result)))
+<BR>                (setq count (+ 1 count))
+<BR>                (setq result (+ result x)))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Из приведенных примеров можно получить общую форму
+      для численной итерации
+
+<FONT COLOR=#FF80000 SIZE=+1>
+<P>
+      (defun &lt; имя-функции &gt; &lt; список-параметров &gt;
+<BR>          (let (&lt; инициализация переменной индекса &gt;
+<BR>                &lt; инициализация переменной результата &gt;)
+<BR>                (loop
+<BR>                (cond &lt; проверка индекса на выход &gt; (return результат))
+<BR>                &lt; изменение переменной счетчика &gt;
+<BR>                &lt; другие действия в цикле,
+<BR>                   включая изменение переменой результата &gt;)))
+</FONT>
+<P>
+      Еще <B> пример</B>. Определим функцию
+<FONT COLOR=#008000 SIZE=+1> factorial</FONT>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     * (factorial 5)
+<BR>      120
+<BR>      1 x 2 x 3 x 4 x 5 = 120
+<P>
+      (defun factorial ( num )
+<BR>          (let ((counter 0)( product 1))
+<BR>                (loop
+<BR>                (cond (( equal counter num) (return product)))
+<BR>                (setq counter (+ 1 counter))
+<BR>                (setq product (* counter product )))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+ <B>     Пример,</B>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+      ( progn (setq x 0)
+<BR>              (loop (if ( = 3 x) (return 't) (print x))
+<BR>                    (setq x  (+ 1 x))))
+<P>
+      0
+<BR>      1
+<BR>      2
+<BR>      t
+</FONT>    
+</TD>
+</CENTER>
+</TABLE>
+      Определим функцию использующую печать и ввод.
+      Функция без аргументов читает серию чисел
+      и возвращает сумму этих чисел, когда пользователь
+      вводит не число. Функция должна печатать
+<P>
+"<FONT COLOR=#008000 SIZE=+1> Enter the next number:  </FONT>"  перед каждым вводом.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+      * ( read-sum)
+<BR>      Enter the next number: 15
+<BR>      Enter the next number: 30
+<BR>      Enter the next number: 45
+<BR>      Enter the next number: stop
+<BR>      90
+<P>
+      (defun read-sum ()
+<BR>          (let ((input) (sum 0))
+<BR>                (loop
+<BR>                (princ "Enter the next number:")
+<BR>                (setq input (read))
+<BR>                (cond (( not (numberp input)) (return sum)))
+<BR>                (setq sum (+ input sum)))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.4.1.2">    5.4.1.2   Применение LOOP для  итераций co списками.</A></H2>
+</FONT>
+<P>
+      Предположим, что  нам необходима функция <FONT COLOR=#008000 SIZE=+1> double-list</FONT>,
+      принимающая список чисел и возвращает новый список
+      в котором каждое число удвоено.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+      * (double-list '(5 15 10 20))
+<BR>      (10 30 20 40)
+<P>      (defun double-list ( lis )
+<BR>          (let ((newlist nil))
+<BR>                (loop
+<BR>                (cond (( null lis ) (return newlist)))
+<BR>          (setq newlist (append newlist (list (* 2 (car lis)))))
+<BR>                (setq lis (cdr lis )))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Посмотрим как будет идти вычисление:
+<P>                    
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER><TABLE BORDER=0 WIDTH=600>
+<TR>
+<TD ALIGN=CENTER >      </TD>
+<TD ALIGN=CENTER >      list  </TD>
+<TD ALIGN=CENTER >      newlist </TD>
+
+<TR>   
+<TD ALIGN=CENTER >       Начальное состояние </TD>
+<TD ALIGN=CENTER >       (5 15 10 20)   </TD>
+<TD ALIGN=CENTER >       ()              </TD>
+<TR>
+<TD ALIGN=CENTER >       итерация 1 </TD>
+<TD ALIGN=CENTER >       (15 10 20) </TD>
+<TD ALIGN=CENTER >       (10) </TD>
+<TR>
+<TD ALIGN=CENTER >       итерация 2 </TD>
+<TD ALIGN=CENTER >       (10 20) </TD>
+<TD ALIGN=CENTER >       (10 30) </TD>
+<TR>
+<TD ALIGN=CENTER >      итерация 1  </TD>
+<TD ALIGN=CENTER >      (20)          </TD>
+<TD ALIGN=CENTER >      (10 30 20) </TD>
+<TR>
+<TD ALIGN=CENTER >      итерация 4   </TD>
+<TD ALIGN=CENTER >      ()                  </TD>
+<TD ALIGN=CENTER >      (10 30 20 40) </TD>
+<TR>
+<TD ALIGN=CENTER >       результат       </TD>
+<TD ALIGN=CENTER >      </TD>
+<TD ALIGN=CENTER >      (10 30 20 40)  </TD>
+</TABLE>
+</CENTER>
+</FONT>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.5">    5.5     DO</A></H2>
+</FONT>
+<P>
+      Это самое общее циклическое предложение
+<P>
+      Общая форма
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>
+   ( DO (( var1 знач1 шаг1) ( var2 знач2 шаг2)....) 
+<BR>           ( условие-окончания форма11 форма12...)
+<BR>           форма21
+<BR>           форма21    ...)
+</FONT>
+<P>
+     1) Вначале локальным переменным      var1 ..varn
+        присваиваются начальные значения  знач1..значn.
+        Переменным, для которых не заданы начальные
+        значения присваивается nil.
+<P>
+      2) Затем проверяется условие окончания,
+         если оно выполняется вычисляются  форма11, форма12...
+         В качестве значения берется
+         значение последней формы.
+<P>
+      3) Если условие не выполняется,
+       то вычисляются форма21, форма22...
+<P>
+      4) На следующем цикле переменным vari
+         присваиваются одновременно новые значения
+         определяемые формами шагi и все повторяется.
+<P>
+<B>    Пример</B>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       *  ( do (( x 1 ( + 1 x)))
+<BR>              (( > x 10) ( print 'end))
+<BR>              ( print x))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+       Будет печатать последовательность чисел.    
+<BR>  В конце end.
+<P>
+       Можно сравнить итерационное вычисление с <FONT COLOR=#FF80000 > LOOP </FONT> и <FONT COLOR=#FF80000 > DO</FONT>.
+<P>
+       Напишем функцию <FONT COLOR=#008000 SIZE=+1> list-abs</FONT>, которая берет список чисел
+       и возвращает список абсолютных величин этих чисел.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       (defun list-abs (lis)
+<BR>          (let ((newlist nil))
+<BR>                (loop
+<BR>                 (cond (( null lis ) (return (reverse newlist))))
+<BR>                (setq newlist (cons (abs (car lis)) newlist))
+<BR>                (setq lis (cdr lis )))))
+<BR>              * (list-abs '(-1 2 -4 5))      
+</FONT>
+</TD>
+</CENTER>
+</TABLE>  
+     То же, только через <FONT COLOR=#FF80000 > DO </FONT>
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       (defun list-abs (lis)
+<BR>          (do ((oldlist  lis (cdr oldlist))
+<BR>               (newlist nil  (cons (abs (car oldlist)) newlist)))
+<BR>               ((null oldlist) (reverse newlist)))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>       
+       Может одновременно изменяться значения нескольких переменных
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       *  ( do (( x 1 (+ 1 x))
+<BR>                ( y 1 (+ 2 y))
+<BR>                ( z 3)); значение не меняется
+<BR>              (( > x 10) ( print 'end))
+<BR>      (princ "  x=")        ( prin1 x) 
+<BR>      (princ "  y=")       ( prin1 y)
+<BR>      (princ "  z=")        ( prin1 z)  (terpri))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+       Можно реализовать вложенные циклы
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       *  ( do (( x 1 (+ 1 x)))
+<BR>                (( > x 10))
+<BR>             ( do (( y 1 (+ 2 y)))
+<BR>                  (( > y 4))
+<BR>             ( princ " x= ")       ( prin1 x)
+<BR>             ( princ " y= ")       ( prin1 y)
+<BR>           (terpri)      ))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.5.1">    5.5.1   Обработка списков c DO.</A></H2>
+</FONT>
+<P>
+     Напишем функцию, которая будет
+     читать элементы с клавиатуры и объединять в список.
+     Ввод будет закончен, когда будет введен последний
+     элемент end
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       ( defun appen-read ()
+<BR>            ( do (( x  ( list ( read)) ( append x (list (read)))))
+<BR>            (( equal (last x) '(end))); ???? '(end)
+<BR>            (print x)))
+<BR>       ( appen-read)
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+     Если есть необходимость можно использовать <FONT COLOR=#FF80000 >DO*</FONT> аналогично
+<FONT COLOR=#FF80000 > LET*</FONT>.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.6">    5.6     DOTIMES</A></H2>
+</FONT>
+<P>
+
+<FONT COLOR=#FF80000 >     DOTIMES </FONT>можно использовать вместо<FONT COLOR=#FF80000 > DO</FONT>, если надо
+     повторить вычисления заданное число раз.
+<P>
+     Общая форма
+<FONT COLOR=#FF80000 SIZE=+1>
+<P>
+     (DOTIMES ( var num форма-return) ( форма-тело))
+</FONT>
+<P>
+             здесь var - переменная цикла,
+<BR>     num - форма определяющая число циклов,
+<BR>     форма - return - результат, который должен быть возвращен.
+<P>
+     Прежде всего вычисляется num-форма, в результате
+     получается целое число-count.
+<P>
+     Затем var меняется от 0 до count (исключая count)
+     и соответственно  каждый раз вычисляется форма-тело.
+<P>
+     Последним вычисляется форма-return.
+<P>
+     Если форма-return отсутствует, возвращается nil.
+<P>
+<B>      Например,</B>
+<TABLE BORDER=0 >
+<TR>
+<TD >   <IMG SRC="EXAMPLE.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       * (dotimes ( x 3 )
+<BR>               ( print x))
+<BR>      0 - автоматически
+<BR>      1
+<BR>      2
+<BR>      t
+<P>
+    * (let ((x nil))
+<BR>       (dotimes (n 5 x)
+<BR>       (setq x (cons n x))))
+<P>
+    ( 4 3 2 1 0)
+</FONT>
+</TD>
+</TABLE>
+<BR>
+<P>
+ <IMG SRC="LINE2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION5/LINE2.GIF">  
+<BR>
+
+<CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<BR>
+<P>  
+</body>
+</html>

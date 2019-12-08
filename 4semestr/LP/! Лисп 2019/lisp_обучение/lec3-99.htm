@@ -1,0 +1,959 @@
+ <HTML>
+<HEAD>
+<TITLE>lec3.htm</TITLE>
+</HEAD>
+<BODY BGCOLOR="#C7D4EA">
+
+<FONT COLOR=#100080>
+</FONT><FONT FACE="Times New Roman" COLOR="#000080"><H2>ЛЕКЦИЯ 3.</FONT><FONT COLOR="#000080"></FONT><FONT FACE="Times New Roman" COLOR="#800000"><H2>Функции. Базовые функции.</H2>
+</FONT><FONT FACE="Times New Roman" COLOR="#000080"><H2>Содержание </H2>
+<A NAME="SOD"> 
+<B>
+<FONT SIZE=+1>
+<DL>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.1"> 
+     3.1 Определение функций.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.2">
+   3.2 Передача параметров. Глобальные и локальные переменные.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.3">
+   3.3 Свободные переменные.</A>
+ <DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.4">
+   3.4 Расчет сопротивления цепи.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.5">
+   3.5 Дополнительные функции обработки списков.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.5.1">
+    3.5.1  APPEND.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.5.1.1">
+   3.5.1.1 Объединяющие функции.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.5.2">
+   3.5.2  REVERSE.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.5.3">
+   3.5.3  LAST. </A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6">
+   3.6 Базовые предикаты.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6.1">
+   3.6.1  ATOM.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6.2">
+   3.6.2  EQ.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6.3">
+   3.6.3  =.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6.4">
+   3.6.4  EQL.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6.5">
+   3.6.5  EQUAL.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.6.6">
+   3.6.6  NULL.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.7">
+   3.7  Предикаты типов.</A>
+<DD>
+    <IMG SRC="blueball-7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/blueball.gif">
+    <A HREF="#L3.8">
+   3.8  Числовые предикаты.</A>
+</DL></A></font></b>
+<P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.1">     3.1 Определение функций.</A></H3></HK><P>
+ </FONT>
+
+    Необходимо поместить два элемента в начало списка, причем эту операцию мы хотели бы выполнять несколько
+    раз с различными элементами.<BR>
+<P>
+<B> Например :<BR>
+ <UL><UL><IMG  SRC="PIC3_4.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_4.GIF"><p>
+<UL><ul>
+
+<FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > cons </FONT> ' a  (<FONT COLOR=#FF80000 >cons </FONT>
+' b ' ( c d ) ) ) <BR>
+      ( a b c d ) <BR> </UL></UL></UL></UL></ul>
+ <UL><UL><UL></B>    или<BR><B>
+<UL> <FONT COLOR="#008000"><P>*</FONT> ( <FONT COLOR=#FF80000 >cons </FONT> ' train (<FONT COLOR=#FF80000 >cons </FONT>
+' truck ' (bus  car boat ) ) ) <BR>
+     ( train truck  bus car boat ) </UL></UL></UL><BR></UL>
+<P>
+</B> <UL><UL><UL>    Лучше, если была бы функция:<BR><B>
+<P>
+<UL>    <FONT COLOR="#008000"><P>*</FONT> ( <FONT COLOR=#FF80000 >cons-two </FONT>' a ' b  ' ( c d ) ) <BR>
+    ( a b c d )</UL><BR>
+<P>
+<UL>    <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > cons-two </FONT> ' train ' truck ' ( bus car boat ) )<BR>
+     ( train truck bus car boat )<BR></B></UL></UL></UL></UL>
+<P>    
+    Такую функцию можно определить самим и  использовать как встроенную.<p>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<UL><B><FONT COLOR=#800080>   Чтобы определить функцию, необходимо:<BR></FONT>
+   <LI> Дать имя функции<BR>
+   <LI> Определить параметры функции<BR>
+   <LI> Определить ,что должна делать функция
+</A></UL></B>
+</TD>
+<TR>
+</TABLE>
+<P>
+  Для задания новых функций в <B>Лиспе</B> используется  специальная форма <FONT COLOR=#FF80000 >
+<B>defun.</b><p></FONT>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8">
+<TD ALIGN=CENTER BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 >defun </FONT> &lt; имя-функции &gt;  &lt; параметры &gt;  &lt; тело-функции &gt;) <BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+</UL></UL></B>
+<P>
+Для  нашего случая:<BR><B>
+<P>
+<UL><UL><UL><UL>   (<FONT COLOR=#FF80000 > defun  cons-two </FONT>  ( x y oldlist )<BR>
+               ( cons x ( cons y oldlist ) ) ) )<BR></B></UL></UL></UL></UL>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL>
+  <LI><B> Имя функции </B>- символ.<BR>
+  <LI><B> Параметры </B>- список аргументов.<BR>
+  <LI><B> Tело функции</B> - вычисляемая форма от аргументов.<BR>
+</TD>
+<TR>
+</TABLE>
+  Значение определения функции <B> defun - имя функции </B>.
+<B>
+<UL><UL><UL><UL>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > defun  cons-two </FONT>  ( x y oldlist )<BR>
+                     ( cons x ( cons y oldlist ) ) ) )<BR>CONS-TWO</UL></UL></UL></UL>
+<P>
+Вызов функции:<P>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD>
+ <H3>  ( &lt; имя-функции &gt;  &lt; значения аргументов &gt;) <BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+
+<P>
+<UL><UL><UL><UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > cons-two </FONT> ' a ' b ' ( c d ) )<BR>
+    ( a b c d )<BR></UL></UL></UL></UL></b>
+<P>
+  <B>  Значение функции </B>- значение тела функции при заданных аргументах.<BR>
+<P>
+ <UL><UL>  <B> Примеры:<BR>
+<P>
+   <UL><UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > defun double </FONT> ( num )  ( * 2 num ) ) <BR></UL></UL>
+ <P>
+<UL><UL>    <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > double </FONT> 7 )<BR>
+      14<BR></UL></UL></UL></UL>
+<P></B>
+<UL><UL><UL>   Определенную функцию можно использовать  как встроенную:<BR><B>
+<P>
+<UL>   <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > setq </FONT> z (<FONT COLOR=#FF80000 > double </FONT> ( + 5 10 ) ) )<BR>
+     30</UL><BR>
+<P>
+<UL>   <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > double </FONT>z )<BR>
+     60<BR></UL></UL></UL></UL></B>
+<P>
+<B>  Еще один пример:<BR></B>
+<P>
+<UL><UL>  Необходимо элемент поместить new на второе место в списке:<B>
+  ( a c d ) </b>станет <b> ( a new c d )<BR></B></UL></UL>
+<P>
+<center><IMG  SRC="PIC3_2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_2.GIF"><BR></center>
+<P>
+  Назовем функцию <B>insert-second</B>.  Два аргумента: <B>item oldlist</B>.<BR>
+<UL><UL>  Тело функции:<BR><B>
+   ( cons ( car oldlist ) ( cons item ( cdr oldlist ) ) )<BR></B></UL></UL>
+<P>
+<UL><UL>  Таким образом,определим функцию:<BR><B>
+<UL> (<FONT COLOR=#FF80000 > defun  insert-second </FONT> ( item oldlist )<BR>
+   ( cons ( car oldlist ) ( cons item ( cdr oldlist ) ) )<BR></UL>
+<P>
+<UL>   <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > insert-second </FONT> 'b  '( a c d ) )<BR>
+   ( a b c d )</B></UL></UL></UL>
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.2">       3.2 Передача параметров. Глобальные и локальные переменные.
+</A></H3></HK><P>
+ </FONT>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><FONT COLOR=#800080>
+
+  В Лиспе передача параметров производится в функцию
+  по значе-<BR>нию,  т.е. формальный параметр в функции связывается с
+  тем же значением, что и значение фактического  параметра.</B></FONT>
+</A><BR>
+</TD>
+<TR>
+</TABLE>
+  Изменение значения <B>формального параметра</B> не оказывает
+   влияния на значения <B>фактических параметров</B>. После вычисления функции, созданные на это время связи
+  параметров ликвидируются и происходит возврат к тому
+  состоянию, которое было до вызова функции .
+   Параметры функции являются <B>локальными переменными </B>, и имеют
+ значение только внутри функции.
+<P>
+<UL><UL><UL><B>  Например:<BR>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > defun  f ( x )</FONT> ( setq x ' new ) ) ;</B> меняет значение x<BR>
+  <B> f</UL><BR>
+<P>
+  <UL><FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > setq </FONT>x  ' old )<BR>
+   old<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT><FONT COLOR=#FF80000 > x </FONT><BR>
+   old<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 >  f x </FONT>)<BR>
+   new</UL><BR>
+<P>
+  </UL></UL></UL>
+<P>
+<UL><UL><UL>  Еще пример:<BR>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > defun double</FONT> ( num ) ( * num 2 )<BR>
+  double<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > setq </FONT>num 5 )<BR>
+  5<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > double</FONT> 2 )<BR>
+  4<BR></UL>
+<P>
+<UL>  * <FONT COLOR=#FF80000 >num </FONT><BR>
+  5</UL></UL></UL></UL></B>
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.3">    3.3 Свободные переменные.
+</A></H3></HK><P>
+ </FONT>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><FONT COLOR=#800080>
+   Если в теле функции есть переменные,  не входящие в число ее формальных
+  параметров - они называются свободными.
+  Значения свободных переменных остается
+  в силе после ее выполнения.</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+  
+<B>
+<UL><UL><UL>  Например:<BR>
+<P>
+<UL>  <FONT COLOR="#008000"><P><FONT COLOR="#008000"><P>*</FONT></FONT> ( <FONT COLOR=#FF80000 >defun f1</FONT> ( y )  (setq x 3 ) )<BR>
+   f1<BR></UL>
+<P>
+<UL> <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > f1 </FONT>5 )<BR>
+    3<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT><FONT COLOR=#FF80000 > x</FONT><BR>
+    3<BR></UL></UL></UL></UL>
+ <P></B>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>   
+<FONT COLOR=#100080>
+<H2><A NAME="L3.4">    3.4 Расчет сопротивления цепи.
+</A></H3></HK><P>
+ </FONT>
+
+  До тех пор пока мы не рассмотрели определение  функций, мы не могли
+ приступить к написанию программ на <B>ЛИСПЕ</B>.
+ Теперь можно рассмотреть простейшую.<BR>
+<P>
+<TABLE BORDER=0 width=540>
+<TD ALIGN=left  VALIGN=TOP >
+<IMG ALIGN=TOP SRC="PIC3_7.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_7.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT valign=bottom>
+ <B>
+ Задача:</B><p>
+Написать программу расчета сопротивления цепи.<BR>
+<B> r1=r2=r3=10</B></UL></UL>
+</TD>
+
+</TABLE>
+<B>
+<UL><UL><UL><UL><UL>Последовательное соединение    (serial)<BR>
+R = R1 + R2</B><BR>
+функция  (<B><FONT COLOR=#FF80000 >s_r</FONT></B> R1 R2)<BR></UL></UL></B>
+<UL><UL>Определение:<B>
+( <FONT COLOR=#FF80000 >defun s_r</FONT>  ( R1 R2 )  (+ R1 R2 ) )<BR></UL>
+<P>
+<UL>Параллельное   соединение (parallel)<BR>
+R =  ( R1 * R2 ) / ( R1 + R2 ) <BR></B>
+функция ( <B><FONT COLOR=#FF80000 >p_r</FONT></B> R1 R2 )<BR></UL></UL>
+<UL><UL>Определение:<B>
+(<FONT COLOR=#FF80000 > defun p_r</FONT> ( R1 R2 )  ( / ( * R1 R2 ) ( + R1 R2 ) ) )<BR></B>
+</UL></UL>
+<P>
+<UL><UL><B>Расчет:
+<P>
+ <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 >s_r </FONT>10 ( <FONT COLOR=#FF80000 >p_r </FONT>10 10 ) )<BR>
+  15<BR></UL></UL></UL></UL></UL>
+</B>
+<P>
+  Усложним цепь:<BR>
+<TABLE BORDER=0 >
+<TD ALIGN=left  VALIGN=TOP>
+<IMG ALIGN=TOP SRC="PIC3_8.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_8.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT valign=middle><B>
+r1=r2=r3=r4=10<BR>
+<P>
+Расчет:<BR>
+<P>
+    <FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 > p_r </FONT>10  (<FONT COLOR=#FF80000 > s_r </FONT> 10
+ (<FONT COLOR=#FF80000 > p_r </FONT> 10 10 ) ) )<BR>
+<P></UL></UL >
+  и т.д.</B>
+</A>
+</TD>
+<TR>
+</TABLE>
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.5">     3.5 Дополнительные функции обработки списков.
+</A></H3></HK><P>
+ </FONT>
+<DL>
+<DD>
+    <A HREF="#L3.5.1"> 
+  APPEND</A>
+<DD>
+    <A HREF="#L3.5.2"> 
+  REVERSE</A>
+<DD>
+   <A HREF="#L3.5.3"> 
+ LAST</A>
+ </DL>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.5.1">   3.5.1  APPEND.
+</A></H3></HK><P>
+ </FONT>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+   Функция  APPEND объединяет два и более списков в один.</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<B>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD>
+ <H3> <FONT COLOR=#FF80000 > ( APPEND </FONT>&lt; список - 1 &gt;  &lt; список - 2 &gt; )<BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+
+<UL><UL><UL>Пример:<p>
+<UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > append </FONT> ' ( a b ) ' ( c ) )<BR>
+   ( a b c )<BR></UL></UL></UL>
+<IMG  SRC="PIC3_9.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_9.GIF"> <BR>
+<P>
+<UL><UL>  APPEND </B>объединяет элементы, не изменяя их.<BR>
+<P>
+<UL><B>   <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > append </FONT> ' ( list ) ' ( ' ( a b ) ' ( c ) ) )<BR>
+    ( list ( quote ( a b ) ) ( quote ( c ) ) )<BR></UL></UL></UL></UL></B>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.5.1.1">    3.5.1.1 Объединяющие функции.
+</A></H3></HK><P>
+ </FONT>
+
+<DL>
+    Рассмотрим несколько примеров,что бы показать отличие 
+    <A HREF="#L3.5.1"> 
+  APPEND</A>
+    <A HREF="javascript:if(confirm('http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LL12.HTM  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?'))window.location='http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LL12.HTM#L2.6.7'" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LL12.HTM#L2.6.7"> 
+  LIST</A>
+   <A HREF="javascript:if(confirm('http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LL12.HTM  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?'))window.location='http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LL12.HTM#L2.6.3'" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LL12.HTM#L2.6.3"> 
+  CONS</A>
+  .
+ </DL>
+<P><B>
+<UL><UL><UL>Примеры:<p>
+<UL>  <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > list</FONT> ' ( a b ) ' ( c d ) )<BR>
+    ( ( a b ) ( c d ) )<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT> ( <FONT COLOR=#FF80000 >cons </FONT> ' ( a b ) ' ( c d ) )<BR>
+    ( ( a b ) c d )<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 >append </FONT> ' ( a b )  ' ( c d ) )<BR>
+    ( a b c d )<BR></UL></UL></UL></UL></B>
+<P>
+<TABLE BORDER=0>
+<TD VALIGN=TOP>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG></td>
+<TD ALIGN=LEFT><UL>
+<LI><B>cons</B> всегда берет два аргумента и помещает
+    первый в начало второго.<BR>
+<LI><B>list </B>берет один или больше аргументов и
+    образует список, помещая аргументы в скобки.<BR>
+<LI><B>append </B>образует новый список, убирая
+    скобки вокруг аргументов и помещая их в один список.</UL>
+</TD>
+</TABLE>
+<p>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8">
+<TD ALIGN=CENTER BGCOLOR=DDFFDD COLSPAN=3>
+ <H2>Дополнительные сведения об отличии функций.</H2></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>Функция</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>Аргументы</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>Действие</H3></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> LIST</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>s s s ...</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( s s s... )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>CONS </H5>></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>s  ( list ) </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( s  list ) </H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>APPEND </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>(l) (l) (l)... </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( l l l ...) </H5></TD>
+</TABLE>
+</CENTER>
+
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.5.2">    3.5.2  REVERSE.
+</A></H3></HK><P>
+ </FONT>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+Функция REVERSE изменяет порядок элементов в аргументе.
+</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8" >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD >
+ <H3><FONT COLOR=#FF80000 >( REVERSE </FONT> &lt; список &gt; ) <BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+
+<UL><UL><UL>
+<B>Пример:<p>
+<UL>    <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > reverse </FONT> ' ( a b c ) ) <BR> 
+    ( c b a )<BR>
+<P></UL></UL></B></UL></ul>
+<UL><IMG  SRC="PIC3_10.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_10.GIF"> <BR></UL>
+<P>
+<LI>  Аргументом <B>reverse</B> должен быть список.<BR>
+<LI> <B>reverse </B>не меняет порядок в списках более нижнего уровня.<BR>
+</UL>
+<UL><UL><UL>
+<P>
+<B>
+ <UL><ul> <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > reverse </FONT> ' ( ( a b c ) e ) )<BR>
+     ( e ( a b c ) )<BR></B></UL></UL></UL></UL></ul>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.5.3">   3.5.3  LAST.
+</A></H3></HK><P>
+ </FONT>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+Функция  LAST удаляет из списка все элементы кроме последнего.
+</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<P>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD >
+ <H3><FONT COLOR=#FF80000 >( LAST </FONT> &lt; список &gt; ) <BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+
+<B><UL><UL><UL><ul><ul>Пример:
+<P>
+<UL>    <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > last </FONT> ' ( a b c ) )<BR>
+    ( c )<BR></UL></UL></UL></UL></ul></ul></B>
+<IMG  SRC="PIC3_11.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_11.GIF"> <BR>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6">    3.6 Базовые предикаты.
+</A></H3></HK><P>
+ </FONT>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+  Предикат в Лиспе - это функция,которая определяет
+  обладает ли аргумент определенным свойством,
+  и возвращает в качестве значения T или NIL.
+</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6.1">    3.6.1  ATOM.
+</A></H2></HK><P>
+ </FONT>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+<UL>  ATOM проверяет , является ли аргумент атомом.<BR>
+  Значение будет Т , если атом , и nil в обратном  случае.</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD >
+ <H3> <FONT COLOR=#FF80000 > ( ATOM </FONT>&lt; s - выражение &gt;) <BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+<p>
+<B><ul>Примеры:<BR></ul></B>
+<CENTER><TABLE BORDER=0>
+<TR>
+<TD><UL><B>
+<UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > atom </FONT>'x )<BR>
+  t<BR></UL>
+<P>
+<UL><FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 > atom </FONT>'( a b ) )<BR>
+  nil<BR></UL></UL>
+</TD>
+<TD><UL><B>
+<UL><FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 > atom </FONT>( cdr ' ( a b ) ) )<BR>
+  nil<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > atom </FONT>( car ' ( a b ) ) )<BR>
+  t</B></UL></UL>
+</TD>
+</TABLE>
+</CENTER>
+<P>
+ Предикат <B>atom</B> с пустым списком <B>nil</B>:<p>
+<CENTER><TABLE BORDER=0 width=350>
+<TR>
+<TD ><B>
+<UL><FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 > atom </FONT> nil )<BR>
+  t<BR></UL></UL>
+</TD>
+<TD ><B>
+<UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > atom </FONT> ( ) )<BR>
+  t<BR></B></UL></UL>
+</TD>
+</TABLE>
+</CENTER>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6.2">      3.6.2  EQ.
+</A></H3></HK><P>
+ </FONT>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+  Предикат EQ сравнивает два символа
+  и возвращает Т, если они одинаковые,
+  и nil в обратном случае.
+</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD>
+ <H3><FONT COLOR=#FF80000 > ( EQ </FONT> &lt; выражение 1 &gt;  &lt; выражение 2 &gt; )<BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+
+<P>
+<B>Примеры:<BR>
+<P>
+<TABLE BORDER=0>
+<TD ALIGN=TOP  VALIGN=TOP>
+<IMG ALIGN=TOP SRC="PIC3_14.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_14.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT valign=middle><B><UL><UL>
+<UL><FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 > eq </FONT> ' cat  ' cat )<BR>
+  t</B></UL></UL>
+</TD>
+<TR>
+<TD ALIGN=TOP  VALIGN=TOP>
+<IMG ALIGN=right SRC="PIC3_15.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_15.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > eq </FONT> ' cat  ' dog )<BR>
+  nil</B></UL></UL>
+</TD>
+</TABLE>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > eq </FONT> ' cat ( car ' ( cat dog ) )<BR>
+  t<BR></UL>
+<P>
+<UL>  <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > eq </FONT> t ' t )<BR>
+  t<BR></UL></UL></UL></UL></B>
+<P>
+<UL><UL><UL> <B> EQ</B> можно применять к числам, если они представлены
+  одним типом.<BR>
+<P>
+<UL><B>  <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > eq </FONT> 123 123 )<BR>
+  t<BR></B>
+</UL></UL></UL></UL>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6.3">    3.6.3  =.
+</A></H3></HK><P>
+ </FONT>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+ Предикат "=" сравнивает числа различного типа.
+</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD>
+ <H3><FONT COLOR=#FF80000 > ( = </FONT> &lt; число - 1 &gt;  &lt; число - 2 &gt; )<BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+<TABLE BORDER=0>
+<TD ALIGN=right  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_16.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_16.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL>
+<UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 >= </FONT> 3  3.0 )<BR>
+  t</UL></UL></UL>
+</B>
+</TD>
+<TR>
+<TD ALIGN=left  VALIGN=middle>
+<IMG ALIGN=left SRC="PIC3_17.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_17.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL>
+<UL><FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 >= </FONT> 3  0.3F 01 )<BR>
+  t
+</UL></B></UL></UL>
+</TD>
+<TR>
+</TABLE>
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6.4">    3.6.4  EQL.
+</A></H3></HK><P>
+ </FONT>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+  Сравнивает и числа и символы. </FONT>
+  ( EQL arg1 arg2 )<BR><FONT COLOR=#800080>
+  Истина только в том случае, если arg1 arg2
+  эквивалентны по ЕQ ,или это числа одного
+  и того же типа, имеющие одно и тоже значение.
+</B></FONT>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD>
+ <H3><FONT COLOR=#FF80000 >( EQL </FONT> &lt; аргумент - 1 &gt;  &lt; аргумент - 2 &gt; )<BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_18.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_18.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL><FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > eql </FONT> ' a  ' a )<BR>
+  t
+</UL></B></UL></UL>
+</TD>
+</TABLE>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_19.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_19.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL><FONT COLOR="#008000"><P>*</FONT>(<FONT COLOR=#FF80000 > eql </FONT> ' 12  ' 12 )<BR>
+  t
+</UL></B></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE>
+
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6.5">     3.6.5  EQUAL.
+</A></H3></HK><P>
+ </FONT>
+
+<UL><UL>  Самый общий предикат.  Сравнивает не только символы,числа ну и списки.<BR>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<UL><B>
+<FONT COLOR=#800080><LI> числа эквивалентны по</FONT> equal<BR>
+<FONT COLOR=#800080><LI> символы эквивалентны по </FONT>equal<BR>
+<FONT COLOR=#800080><LI> списки эквивалентны по  </FONT>equal<BR></UL>
+<FONT COLOR=#800080>     если их изображения совпадают.<BR></FONT>
+</A>
+</TD>
+<TR>
+</TABLE></UL></UL>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD >
+ <H3> <FONT COLOR=#FF80000 >( EQUL </FONT>  &lt; аргумент - 1 &gt;  &lt; аргумент - 2 &gt; )<BR></H3> </A></TD>
+</TABLE>
+</CENTER>
+<P>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_20.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_20.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL> <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > equal </FONT> ' (a b c ) ' ( a b c ) )<BR>
+  t
+</UL></B>
+</UL></UL>
+</TD>
+</TABLE>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_21.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_21.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL><UL>
+<UL> <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > equal </FONT> nil ' ( ( ) ) )<BR>
+  nil
+</UL></B></UL></UL></UL>
+</TD>
+</TABLE>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.6.6">       3.6.6  NULL.
+</A></H3></HK><P>
+ </FONT>
+
+<UL>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT>
+<FONT COLOR=#800080><B>
+ Предикат NULL проверяет является ли аргумент пустым списком.</FONT></B>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8" >
+<TD ALIGN=CENTER BGCOLOR=DDFFDD >
+ <H3><FONT COLOR=#FF80000 > ( NULL </FONT>&lt; аргумент &gt;) <BR></H3> </TD>
+</TABLE>
+</CENTER>
+
+<UL><TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_22.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_22.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL> <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > null </FONT> ' ( ) ) <BR>
+   T<BR></UL></B></UL></UL>
+</TD>
+</TABLE>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_23.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_23.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL> <FONT COLOR="#008000"><P>*</FONT> (<FONT COLOR=#FF80000 > null </FONT> nil ) <BR>
+   T<BR></UL></B></UL></UL>
+</TD>
+</TABLE>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=middle>
+<IMG ALIGN=TOP SRC="PIC3_24.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/PIC3_24.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><B><UL><UL>
+<UL>  <FONT COLOR="#008000"><P>*</FONT>  (<FONT COLOR=#FF80000 > null </FONT> t )<BR>
+  nil<BR></UL></B></UL></UL>
+</TD>
+</TABLE>
+</UL></UL>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.7">       3.7  Предикаты типов.</H3></HR> </FONT>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8">
+<TD ALIGN=CENTER COLSPAN=4 BGCOLOR=DDFFDD>
+ <H2> Предикаты типов.</H2></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>Предикат</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>Действие</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>T</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>NIL</H3></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>atom</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>аргумент атом?</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( atom 'a )</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( atom '( a ) )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>symbolp</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>аргумент символ?</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( symbolp 'a )</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( symbolp '10 )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>listp</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>аргумент список?</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( listp '( a ) )</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( listp 'a )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>numberp</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>аргумент число?</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( numberp 10 )</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( numberp 'a )</H5></TD>
+</TABLE>
+</CENTER></B>
+ <P>
+<P><IMG SRC="LINE2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION3/LINE2.GIF" WIDTH=623 HEIGHT=6></P>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L3.8">    3.8  Числовые предикаты.</H3></HR> </FONT>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8">
+<TD ALIGN=CENTER COLSPAN=4 BGCOLOR=DDFFDD>
+ <H2> Числовые предикаты.</H2></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>Предикат</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3> Действие </H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>T</H3></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H3>NIL</H3></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>zerop</H5></TD> 
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>arg = 0 </H5> </TD> 
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( zerop 0 )</H5> </TD> 
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( zerop 1 ) </H5></TD> 
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>plusp</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> arg > 0</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( plusp 1 )</H5> </TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( plusp -1 )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>minusp </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>arg < 0 </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( minusp -1 ) </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>( minusp 1 )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>=</H5> </TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> arg1 = arg2 = arg3 = ...</H5> </TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> ( =  2 2 2 )</H5> </TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD> <H5>( =  1 2 3 )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>&gt;</H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> arg1 &gt; arg2 &gt; arg3 &gt; ...</H5> </TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD> <H5>( &gt;  3 2 1 ) </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD> <H5>( &gt;  2 3 1 )</H5></TD>
+<TR>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5>&lt; </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> arg1 &lt; arg2 &lt; arg3 &lt; ...</H5> </TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> ( &lt;  1 2 3 ) </H5></TD>
+<TD ALIGN=CENTER BGCOLOR=DDFFDD><H5> ( &lt;  2 3 1 )</H5></TD>
+</TABLE>
+</CENTER>
+<BR>
+<P>
+
+<CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+
+</CENTER>
+<BR>
+<P>  
+</body>
+</html>

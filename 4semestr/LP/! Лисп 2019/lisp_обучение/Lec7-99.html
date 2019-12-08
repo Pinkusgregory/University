@@ -1,0 +1,1022 @@
+<HTML>
+<HEAD>
+<TITLE>lec7-99.htm</TITLE>
+</HEAD>
+<BODY BGCOLOR="#C7D4EA">
+<BR>
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 7.
+<P>
+<FONT COLOR=#100000>
+<CENTER> ПОИСК НА ЛИСПЕ. ФУНКЦИОНАЛЫ. СВОЙСТВА СИМВОЛОВ </CENTER>
+</FONT>
+<A NAME="SOD">
+<P> <BR> <CENTER> Содержание  </CENTER>
+</FONT>
+</H2>
+</FONT>
+
+
+<B>
+<FONT SIZE=+1>
+<P>
+<DL>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.1"> 
+    7.1 Алгоритм поиска на Лиспе. (Функциональный подход к задаче о фермере,
+         волке, козе и капусте.)</A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.2">
+    7.2     Функционалы.</A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.2.1">
+     7.2.1    Отображающий функционал MAPCAR. </A>
+ <DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.2.2">
+     7.2.2  MAPCAR для нескольких списков. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.3">
+    7.3    Лямбда выражения. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.4">
+    7.4    Cвойства символов. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.4.1">
+    7.4.1  Чтение свойства. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.4.2">
+    7.4.2  Присвоение свойства. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.4.3">
+    7.4.3  Замена свойства. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.4.4">
+    7.4.4  Удаление свойства. </A>
+<DD>
+    <IMG SRC="blueball-8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/blueball.gif">
+    <A HREF="#L7.4.4">
+    7.4.5 SYMBOL-PLIST. </A>
+</DL>
+</FONT>
+</B>
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.1"> 7.1 Алгоритм поиска на Лиспе. 
+<BR> ( Функциональный подход к задаче о фермере,волке,козе и капусте.)
+</A></H2><P></FONT>
+
+           Фермер (<B>F</B>armer), волк (<B>W</B>olf), козел (<B>G</B>oat) и капуста (<B>C</B>abbidge)
+           находятся  на одном берегу. Надо перебраться  на другой  берег  на     лодке.
+<P>
+<CENTER>
+<TABLE BORDER=0 >
+<TR>
+<TD>
+<IMG SRC="L7K_1.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_1.GIF">  
+</TD>
+</TABLE>
+</CENTER>
+
+<BR>  
+<UL>
+<LI>Лодка перевозит только двоих.
+<LI>Нельзя  оставлять на одном  берегу
+           козу и капусту, козу и волка.
+</UL> 
+
+<CENTER>
+<TABLE BORDER=0  >
+<TR>
+<TD >   <IMG SRC="L7K_2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_2.GIF">  
+</TD>
+</TABLE>
+</CENTER>
+      Главная проблема  в формировании алгоритма - найти  эффективное представление структурой данных Лиспа информации о задаче.
+<P>Процесс перевозки может быть представлен последовательностью состояний. 
+     Состояние представляется  списком  из четырех элементов, каждый
+      из которых отражает размещение объектов <B>F</B>, <B>W</B>, <B>G</B>, <B>C</B>:
+
+<BR> <B>  (e  w  e  w) </B>- <B>F</B>, <B>G</B> на восточном берегу (e - east);
+<BR> <B>   F  W G  C </B> - <B>W</B>, <B>C</B> на западном  берегу (w - west).
+<CENTER>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="L7K_3.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_3.GIF">  
+</TD>
+</TABLE>
+</CENTER>
+
+      Определим две функции:
+<P>
+        конструктор -  <FONT COLOR=#008000 SIZE=+1>make-state</FONT>,
+        которая берет  в качестве  аргументов   размещение   <B>F</B>, <B>W</B>, <B>G</B>, <B>C</B>
+        и    возвращает  состояние
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       (defun make-state (f w g c) (list f w g c))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<CENTER>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="L7K_4.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_4.GIF">  
+</TD>
+</TABLE>
+</CENTER>
+         и четыре функции доступа, каждая  из которых берет состояние и возвращает размещение.
+
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1> 
+   (defun farmer-side (state)
+<BR>             (nth 0 state))
+<P>
+    (defun wolf-side (state)
+<BR>           (nth 1 state))
+<P>
+    (defun goat-side (state)
+<BR>           (nth 2 state))
+<P>
+    (defun cabbage-side (state)
+<BR>                 (nth 3 state))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L7K_5.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_5.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+      Оставшаяся программа  основывается на этих  функциях  доступа  и конструкторах. 
+      В частности, они используются для реализации четырех возможных действий фермера:
+<BR>       -  перевоз через реку или самого себя  или <B>W</B>, <B>G</B>, <B>C</B>.
+<P>
+      Эти функции используют четыре функции доступа для разбиения состояния
+      на его компоненты.
+<P>
+      Функция   <FONT COLOR=#008000 SIZE=+1>opposite</FONT> ( определена позже )  определяет  новое  размещение
+      объектов, которые пересекли  реку, а  <FONT COLOR=#008000 SIZE=+1> make-state </FONT> собирает их в новое
+      состояние.
+<P>
+      Например, функция  <FONT COLOR=#008000 SIZE=+1>farmer-takes-self</FONT> может быть определена:
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+(defun farmer-take-self (state)
+<BR>         (safe (make-state (opposite (farmer-side state))
+<BR>         (wolf-side state)
+<BR>         (goat-side state)
+<BR>         (cabbage-side state))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Отметим, что эта функция возвращает  новое  состояние, независимо  от
+      того, безопасно оно или нет. Однако могут быть опасные состояния:
+      например, когда <B>W</B>, <B>G</B> или <B>G</B>, <B>C</B> находятся на одном берегу.
+<P>     
+      Программа должна найти в качестве решения только  безопасные состояния. 
+      Проверка на опасные  состояния должна  производиться  на разных
+      cтадиях программы. В нашем случае это можно сделать в функциях движения. 
+<P>
+      Реализуем это, используя  функцию  <FONT COLOR=#008000 SIZE=+1>safe</FONT>, 
+которая имеет  следующее  поведение:
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+      * (safe '(w w w w))</FONT>  ; состояние безопасно, возвращается без изменений
+<FONT COLOR=#008000 SIZE=+1>
+<BR>      (w w w w)             
+</FONT>
+<P>
+      <FONT COLOR=#008000 SIZE=+1> Safe</FONT>  используется в каждой 
+ функции  перемещения  для отфильтрования
+      опасных состояний. Таким образом, любое  перемещение, которое ведет  к
+      опасному состоянию будет  возвращать  nil  вместо состояния. Алгоритм
+      формирования пути  может  проверять  этот nil и использовать его  для
+      избегания этого состояния. 
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L7K_6.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_6.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+<P>
+Используя  <FONT COLOR=#008000 SIZE=+1>safe</FONT>, будем иметь:
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+(defun farmer-take-wolf (state)
+<BR>        (cond ((equal (farmer-side state) (wolf-side state))
+<BR>         (safe (make-state (opposite (farmer-side state))
+<BR>         (opposite(wolf-side state))
+<BR>         (goat-side state)
+<BR>         (cabbage-side state))))
+<BR>         (t nil)))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Оставшиеся функции движения определяются аналогично, но  включают 
+      условный тест  для определения, находятся ли  фермер  и предполагаемый
+      пассажир на одной и той же  стороне реки. Если нет, то перемещение не
+      может быть сделано, то есть пассажир и фермер  не находятся  на одном
+      берегу, эта функция будет возвращать nil.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (defun farmer-take-goat (state)
+<BR>        (cond ((equal (farmer-side state) (goat-side state))
+<BR>           (safe (make-state (opposite (farmer-side state))
+<BR>           (wolf-side state)
+<BR>           (opposite(goat-side state))
+<BR>           (cabbage-side state))))
+<BR>           (t nil)))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+      (defun farmer-take-cabbage (state)
+<BR>        (cond ((equal (farmer-side state) (cabbage-side state))
+<BR>         (safe (make-state (opposite (farmer-side state))
+<BR>         (wolf-side state)
+<BR>         (goat-side state)
+<BR>         (opposite(cabbage-side state)))))
+<BR>         (t nil)))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Теперь можно определить функцию  <FONT COLOR=#008000 SIZE=+1>opposite</FONT>, которая возвращает другую сторону.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (defun opposite (side)
+<BR>      (cond ((equal side 'e) 'w)
+<BR>            ((equal side 'w) 'e)))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      <FONT COLOR=#008000 SIZE=+1>  Safe</FONT> определена с использованием 
+ <FONT COLOR=#008000 SIZE=+1>cond</FONT> для проверки двух опасных
+      состояний: <B>F</B> находится на противоположном берегу от <B>W</B>, <B>G</B>, и от <B>G</B> и <B>C</B>.
+<BR>      Если состояние безопасно, оно будет возвращено без изменений.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (defun safe (state)
+<BR>      (cond ((and (equal (goat-side state) (wolf-side state))
+<BR>             (not (equal (farmer-side state) (wolf-side state)))) nil)
+<BR>            ((and (equal (goat-side state) (cabbage-side state))
+<BR>             (not (equal (farmer-side state) (goat-side state)))) nil)
+<BR>             (t state)))
+</TD>
+</CENTER>
+</TABLE><p>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (defun path (state goal)
+<BR>       (cond ((equal state goal))
+<BR>          (t (or (path (farmer-takes-self state) goal)))
+<BR>          (path (farmer-take-wolf state) goal)
+<BR>          (path (farmer-take-goat state) goal)
+<BR>        (path (farmer-take-cabbage state) goal))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+  Эта версия функции  <FONT COLOR=#008000 SIZE=+1>path</FONT>  является простым переводом 
+и содержит несколько ошибок, которые надо исправить. В частности, отметим использование 
+формы  <FONT COLOR=#008000 SIZE=+1>OR</FONT> для управления выполнением ее аргументов.
+<P>
+  Напомним,что <FONT COLOR=#008000 SIZE=+1> OR </FONT>выполняет свои аргументы до тех  пор, 
+пока один из  них не вернет  <FONT COLOR=#008000 SIZE=+1> не-nil</FONT>  величину. Когда это  
+случается, <FONT COLOR=#008000 SIZE=+1>OR</FONT> завершается без выполнения других аргументов и возвращает это
+<FONT COLOR=#008000 SIZE=+1> не-nil</FONT>, как результат. <P>
+ Таким образом, <FONT COLOR=#008000 SIZE=+1> OR</FONT> используется не только  как логический 
+оператор, но также обеспечивает способ управления поиском пути.<FONT COLOR=#008000 SIZE=+1> OR 
+</FONT>используется  здесь вместо  
+<FONT COLOR=#008000 SIZE=+1>cond</FONT>, потому что  величина, которая тестируется, и величина,
+которая возвращается в случае  <FONT COLOR=#008000 SIZE=+1>не-nil</FONT>, одна и та же.
+<P>
+  Одна проблема с этим определением заключается в том,что функция  перемещения может вернуть
+значение <FONT COLOR=#008000 SIZE=+1> nil</FONT>, если перемещение не может  быть
+сделано, когда оно ведет не к безопасному состоянию, чтобы предотвратить <FONT COLOR=#008000 SIZE=+1>
+path</FONT> от попытки  генерировать  дочерние  состояния  от состояния <FONT COLOR=#008000 SIZE=+1>
+nil</FONT>, она ( <FONT COLOR=#008000 SIZE=+1>path</FONT>), должна сначала проверять, 
+является ли текущее состояние  <FONT COLOR=#008000 SIZE=+1> nil</FONT>, если да, то 
+<FONT COLOR=#008000 SIZE=+1>path</FONT> должна вернуть  <FONT COLOR=#008000 SIZE=+1>nil</FONT>.
+<P>
+  Другая проблема,которая возникает в реализации <FONT COLOR=#008000 SIZE=+1> path</FONT>,
+заключается в  возможности возникновения петель в пространстве состояний. Если  
+данную реализацию  <FONT COLOR=#008000 SIZE=+1>path</FONT> запустить, фермер будет ездить
+взад-вперед  между двумя берегами  бесконечно, то есть алгоритм  приведет  к бесконечным
+переходам между двумя одинаковыми состояниями.
+<P>
+        Чтобы  предотвратить  это, в  path  надо  ввести  третий  параметр,
+<FONT COLOR=#008000 SIZE=+1>been-list</FONT>, список всех состояний, которые уже были достигнуты.
+      Каждый раз, когда  <FONT COLOR=#008000 SIZE=+1>path</FONT> вызывается рекурсивно с новым 
+дочеpним состоянием, состояние-родитель должно быть добавлено в  <FONT COLOR=#008000 SIZE=+1>
+been-list</FONT>. Вставляя в  <FONT COLOR=#008000 SIZE=+1>path</FONT> предикат 
+<FONT COLOR=#008000 SIZE=+1>member</FONT>, можно проверять, что текущее  состояние  не является
+элементом  <FONT COLOR=#008000 SIZE=+1>been-list</FONT>, то есть здесь поиск уже побывал. Это
+выполняется  проверкой  текущего  состояния, на  присутствие  в  <FONT COLOR=#008000 SIZE=+1> 
+been-list</FONT>   перед     генерацией его наследников.
+<P>
+ <FONT COLOR=#008000 SIZE=+1>        Path</FONT> теперь определяется:
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (defun path (state goal been-list)
+<BR>     (cond ((null state) nil)
+<BR>      ((equal state goal) (reverse (cons state been-list)))
+<BR>        ((not (member-lis state been-list ))
+<BR>          (or (path (farmer-take-self state) goal (cons state been-list))
+<BR>          (path (farmer-take-wolf state) goal (cons state been-list))
+<BR>          (path (farmer-take-goat state) goal (cons state been-list))
+<BR>        (path (farmer-take-cabbage state) goal (cons state been-list))))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Функция  <FONT COLOR=#008000 SIZE=+1>member</FONT> используется другая, так как 
+проверяется принадлежность  элемента списку списков <FONT COLOR=#008000 SIZE=+1>member-equal</FONT>.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+      (defun member-lis (x lis)
+<BR>          (cond ((null lis) nil)
+<BR>        ((equal x (car lis)) t)
+<BR>        (t (member-lis x (cdr lis)))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+        Вместо того, чтобы вернуть <FONT COLOR=#008000 SIZE=+1> t</FONT>, можно вернуть 
+список состояний, которые были пройдены  до достижения цели. Так как цель  не содержится  в
+списке, она может быть вставлена, как последний элемент.
+<P>
+        Перед тем, как вернуть  список, его  надо  перевернуть, используя
+<FONT COLOR=#008000 SIZE=+1>reverse</FONT>. Окончательно,чтобы параметр 
+<FONT COLOR=#008000 SIZE=+1>been-list </FONT> скрыть  от пользователя,
+может быть написана вызывающая функция, которая имеет два аргумента - 
+начальное и конечное состояния и вызывает path с пустым списком  <FONT COLOR=#008000 SIZE=+1>
+been-list = nil</FONT>.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (defun solve-fwgc (state goal) (path state goal nil))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+        Для решения можно использовать
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+ <FONT COLOR=#008000 SIZE=+1>
+        (solve-fvgc '(w w w w) '(e e e e))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+         ответ:
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+<TABLE BORDER>
+<TR>
+<TD> 1) w w w w </TD><TD> 5) w e w w
+</TD>
+</TR>
+<TR>
+<TD>2) e w e w </TD><TD> 6) e e w e
+</TD></TR><TR><TD>3) w w e w</TD><TD>7) w e w e
+</TD></TR><TR><TD>4) e e e w </TD><TD> 8) e e e e
+</TD>
+
+</TR>
+</TABLE> 
+
+         
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L5.1">7.2     Функционалы
+</A></H2><P></FONT>
+
+    До сих пор мы рассматривали функции, в качестве  аргументов, которые использовали данные.
+
+<P>
+  Например
+<P>
+
+
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+
+ * <FONT COLOR=#008000 SIZE=+1> (add1 3)  </FONT>добавляет к аргументу 1
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+  4
+<P>
+   (defun add1 (x) (+ 1 x))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+ Однако, в качестве аргумента функции можно указывать  и функцию.
+<P>
+    Аргумент, значением которого является функция,
+    называют <FONT COLOR=#FF80000 SIZE=+1>
+функциональным аргументом </FONT>, а функцию,
+    имеющую функциональный аргумент -<FONT COLOR=#FF80000 SIZE=+1>
+ функционалом</FONT>.
+<P>
+    Различие между понятиями <FONT COLOR=#FF80000 SIZE=+1>
+"данные"</FONT> и <FONT COLOR=#FF80000 SIZE=+1>
+" функция"</FONT>,    определяются не на основе их структуры,    а в зависимости от использования.
+<P>
+    Если аргумент используется в функции, как
+    объект участвующий в вычислениях, то это <FONT COLOR=#FF80000 SIZE=+1>данные.</FONT>.
+<P>
+    Если аргумент используется как средство,
+    определяющее вычисления, то это <FONT COLOR=#FF80000 SIZE=+1>функция</FONT>.
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.2.1">7.2.1    Отображающий функционал MAPCAR
+</A></H2><P></FONT>
+
+     Важный класс функционалов используемых
+    в лиспе - <FONT COLOR=#FF80000 SIZE+=1>
+отображающие функционалы (МАР функционалы)<BR>
+    МАР функционалы</FONT> - функции, которые некоторым образом
+    отображают  (map) список в новый список.
+<P>
+<CENTER>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="L7K_7.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_7.GIF">  
+</TD>
+</TABLE>
+</CENTER>
+<P>
+<FONT COLOR=#FF80000 SIZE+=1>    MAPCAR </FONT>один из основных отображающих  функционалов.
+<P>
+<FONT COLOR=#FF80000 SIZE+=1>
+    (MAPCAR f '(x1 x2 x3 ... xN))
+</FONT>
+<P>
+ <FONT COLOR=#FF80000 SIZE+=1>    MAPCAR </FONT>функционал имеет два аргумента.
+
+    Первый аргумент - функция,
+
+    а второй - аргумент список.
+<P>
+<TABLE>
+<TD>
+    Когда  <FONT COLOR=#FF80000 SIZE+=1>MAPCAR</FONT>  выполняется ,
+    функция определенная    первым аргументом   применяется к каждому элементу,    списка,
+    определенному вторым аргументом    и результат помещает (отображает) в новый список.
+</TD>
+</TABLE>
+
+<P>
+<B>    Пример,</B>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+    * (mapcar 'add1  '( 1 2 3))
+<BR>
+    (2 3 4)
+<P>
+    (MAPCAR f '(x1 x2 x3 ... xN))
+<P>
+</FONT>
+    эквивалентно
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+    (list (f 'x1)  (f 'x2) ....  (f 'xN))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P>
+    Можно использовать в функциях
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+    (defun list-add1 (lis) (mapcar 'add1 lis))
+<P>   * (list-add1 '(1 2 3))
+<BR>    (2 3 4)
+</FONT>
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P>
+    В качестве аргумента для <FONT COLOR=#FF80000 SIZE+=1> MAPCAR</FONT>
+    может быть использовано значение символа
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+ *   (setq x '(a b (d)))
+<BR>
+ *   (setq y 'atom)
+<BR>
+ *   (mapcar y x)
+<BR>
+     (t t nil)
+</FONT>
+</TD>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.2.2">7.2.2  MAPCAR для нескольких списков
+</A></H2><P></FONT>
+
+ <FONT COLOR=#FF80000 SIZE+=1>    MAPCAR </FONT>может обрабатывать больше списков, если
+    в функциональном аргументе несколько аргументов.
+<P>
+<CENTER>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="L7K_8.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/L7K_8.GIF">  
+</TD>
+</TABLE>
+</CENTER>
+<P>
+<B>    Например</B>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+*   (defun addlist (l1 l2) (mapcar '+ l1 L2))
+<P>
+*   (addlist '( 1 2 3) '(1 2 3))
+<P>
+     (2 4 6)
+</FONT>
+<P>
+т.е.
+ <FONT COLOR=#008000 SIZE=+1>
+<P>
+(list (+ 1 1) (+ 2 2) (+ 3 3))
+</FONT>
+</TD>
+</TABLE>
+<P>
+
+    Если списки разной длины, то длина результата
+    будет равна длине наименьшего.
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.3">7.3    Лямбда выражения
+</A></H2><P></FONT>
+
+     Структура<FONT COLOR=#FF80000 SIZE=+1> МАР функций</FONT> ограничивает формы
+отображаемых функций.
+<P>
+     Так, если мы желаем получить список с элементами
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       x * x + 1
+</FONT>
+<P>
+     Мы должны определить функцию
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+  (defun f1 (x) (+ 1 (* x x)))
+<P>
+  *   (mapcar 'f1 '(1 2 3))
+</FONT>
+</TD>
+</TABLE>
+<P>
+     Таким образом определяется специальная функция,
+     которая используется только в <FONT COLOR=#FF80000> MAPCAR</FONT>.
+<P>
+     Аналогично происходит с<FONT COLOR=#008000 SIZE=+1> add1</FONT>.
+<P>
+     Более эффективно в этом случае использовать,
+     т.н. <FONT COLOR=#FF80000 SIZE=+1>
+лямбда выражения</FONT>:
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+     (mapcar '(lambda (x)  (+ 1 (* x x))) '(1 2 3))
+<P>
+     сравни (defun f1 (x)  (+ 1 (* x x)))
+<P>
+
+     (mapcar '(lambda (x) (+ 1  x)) '(1 2 3))
+<P>
+</FONT>
+</TD>
+</TABLE>
+     Т.о.<FONT COLOR=#FF80000 SIZE=+1> лямбда выражения</FONT> позволяют определять
+     функцию внутри  другой функции.
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>     Лямбда-выражения </FONT>определяют функцию не имеющую имени.
+<P>
+     Общая форма:
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>
+         (lambda (параметры) <тело функции>)
+</FONT>
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.4">7.4    Cвойства символов
+</A></H2><P></FONT>
+
+  В лиспе с символом можно связывать, не только
+
+  значение, но и информацию, называемую списком
+
+<FONT COLOR=#FF80000 SIZE=+1>  свойств (property list)</FONT>.
+<P>
+  Например, рассмотрим информацию o Mary:
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+<TABLE BORDER  >
+<TR>
+<TD ALIGN=CENTER >      aqe  </TD>
+<TD ALIGN=CENTER >      28    </TD>
+<TR >   
+<TD ALIGN=CENTER >      occupation  </TD>
+<TD ALIGN=CENTER >      lawyer         </TD>
+<TR>
+<TD ALIGN=CENTER >      salary      </TD>
+<TD ALIGN=CENTER >      90           </TD>
+<TR>
+<TD ALIGN=CENTER >      children                 </TD>
+<TD ALIGN=CENTER >      Bill Alice Susan      </TD>
+<TR>
+<TD ALIGN=CENTER >      свойство  </TD>
+<TD ALIGN=CENTER >      значение  </TD>
+</TABLE>
+</FONT>
+</TD>
+</TABLE>
+<P>
+  Список свойств в этом случае выглядит
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+  (aqe  28  occupation lawyer salary 90 children ( Bill Alice Susan))
+</FONT>
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.4.1">7.4.1  Чтение свойства
+</A></H2><P></FONT>
+
+  Узнать свойство атома можно используя функцию:
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>
+  (GET &lt;cимвол&gt; &lt;свойство&gt;)  возвращает значение
+<P>
+</FONT>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+*  ( get 'Mary 'age)
+<P>
+  28
+<P>
+ * ( get 'Mary 'children)
+<P>  ( Bill Alice Susan))
+<P>
+* ( get 'Mary 'hobby)
+<P>  nil
+</FONT>
+</TD>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.4.2">7.4.2  Присвоение свойства
+</A></H2><P></FONT>
+
+  Чтобы задать свойство необходимо использовать
+  обобщенную функцию присвоения <FONT COLOR=#FF80000 SIZE=+1>
+setf
+<P>
+  ( setf ( get &lt;символ&gt; &lt;свойство&gt;) &lt;значение&gt;)
+</FONT>
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+* ( setf ( get 'Mary 'salary) 90)
+<P>  90
+</FONT>
+</TD>
+</TABLE>
+<P>
+  Сначала свойство задается, а затем извлекается.
+  Мы поступили наоборот, хотя  в нашем лиспе
+  присутствует функция <FONT COLOR=#FF80000 SIZE=+1>
+putprop:
+<P>
+  ( putprop &lt;символ&gt; &lt;значение&gt; &lt;свойство&gt;)
+<P>
+  &lt;свойство&gt; - нечисловой атом;
+<BR>
+  &lt;значение&gt; - любое выражение ;
+<P>
+</FONT>
+  Можно определить
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+  (defun <FONT COLOR=#FF80000 SIZE=+1>
+putprop </FONT>( atom value property)
+<P>    (setf (get atom property) value)) 
+</FONT>
+</TD>
+</TABLE>
+<P>
+    и использовать при работе со списками.
+<P>
+ Свойств у атома может быть много, но у каждого
+ только одно значение.
+<P>
+ При внесении нового свойства, оно помещается
+ вначале списка свойств.
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+* (putprop 'Mary  'cinema 'hobby)
+<P>
+ ( hobby cinema .....)
+</FONT>
+</TD>
+</TABLE>
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.4.3">7.4.3  Замена свойства
+</A></H2><P></FONT>
+
+ Замена значения свойства производится
+
+ повторным присвоением.
+<P>
+ Например,
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+(putprop 'mary 29 'age)
+<P>
+(get 'mary 'age)
+</FONT>
+</TD>
+</TABLE>
+<P>
+ Если возникает необходимость замены текущего значения
+ новым, используя при этом текущее, можно поступить
+ следующим образом:
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+ (putprop 'mary (+ 1 (get 'mary  'age)) 'age)
+</FONT>
+</TD>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.4.4">7.4.4  Удаление свойства
+</A></H2><P></FONT>
+
+ Удаление свойства и его значения производится функцией
+<P>
+<FONT COLOR=#FF80000 SIZE=+1>
+ (remprop &lt;символ&gt; &lt;свойство&gt;)
+</FONT>
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+ *(remprop 'Mary 'age)
+<P> T
+</FONT>
+</TD>
+</TABLE>
+
+
+
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L7.4.5">7.4.5 SYMBOL-PLIST
+</A></H2><P></FONT>
+
+<font color=#FF80000 SIZE=+1>
+SYMBOL-PLIST </FONT>даст информацию о списке свойств
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD>   <IMG SRC="EXAMPLE-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+* ( SYMBOL-PLIST 'Mary)
+<P> (aqe  28  occupation lawyer salary 90 children  ( Bill Alice Susan))
+</FONT>
+</TD>
+</TABLE>
+<P>
+<BR>
+<P>
+ <IMG SRC="line2-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION7/line2.GIF">  
+<BR>
+
+<CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+
+<BR>
+<P>  
+</body>
+</html>

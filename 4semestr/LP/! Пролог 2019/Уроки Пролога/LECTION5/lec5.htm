@@ -1,0 +1,1986 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="lec5.files/filelist.xml">
+<link rel=Edit-Time-Data href="lec5.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Логическое и функциональное программирование. Лекция 5</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>DimonD</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>24</o:TotalTime>
+  <o:Created>2009-07-30T10:07:00Z</o:Created>
+  <o:Pages>7</o:Pages>
+  <o:Words>2347</o:Words>
+  <o:Characters>13382</o:Characters>
+  <o:Company>Grizli777</o:Company>
+  <o:Lines>111</o:Lines>
+  <o:Paragraphs>31</o:Paragraphs>
+  <o:CharactersWithSpaces>15698</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="lec5.files/themedata.thmx">
+<link rel=colorSchemeMapping href="lec5.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>90</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627400839 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536881799 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+pre
+	{mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Стандартный HTML";
+	font-family:"Consolas","serif";
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	color:black;}
+span.body8
+	{mso-style-name:body8;
+	mso-style-unhide:no;}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;
+	color:black;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:304747403;
+	mso-list-template-ids:-746565544;}
+@list l1
+	{mso-list-id:962535873;
+	mso-list-template-ids:151659110;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:995105209;
+	mso-list-template-ids:521836530;}
+@list l3
+	{mso-list-id:1520317771;
+	mso-list-template-ids:1869801816;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#C7D4EA" lang=RU link=blue vlink=purple style='tab-interval:
+35.4pt' alink="#0000FF">
+
+<div class=Section1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=10 style='width:6.0pt;background:#8181C0;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="65%" style='width:65.0%;background:#8181C0;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><i><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman";color:#C6C6FF'>Лекция 5</span></i></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:12.0pt'>
+<!-- Row 2 -->
+  <td width=10 style='width:6.0pt;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'></td>
+  <td width="65%" style='width:65.0%;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman";color:#004080'>Отсечение.
+  Сортировка списков.</span></i></b><span style='font-size:18.0pt;mso-fareast-font-family:
+  "Times New Roman";color:#004080'> </span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+ </tr>
+</table>
+
+</div>
+
+<h2><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:#004080'>Cодержание</span><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img width=12
+height=12 id="_x0000_i1077" src=blueball.gif></span><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.1">5.1 Отсечение.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1076" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.1.1">5.1.1 Графическая иллюстрация действия cut.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1075" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.1.2">5.1.2 Пример действия cut.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1074" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.1.3">5.1.3 Применение cut при выборе альтернатив.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1073" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.1.4">5.1.4 Формальное описание действия отсечения.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1072" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.2">5.2 Применение отсечения.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1071" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.2.1">5.2.1 minimum(X, Y, M).</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1070" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.2.2">5.2.2 Добавление элемента без дублирования.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1069" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.2.3">5.2.3 Классификация.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1068" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.2.4">5.2.4 Отсечение в численной рекурсии.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1067" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.2.5">5.2.5 Замечания при использовании отсечения.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1066" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.3">5.3 Сортировка списков.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1065" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.3.1">5.3.1 Метод наивной сортировки.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1064" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.3.2">5.3.2 Метод пузырька.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1063" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.3.3">5.3.3 Mетод вставки.</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=12 height=12 id="_x0000_i1062" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec5.3.4">5.3.4 Быстрая сортировка quick.</a> <o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1061"
+src=saqual.gif></span></p>
+
+<h2 align=center style='text-align:center'><a name=Lec5.1><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.1 Отсечение.<o:p></o:p></span></a></h2>
+
+<span style='mso-bookmark:"Lec5\.1"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1060"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>В процессе вычисления
+цели пролог проводит перебор вариантов, в соответствии с установленным
+порядком. Цели выполняются последовательно, одна за другой, а в случае неудачи
+происходит </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>откат<br>
+к предыдущей цели (backtracing).</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Однако для повышения
+эффективности выполнения программы, часто требуется вмешаться в перебор,
+ограничить его, исключить некоторые цели. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Для этой цели в пролог
+введена специальная конструкция </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>cut - &quot;отсечение&quot;</span></b><span style='font-family:
+"Arial CYR","sans-serif"'>, обозначаемая как <b>&quot;!&quot;</b> <br>
+( Читается <b>&quot;cut&quot;, &quot;кат&quot;</b>). <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>Cut</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> подсказывает прологу
+&quot;закрепить&quot; все решения предшествующие появлению его в предложении.
+Это означает, что если требуется бэктрекинг, то он приведет к неудаче (<b>fail</b>)
+без попытки поиска альтернатив. <o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1059"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.1.1><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.1.1 Графическая иллюстрация действия cut.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.1\.1"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1058"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Графически действие <b>cut</b>
+можно показать с помощью </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>box-представления</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+логического вывода. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>В обычном случае
+бэктрекинг для правила <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>G:-A,B,C.</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>выглядит следующим
+образом: <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img
+border=0 width=481 height=167 id="_x0000_i1057" src="cut_gr1.gif"></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Т.е. поиск альтернатив
+производится для всех целей: <b>G,A,B,C.</b> Заменим <b>B</b> на <b>cut</b> : <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img
+border=0 width=482 height=158 id="_x0000_i1056" src="cut_gr2.gif"></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";color:blue;mso-ansi-language:
+  EN-US;mso-no-proof:yes'><span style='mso-spacerun:yes'>  </span></span><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                  
+  </span></span><span style='mso-fareast-font-family:"Times New Roman"'>Графическая
+  иллюстрация действия cut.<o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Действие cut заключается
+в отмене поиска альтернатив для целей <b>A,G</b>, стоящих после <b>&quot;!&quot;</b>.
+<o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1055"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.1.2><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.1.2 Пример действия cut.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.1\.2"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1054"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Пусть база данных
+выглядит следующим <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>data(one). <br>
+  data(two). <br>
+  data(three).</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Процедура для проверки: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>cut_test_a(X):- data(X). <br>
+  cut_test_a('last clouse').</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Цель: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?- </span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>cut_test_a(X),nl,write(X).
+  <br>
+  one; <br>
+  two; <br>
+  three; <br>
+  last_clouse; <br>
+  no</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=11 style='border:none'></td>
+  <td width=10 style='border:none'></td>
+  <td width=579 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Теперь поставим <b>cut</b>
+в правило: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>cut_test_b(X):- data(X),!. <br>
+  cut_test_b('last clouse').</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Цель: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>cut_test_b(X),nl,write(X).
+  <br>
+  one; <br>
+  no</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=11 style='border:none'></td>
+  <td width=10 style='border:none'></td>
+  <td width=579 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Происходит остановка
+бэктрекинга для левого <b>data</b> и родительского <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>cut_test_b(X).</span></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Теперь поместим <b>cut</b>
+между двумя целями. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>cut_test_</span></b><b><span style='mso-fareast-font-family:
+  "Times New Roman"'>с</span></b><b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'>(X,Y):- data(X), <br>
+  / !,data(Y). <br>
+  cut_test_</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>с</span></b><b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'>('last clouse').</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Теперь бэктрекинг не
+будет для для левого <b>data</b> и родительского <b>cut_test_b(X)</b>,но будет
+для правого <b>data</b>,стоящего после<b> !</b>. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>cut_test_</span></b><b><span
+  style='mso-fareast-font-family:"Times New Roman"'>с</span></b><b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'>(X,Y),nl,write(X-Y). <br>
+  one-one; <br>
+  one-two; <br>
+  one-tree; <br>
+  no</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=10 style='border:none'></td>
+  <td width=9 style='border:none'></td>
+  <td width=581 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1053"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.1.3><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.1.3 Применение cut при выборе альтернатив.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.1\.3"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1052"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Рассмотрим функцию<b>
+Y(X)</b>: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></b></p>
+  <pre><b><o:p>&nbsp;</o:p></b></pre><pre><b><span style='mso-spacerun:yes'>         </span></b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></pre><pre><b><span style='mso-spacerun:yes'>       </span><span style='mso-spacerun:yes'>  </span>0 ,<span style='mso-spacerun:yes'>   </span>X &lt; 3<o:p></o:p></b></pre><pre><b><span style='mso-spacerun:yes'>         </span></b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></pre><pre><b><span style='mso-spacerun:yes'>  </span>Y= </b><b><span
+  style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'> </span></span><span style='mso-spacerun:yes'>   </span>2 ,<span style='mso-spacerun:yes'>  </span>3 = &lt; X &lt; 6<o:p></o:p></b></pre><pre><b><span style='mso-spacerun:yes'>         </span></b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></pre><pre><b><span style='mso-spacerun:yes'>       </span><span style='mso-spacerun:yes'>  </span>4 ,<span style='mso-spacerun:yes'>  </span>X &gt;= 6<o:p></o:p></b></pre><pre><b><span style='mso-spacerun:yes'>         </span></b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></b></pre></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=263 height=224 id="_x0000_i1051"
+  src=fun.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=131 style='border:none'></td>
+  <td width=129 style='border:none'></td>
+  <td width=340 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>На прологе это запишется
+через бинарное отношение <b>f(X, Y).</b> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Процедура выглядит: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>f(X, 0):- X &lt; 3. <br>
+  f(X, 2):- 3 =&lt; X, X &lt; 6. <br>
+  f(X, 4):- 6 =&lt; X.</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Зададим вопрос: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>f(1,Y),Y&gt;2.
+  </span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=19 style='border:none'></td>
+  <td width=17 style='border:none'></td>
+  <td width=564 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Таким образом
+последовательно проверяются все три предложения, хотя сразу ясно, что
+выполняется только одно. <br>
+</span><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Как
+убрать неэффективность?</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+<br>
+Надо использовать отсечение-<b>cut.</b> <br>
+Перепишем <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>f( X, 0):-X&lt;3, !. <br>
+  f(X, 2):- 3=&lt;X, X&lt;6, !. <br>
+  f(X, 4):-6 =&lt;X, !.</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>! указывает, что возврат
+из этой точки проводить не надо. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Что произойдет теперь? <br>
+Для цели <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>f(1,
+  Y), Y&gt;2. <br>
+  no</span></b><span style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=18 style='border:none'></td>
+  <td width=16 style='border:none'></td>
+  <td width=566 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>После выполнения цели <b>X&lt;3</b>
+цель <b>Y&gt;2</b>, не достигается, но откат не может произойти, так как стоит <b>cut</b>.
+<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Таким образом сокращается
+перебор. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Аналогично для цели <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>f(5,
+  Y), Y=0.</span></b><span style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=18 style='border:none'></td>
+  <td width=16 style='border:none'></td>
+  <td width=566 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Здесь введение <b>cut</b>
+повышает эффективность программы, сокращая время перебора и объем памяти, не
+влияет на декларативное чтение программы. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>После изъятия <b>!</b>
+декларативный смысл не изменится. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Такое применение <b>cut</b>
+называют </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>&quot;зеленым отсечением&quot;.</span></b><span style='font-family:
+"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>&quot;Зеленые
+отсечения&quot;</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+лишь отбрасывают те пути вычисления, которые не приводят к новым решениям. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Бывают и </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>&quot;красные
+отсечения&quot;</span></b><span style='font-family:"Arial CYR","sans-serif"'>,
+при изъятии которых меняется декларативный смысл программы. <o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1050"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.1.4><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.1.4 Формальное описание действия отсечения.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.1\.4"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1049"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Рассмотрим предложение <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>Н:-B1, B2,..., Bm,
+!,..., Bn.</span></b><span style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Это предложение
+активизируется, когда некоторая цель <b>G</b>, будет сопоставляться с <b>H</b>.
+<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Тогда <b>G</b> называют </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>целью-родителем</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Если <b>B1, B2,..., Bm</b>
+выполнены, а после <b>!</b>, например в <b>Bi, i&gt;m</b>, произошла неудача и
+требуется выбрать альтернативные варианты, то для <b>B1, B2,..., Bm</b> такие
+альтернативы больше не рассматриваются. Кроме этого <b>G</b> будет связана с
+головой <b>H</b>, и другие предложения процедуры во внимание не принимаются. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img
+border=0 width=390 height=272 id="_x0000_i1048" src=opisanie.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Формально действие
+отсечения описывается так: <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Пусть цель -родитель
+сопоставляется с головой предложения, в теле которого содержится отсечение. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Когда при просмотре целей
+тела предложения встречается в качестве цели отсечение, то такая цель считается
+успешной и все альтернативы принятым решениям до отсечения </span><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Arial CYR","sans-serif"'>(</span></b><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>cut</span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Arial CYR","sans-serif"'>)</span></b><span
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;font-family:"Arial CYR","sans-serif"'>
+</span><span style='font-family:"Arial CYR","sans-serif"'>не рассматриваются. <br>
+Процесс поиска возвращается к последнему выбору, сделанному перед
+сопоставлением цели родителя. <o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1047"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><a name=Lec5.2><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.2 Применение отсечения.<o:p></o:p></span></a></h2>
+
+<span style='mso-bookmark:"Lec5\.2"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1046"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.2.1><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.2.1 minimum(X, Y, M).<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.2\.1"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1045"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Найти минимальный элемент
+из двух. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>minimum(X, Y, X):- X&lt;=Y, !.<br>
+  minimum(X, Y, Y):- Y</span><X, !.></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>minimum(2,
+  5, Y).</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=14 style='border:none'></td>
+  <td width=13 style='border:none'></td>
+  <td width=573 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1044"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.2.2><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.2.2 Добавление элемента без дублирования.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.2\.2"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1043"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Чтобы добавить элемент в
+голову списка достаточно использовать <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>add(X, L, [X|L]).</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Но если возникает
+необходимость добавлять только, если элемент отсутствует, то можно добавить
+правило: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>add(X, L, L):-member(X, L), !. add(X, L, [X|L]).</span></b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Вопрос <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>add(a,
+  [b, c], L). <br>
+  L=[a, b, c] <br>
+  </span></b><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>add(b,
+  [b, c], L). <br>
+  </span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>L=[b,
+  c]</span></b><span style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=15 style='border:none'></td>
+  <td width=14 style='border:none'></td>
+  <td width=572 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Если сечение убрать, то <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>add(b,
+  [b, c], L) <br>
+  L=[b, c]; <br>
+  L=[b, b, c]</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=15 style='border:none'></td>
+  <td width=14 style='border:none'></td>
+  <td width=571 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Таким образом, при
+изъятии отсечения, изменился декларативный смысл программы. <o:p></o:p></span></p>
+
+<p align=center style='text-align:center'><a name=Lec5.2.3></a><span
+style='mso-bookmark:"Lec5\.2\.3"'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1042"
+src=saqual.gif></span></span><span style='mso-bookmark:"Lec5\.2\.3"'><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></span></p>
+
+<h3 align=center style='text-align:center'><span style='mso-bookmark:"Lec5\.2\.3"'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.2.3 Классификация.<o:p></o:p></span></span></h3>
+
+<span style='mso-bookmark:"Lec5\.2\.3"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1041"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Используя отсечение,
+легко произвести классификацию объектов. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Например, надо
+классифицировать числа <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td colspan=3 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>class(X, plus):-X&gt;0, !. <br>
+  class(X, minus):-X<br>
+  <0, !.  >class(X, zero):-X=0, !.</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td colspan=3 style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>class(4,
+  Y). <br>
+  Y=plus</span></b><span style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td colspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=13 style='border:none'></td>
+  <td width=3 style='border:none'></td>
+  <td width=18 style='border:none'></td>
+  <td width=567 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1040"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.2.4><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.2.4 Отсечение в численной рекурсии.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.2\.4"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1039"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Применение отсечения в
+рекурсии позволяет значительно сократить использование памяти. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Определим факториал <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>factorial(0, 1):-!. <br>
+  factorial(N, RES) :- <br>
+  N1 is N-1, factorial(N1, N1fak), Res is N*N1fak.</span></b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1038"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.2.5><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.2.5 Замечания при использовании отсечения.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.2\.5"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1037"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Применение сечения за
+счет сокращения перебора позволяет повысить эффективность программы. Кроме
+этого отсечение упрощает программирование выбора вариантов. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Вместе с тем, часто, при
+использовании красных отсечений может изменится декларативный смысл программы. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Поэтому отсечение требует
+осторожности в использовании. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Следует избегать</span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'> двух ошибок</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>: <o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo1;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>отсечения
+     путей вычисления, которые нельзя отбрасывать <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo1;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>и не
+     отсечения тех решений, которые должны были быть отброшены. <o:p></o:p></span></li>
+</ul>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1036"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><a name=Lec5.3><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.3 Сортировка списков.<o:p></o:p></span></a></h2>
+
+<span style='mso-bookmark:"Lec5\.3"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1035"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>До сих пор средства
+пролога использовались при записи простых процедур и примеров. Рассмотрим более
+сложные примеры написания программ на прологе для различных методов сортировки.
+<a name=Lec5.3.1><o:p></o:p></a></span></p>
+
+<p align=center style='text-align:center'><span style='mso-bookmark:"Lec5\.3\.1"'></span><span
+style='mso-bookmark:"Lec5\.3\.1"'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1034"
+src=saqual.gif></span></span><span style='mso-bookmark:"Lec5\.3\.1"'><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></span></p>
+
+<h3 align=center style='text-align:center'><span style='mso-bookmark:"Lec5\.3\.1"'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.3.1 Метод наивной сортировки.<o:p></o:p></span></span></h3>
+
+<span style='mso-bookmark:"Lec5\.3\.1"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1033"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>В этом методе элементы в
+списке переставляются ( перемешиваются <b>permutation/2</b> ),и проверяется
+отсортирован этот список или нет: <b>sorted/1.</b> <br>
+Это записывается: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>sortn(L1, L2) :- permutation(L1, L2), sorted(L2), !.</span></b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Перестановки определим
+через <b>append</b> <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!--IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>permutation(L, [H|T]) :- append(V, [H|U], L), <br>
+  append(V, U, W), <br>
+  permutation(W, T). <br>
+  </span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>permutation([],
+  []).</span></b><span style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Проверка того, что
+элементы списка расположены в возрастающем порядке выражается через два
+предложения. Факт означает, что список из одного элемента всегда упорядочен.
+Правило утверждает, что список упорядочен ,если первые два элемента расположены
+по порядку и остаток ,начинающийся со второго элемента тоже упорядочен: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>sorted([L]). <br>
+  sorted([X,Y|T]) :- order(X,Y), sorted([Y|T]). <br>
+  </span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>order(X,
+  Y) :- X =&lt; Y. </span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1032"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.3.2><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.3.2 Метод пузырька.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.3\.2"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1031"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img
+border=0 width=443 height=284 id="_x0000_i1030" src=puzir.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Это простой и эффективный
+метод. <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Декларативное
+описание:</span></b><span style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Найти
+     в списке <b>L</b> два смежных элемента <b>X</b> и <b>Y</b>, таких, что <b>X
+     &gt; Y</b>, поменять их местами и получить новый список, <b>M</b>, затем
+     отсортировать <b>M</b>. Для поиска таких элементов и перестановки
+     используется процедура <b>swap/2</b>. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo2;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Если в
+     списке нет не одной пары смежных элемента <b>X</b> и<b> Y</b>, таких, что <b>X
+     &gt; Y</b>, считать что список отсортирован. <o:p></o:p></span></li>
+</ol>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>busort(L, S) :- swap(L, M), !, busort(M, S). <br>
+  busort(L, L) :- !. <br>
+  swap([X, Y|R], [Y, X|R]) :- order(Y, X). <br>
+  </span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>swap([X|R],
+  [X|R1]) :- swap(R, R1).</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+  <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center'><a name=Lec5.3.3></a><span
+style='mso-bookmark:"Lec5\.3\.3"'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1029"
+src=saqual.gif></span></span><span style='mso-bookmark:"Lec5\.3\.3"'><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></span></p>
+
+<h3 align=center style='text-align:center'><span style='mso-bookmark:"Lec5\.3\.3"'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>5.3.3 Mетод вставки.<o:p></o:p></span></span></h3>
+
+<span style='mso-bookmark:"Lec5\.3\.3"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1028"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif";mso-no-proof:yes'><img
+border=0 width=348 height=278 id="_x0000_i1027" src=vstavka.gif></span><span
+style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Декларативное
+описание:</span></b><span style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Для того чтобы
+упорядочить непустой список <b>L=[X|T] </b>необходимо: <o:p></o:p></span></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo3;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Упорядочить
+     хвост <b>Т</b> списка <b>L</b> <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo3;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Вставить
+     голову <b>X</b> списка <b>L</b> в упорядоченный хвост, поместив ее таким
+     образом, чтобы получившийся список остался упорядоченным. <o:p></o:p></span></li>
+</ol>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=673
+ style='width:404.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td width=663 style='width:397.7pt;padding:.75pt .75pt .75pt .75pt'><pre><b><o:p>&nbsp;</o:p></b></pre><pre><b><span style='mso-spacerun:yes'>    </span></b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>insort([], []).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'>    </span>insort([X|L], M) :- insort(L, N), insortx(X, N, M).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'>    </span>insortx(X, [A|L], [A|M]) :- order(A, X), !, insortx(X,L,M).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'>    </span>insortx(X, L, [X|L]).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><br>
+<span style='mso-spacerun:yes'>    </span></span>order(X, Y) :- X =&lt; Y.<o:p></o:p></b></pre></td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1026"
+src=saqual.gif></span></p>
+
+<h3 align=center style='text-align:center'><a name=Lec5.3.4><span
+style='mso-fareast-font-family:"Times New Roman";color:navy'>5.3.4 Быстрая
+сортировка quick.<o:p></o:p></span></a></h3>
+
+<span style='mso-bookmark:"Lec5\.3\.4"'></span>
+
+<p align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-no-proof:yes'><img border=0 width=600 height=6 id="_x0000_i1025"
+src=saqual.gif></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Описание
+метода:</span></b><span style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Убираем первый элемент: <o:p></o:p></span></p>
+
+<pre><span style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p>&nbsp;</o:p></span></pre><pre><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><span style='mso-spacerun:yes'>     </span><b><span style='mso-spacerun:yes'>    </span>5 3 7 8 1 4 7 6</b><o:p></o:p></span></pre>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>получаем:<b> X =5.</b> <br>
+и оставшийся список: <o:p></o:p></span></p>
+
+<pre><span style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p>&nbsp;</o:p></span></pre><pre><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><span style='mso-spacerun:yes'>   </span><b><span style='mso-spacerun:yes'>      </span>3 7 8 1 4 7 6</b><o:p></o:p></span></pre>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Разбиваем новый список на два,
+помещая в первый элементы меньше <b>X</b>, а во второй - больше <b>X</b>: <o:p></o:p></span></p>
+
+<pre><span style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p>&nbsp;</o:p></span></pre><pre><b><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><span style='mso-spacerun:yes'>  </span>( X: 3 1 4<span style='mso-spacerun:yes'>  </span>)<span style='mso-spacerun:yes'>  </span>X:<span style='mso-spacerun:yes'>  </span>7 8 7 6</span></b><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></pre>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Сортируем оба списка: <o:p></o:p></span></p>
+
+<pre><span style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p>&nbsp;</o:p></span></pre><pre><b><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><span style='mso-spacerun:yes'>   </span>1 3 4<span style='mso-spacerun:yes'>        </span>6 7 7 8</span></b><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></pre>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Соединим первый список,<b> X</b>,
+второй список. <o:p></o:p></span></p>
+
+<pre><span style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p>&nbsp;</o:p></span></pre><pre><b><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><span style='mso-spacerun:yes'>      </span>1 3 4 5 6 7 7 8</span></b><span
+style='font-size:18.0pt;font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></pre>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><br>
+</span><b><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:purple'>Декларативное описание:</span></b><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>
+<o:p></o:p></span></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Удалить
+     из списка голову <b>Х</b> и разбить оставшийся список на два списка <b>Small</b>
+     и <b>Big</b> следующим образом: все элементы большие чем <b>Х</b>
+     помещаются в <b>Big</b> и меньшие <b>X</b> - в <b>Small</b>. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Отсортировать
+     список <b>Small</b> в <b>Small1</b>. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Отсортировать
+     список <b>Big</b> в <b>Big1</b>. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo4;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Соединить
+     списки <b>Small1 Х</b> и <b>Big1</b>. <o:p></o:p></span></li>
+</ol>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20></IMG --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><b><span style='font-size:
+  13.5pt;font-family:"Arial CYR","sans-serif"'><o:p>&nbsp;</o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'>qsort([], []).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'>qsort([H|Tail], S) :- split(H, Tail, Small, Big),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                           </span>qsort(Small, Small1),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                           </span>qsort(Big, Big1),<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                           </span>append(Small1, [H|Big1], S).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'>order(X, Y) :- X =&lt; Y.<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'>split(H, [A|Tail], [A|Small], Big) :- order(A, H), !,<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                                               </span>split(H, Tail, Small, Big).<o:p></o:p></span></b></pre><pre><b><span
+  lang=EN-US style='font-size:13.5pt;font-family:"Arial CYR","sans-serif";
+  mso-ansi-language:EN-US'>split(H, [A|Tail], Small, [A|Big]) :- split(H, Tail, Small, Big).<o:p></o:p></span></b></pre><pre><b><span
+  style='font-size:13.5pt;font-family:"Arial CYR","sans-serif"'>split(_, [], [], []).</span></b><span
+  style='font-size:13.5pt;font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></pre></td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=500
+ style='width:300.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 0cm 0cm 0cm' height=20>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:4.8pt'>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+<!-- лемч -->
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td width=95 rowspan=3 style='width:57.0pt;padding:0cm 0cm 0cm 0cm;
+  height:4.8pt'></td>
+  <td width=95 rowspan=3 style='width:57.0pt;padding:0cm 0cm 0cm 0cm;
+  height:4.8pt'></td>
+  <td width=95 rowspan=3 style='width:57.0pt;padding:0cm 0cm 0cm 0cm;
+  height:4.8pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:4.8pt'>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:4.8pt'>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,565 @@
+<HTML>
+<HEAD><TITLE>lec97.htm</Title></HEAD>
+
+<BODY Bgcolor="#C7D4EA">
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 9.
+<P>
+<FONT COLOR=#100000>
+<CENTER>Массивы. Макросы. Пример программы на лиспе.
+                          Дифференцирование выражений.
+</CENTER>
+</FONT>
+<P> <BR> <CENTER> Содержание  </CENTER>
+</FONT>
+</H2>
+</FONT>
+
+<A NAME="SOD">
+<B>
+<FONT SIZE=+1>
+<DL>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.1"> 
+    9.1   Массивы. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.1.1">
+    9.1.1 Определение массива. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.1.2">
+    9.1.2 Доступ к ячейке массива. </A>
+ <DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.1.3">
+    9.1.3 Запись данных в массив. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.1.4">
+    9.1.4 Обработка массивов. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.1.5">
+    9.1.5 Длина массива. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.2">
+    9.2   Обратная блокировка. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.3.1">
+    9.3.1 Макросы. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.3.2">
+    9.3.2 Разработка макро. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.4">
+    9.4  Пример программы на лиспе.
+          Дифференцирование выражений.. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.5.1">
+    9.5.1 Модульный подход. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.5.2">
+    9.5.2 Интерфейс программы. </A>
+<DD>
+    <IMG SRC="blueball-5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/blueball.gif">
+    <A HREF="#L9.5.3">
+    9.5.3 Загрузка программы. </A>
+</DL>
+</FONT>
+</B>
+</A>
+
+<BR>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.1">   9.1  Массивы. </A></H2><P>
+</FONT>
+<P>
+Для хранения большого количества
+    данных в лиспе используются массивы.<BR>
+    <FONT COLOR=800000 SIZE=+1>Массив</FONT> -  это переменных, ячеек, имеющих одно имя, но разные номера, обеспечивающие доступ
+    к этим ячейкам. 
+<p>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+</P>  
+
+<FONT COLOR=#100080>
+<H2><A NAME="L9.1.1">     9.1.1  Определение массива
+</A></H2><P>
+ </FONT>
+Для определения массива заданной размерности
+    используется функция <FONT color=800000 SIZE=+1>make-array</FONT>
+    (make-array <размерность>)
+    поддерживаются только одномерные массивы-векторы.<P>
+    Пример : <BR>      
+<FONT COLOR=#008000 SIZE=+1>
+    (setq data   (make-array 10))<P>
+    
+   #<VECTOR T 10  7DBO:7737>
+
+   (0 0 0 0 0 0 0 0 0 0)<BR>
+       data</FONT> - имя массива,<BR>
+<FONT COLOR=#008000 SIZE=+1>
+       0</FONT> - начальное наполнение.<P>
+</FONT>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.1.2">  9.1.2 Доступ к ячейке массива. </A></H2><P>
+ </FONT>
+Доступ производится с помощью функции <FONT color=800000 SIZE=+1>aref. 
+    AREF </FONT>имеет два аргумента - имя массива и индекс
+    и возвращает значение ячейки<BR>
+<FONT COLOR=#008000 SIZE=+1>
+      (aref <имя> <индекс>)<BR>
+   *  (aref data 8)<BR>
+   0,<P>
+</FONT>
+    так как там записан 0.<P>
+
+    <FONT SIZE=+1>
+Особенности:</FONT> первый аргумент не блокируется,
+                 первая ячейка имеет номер 0.
+<BR>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.1.3">  9.1.3 Запись данных в массив. </A></H2><P>
+ </FONT>
+
+Поместить данные в массив можно ,используя
+    функцию <FONT COLOR=#800000 SIZE=+1> setf</FONT><P>
+<FONT COLOR=#008000 SIZE=+1>
+    * (setf (aref data 2) 'dog)<BR></FONT>
+    <FONT COLOR=#800000 SIZE=+1>aref </FONT>-вызывает значение ячейки, функция <FONT COLOR=#800000 SIZE=+1>setf</FONT> помещает
+    значение.<P>
+    Рассмотрим массив <FONT COLOR=#800000 SIZE=+1>testdata</FONT>
+<BR>    
+<FONT COLOR=#008000 SIZE=+1>
+
+(setq testdata (make-array 4))<BR>
+#<VECTOR T 4 8DB0:8E75>
+
+
+    * (setf (aref testdata 1) 'dog)<BR>
+    * (setf (aref testdata 0) 18 )<BR>
+    * (setf (aref testdata 2) '(a b) )<BR>
+    * (setf (aref testdata 3) 4 )<P></FONT>
+    Можно <FONT COLOR=#008000 SIZE=+1>(setq testdata ( vector   18  'dog '(a b) 0)) (aref d 1)</FONT><P>
+    В результате получим<BR>
+<FONT COLOR=#008000 SIZE=+1>
+    testdata   0        1      2       3<BR>
+               18       dog    (a b)   0<P>
+</FONT><P>
+   Можно использовать эти данные<FONT COLOR=#008000 SIZE=+1><BR>
+    (cons (aref  testdata 1) (list  (aref  testdata 3)<BR>
+                                    (aref  testdata 2)))<P>
+
+    (dog 0 ( a b))<BR>
+    (aref  testdata (aref  testdata 3))<BR>
+    18<BR>
+</FONT>
+<BR>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.1.4">  9.1.4 Обработка массивов. 
+</A></H2><P>
+ </FONT>
+
+Так как доступ к элементам массива производится
+    по номерам, то удобно использовать численные
+    итерации и рекурсии.<P>
+    Рассмотрим функцию, которая берет два аргумента
+    имя массива и его длину и возвращает все значения,
+    помещенные в список<BR>
+<FONT COLOR=#008000 SIZE=+1>
+    (defun array-list (arnam len)<BR>
+           (do (( i 0 ( + 1 i))<BR>
+               ( result nil (append result (list (aref arnam i)))))<BR>
+               (( equal i len) result)))<BR>
+    (array-list testdata 4)<BR>
+    ( 18 dog (a b) 0)<P>
+</FONT>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.1.5">  9.1.5 Длина массива. </A></H2><P>
+ </FONT>
+<FONT COLOR=#800000 SIZE=+1>
+     (array-length  <имя>)</FONT> возвращает длину массива.<BR>
+<FONT COLOR=#800000 SIZE=+1>
+     (array-length  testdata)</FONT> возвращает длину массива <FONT COLOR=#008000 SIZE=+1>4.</FONT><P>
+
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.2">  9.2   Обратная блокировка. </A></H2><P>
+ </FONT>
+
+ Обычная блокировка не позволяет вычислять выражения<BR>
+<FONT COLOR=#008000 SIZE=+1>
+  * '(a b c)<BR>
+  (a b c)</FONT><P>
+  Иногда возникает необходимость вычислить только часть  выражения.<BR>
+  Если<BR>
+<FONT COLOR=#008000 SIZE=+1>
+      (setq b '(x y z))</FONT><BR>
+  И мы запишем<BR>
+<FONT COLOR=#008000 SIZE=+1>
+   *   `( a ,b c)  </FONT>,то <FONT COLOR=#008000 SIZE=+1>
+ b </FONT>- будет вычислено и мы  получим<BR>
+<FONT COLOR=#008000 SIZE=+1>
+     (a (x y z) c)</FONT><BR>
+  <FONT COLOR=#008000 SIZE=+1>`</FONT> - обратная верхняя запятая обозначает блокировку, которая может частично сниматься запятой.<BR>
+   Обратная блокировка может использоваться при печати:<BR>
+  <FONT COLOR=#008000 SIZE=+1>
+  (setq n 'john)<BR>
+  (setq m 'Robert)<BR>
+  (print `(boys ,n and ,m))<BR>
+  (boys john and roberts)<P></FONT>
+  Наиболее часто обратная блокировка используется в мощном
+  средстве лиспа - макросах.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.3.1">  9.3.1 Макросы. </A></H2><P>
+ </FONT>
+
+Это специальное средство,позволяющее формировать вычисляемое
+  выражение в ходе выполнения программы.<P>
+  Рассмотрим например функцию <FONT COLOR=#800000 SIZE=+1>blancs</FONT>, которая
+  производит <FONT COLOR=#008000 SIZE=+1>n</FONT> переводов каретки (пропускает n линий)<BR>
+<FONT COLOR=#008000 SIZE=+1>
+  (defun blancs (n)<BR>
+         (do ((count n ( - count 1)))<BR>
+             (( zerop count) nil)<BR>
+             (terpri)))<P>
+
+     (blancs 4) </FONT> пропустит четыре строки.<P>
+   Будем писать программу, которая позволит выполнять некоторое
+   действие n раз<BR>
+      Для <FONT COLOR=#800000 SIZE=+1>blancs:</FONT><BR>
+<FONT COLOR=#008000 SIZE=+1>
+      (do-times '(terpri) 4)<BR>
+</FONT>
+      Или<BR>
+<FONT COLOR=#008000 SIZE=+1>
+         (do-times '(print 'hello) 3)<BR>
+</FONT>
+      Напечатает <FONT COLOR=#008000 SIZE=+1>hello</FONT> три раза<P>
+      Можно через <FONT COLOR=#800000 SIZE=+1>
+eval</FONT> определить<BR>
+     <FONT COLOR=#008000 SIZE=+1>
+        (defun do-times (operation n)<BR>
+         (do ((count n ( - count 1)))<BR>
+             (( zerop count) nil)<BR>
+             (eval operation)))<P>
+</FONT>
+   Это можно сделать также через специальную форму : <FONT COLOR=#800000 SIZE=+1>
+defmacro</FONT><P>
+
+<FONT COLOR=#008000 SIZE=+1>
+        (defmacro do-times (operation n)<BR>
+          ` (do ((count ,n ( - count 1)))<BR>
+             (( zerop count) nil)<BR>
+              ,operation))<P>
+</FONT>
+        Как видно, форма макро похожа на определение функции,
+       но есть <FONT SIZE=+1>отличия</FONT>:<P>
+   1. Аргументы макро не вычисляются перед их использованием.<BR>
+       Тогда обращение  записывается:<BR>
+<FONT COLOR=#008000 SIZE=+1>
+       (do-times (print 'hello) 3)<P>
+</FONT>
+   2. Когда макро вызывается, лисп сначала вычисляет тело
+       макро, а затем выполняет получившееся выражение.<BR>
+       Например,после обращения<BR>
+<FONT COLOR=#008000 SIZE=+1>
+       (do-times (print 'hello) 3)<BR>
+</FONT>
+       Получим<BR>
+<FONT COLOR=#008000 SIZE=+1>
+         (do ((count 3 ( - count 1)))<BR>
+             (( zerop count) nil)<BR>
+             (print 'hello))<BR>
+</FONT>
+       Этот список потом вычисляется.<BR>
+       Таким образом при вызове макро сначала вычисляется
+       тело (этап называется расширением) и формируется
+       выражение.<BR>
+       На втором этапе вычисляется полученное выражение,
+       и полученное значение возвращается как результат.<BR>
+       Вызывая macro с разными аргументами получим разные
+       результаты. Если мы вызываем:<BR>
+<FONT COLOR=#008000 SIZE=+1>
+       (do-times (print count) 10)<P>
+</FONT>
+       После вычисления тела получим:<BR>
+
+<FONT COLOR=#008000 SIZE=+1>
+         (do ((count 10 ( - count 1)))<BR>
+             (( zerop count) nil)<BR>
+             (print count))<P>
+</FONT>
+       Печатается числа от 10 до 1.<BR>
+      Можно определить функцию обратной печати чисел<P>
+<FONT COLOR=#008000 SIZE=+1>
+      (defun print-number (n)<BR>
+       (do-times (print count) n))<BR>
+       ( print-number 5)<P>
+</FONT>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.3.2">  9.3.2 Разработка макро </A></H2><P>
+ </FONT>
+
+    При разработке макро необходимо выполнить три шага:<P>
+<OL>
+  <LI> Написать пример функции,которую должна формировать макро,
+  <LI> Выделить общие части для нескольких функций и переменные.
+         Переменные части обозначить переменными, выделить запятыми
+         и вынести в аргументы. Постоянные части записать напрямую.
+  <LI> Определить макро,которое реализует этот вызов.
+</OL>
+<FONT SIZE=+1>
+  Пример.</FONT> Надо определить макро<FONT COLOR=#800000 SIZE=+1>
+ term-search</FONT>, которая будет просматривать список и выделять первый элемент удовлетворяющий заданному условию.<P>
+
+       Шаг1. Сформулируем пример. Запишем тело для поиска чисел:<P>
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+       (setq l '(s d 3 d))    (setq item 5)  
+                      _      
+         (do (( tail  l (cdr tail)))  
+               ((null tail) nil)  
+               ( cond ((numberp (car tail)) (return (car tail)))))
+                       ~~~~~~~
+</FONT>  </pre> </b>
+  Шаг2. Выделяем общие части  список <FONT COLOR=#008000 SIZE=+1>
+lis - l</FONT> и предикат <FONT COLOR=#008000 SIZE=+1>
+predicate - number</FONT>.<P>
+  
+  Шаг3.Формируем макро<BR>
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+           (defmacro term-search ( predicate lis)  
+           ` (do (( tail , lis (cdr tail)))  
+                 ((null tail) nil)  
+      (cond ((,predicate (car tail)) (return (car tail))))))  
+</FONT>   </pre> </b>
+<BR>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.4">  9.4   Пример программы на лиспе.
+          Дифференцирование выражений. </A></H2><P>
+ </FONT>
+Напишем программу дифференцирования алгебраических
+ выражений. Для наглядности ограничимся алгебраическими
+ выражениями в следующей форме:<BR>
+
+<FONT COLOR=#008000 SIZE=+1>
+ (+ x y) (* x y)
+</FONT><P>
+ Сложение и умножение можно свободно комбинировать.<BR>
+ Например,<BR>
+<FONT COLOR=#008000 SIZE=+1>
+ (*(+ a ( * a b)) c)
+</FONT>
+  Программируя непосредственно получаем
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+   (defun diff0 ( l x)  
+      (cond (( atom l)  
+                (if (eq l x) 1  ;l=1  
+                      0));l=константа  
+            (( eq (first l) '+)  
+               (list '+  
+                      (diff0  (second l) x)  
+                      (diff0  (third  l) x)))  
+            (( eq (first l) '*)  
+               (list '+  
+                  (list '*  
+                      (diff0  (second l) x)  
+                      (third  l))  
+                  (list '*  
+                      (diff0  (third l) x)  
+                      (second  l))))  
+            (t l)))
+</FONT>  </pre> </b>
+Испoльзуем 
+<pre> <b> <FONT COLOR=#008000 SIZE=+2>
+ (diff0 '(+ x (* 3 x)) 'x)  
+   ( + 1 (+ (* 0 x) (* 1 3))) = 4  
+ (diff0 '(- x (* 3 x)) 'x) return   
+     (- x (* 3 x))  Why?  
+ (diff0 '(* x ( + x 1)) 'x)  
+   (+ (* 1 ( x 1))(*(1 0) x))
+</FONT>  </pre> </b>
+ Вычисляемые выражения не упрощаются,хотя это не трудно сделать.
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.5.1">  9.5.1 Модульный подход. </A></H2><P>
+ </FONT>
+
+Эта программа неудобна,так как трудно расширять,приходится
+ все группировать в один <FONT COLOR=#800000 SIZE=+1>
+cond.</FONT>Она не является модульной.<BR>
+ Мы получим более удобное решение,если для каждого действия
+ определим свою дифференцирующую функцию и через  свойство <FONT COLOR=#800000 SIZE=+1>diff</FONT> свяжем эту функцию с символом ,обозначающим действие.<P>
+ Прoстим запись самой дифференцирующей функции:<P>
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+(defun dif1 (l x)  
+	(cond (( atom l)  
+		(if (eq l x) 1 0))  
+	       ( t (funcall (get (first  l) 'diff) (cdr l) x))))  
+</FONT> </pre> </b>
+Функции дифференцирования становятся значениями свойства <FONT COLOR=#800000 SIZE=+1>'diff</FONT>:<P>
+
+<FONT COLOR=#008000 SIZE=+1>
+(setf (get '+ 'diff) 'dif+)  
+(setf (get '* 'diff) 'dif*)<BR>
+</FONT>
+Таким образом извлекаем действие из данных.
+Сами функции записываются:<P>
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+(defun dif* (l x)  
+	(list '+ (list '* (dif1 (first l) x)  
+			  (second l))  
+		 (list '* (dif1 (second l) x)  
+			  (first l))))
+ (defun dif+ (l x)  
+	(list '+ (dif1 (first l) x) (dif1 (second l) x)))  
+</FONT> </pre> </b>
+Благодаря модульности можно дополнить для - <BR>
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+ (defun dif- (l x)  
+	(list '- (dif1 (first l) x) (dif1 second l) x)))  
+</FONT>  </pre> </b>
+Таким образом, первоначальное упрaвление вычислительным процессом,
+связанное со структурой программы, мы преобразовали
+ в динамическое управление основанное на данных.<BR>
+Можно использовать макросы. <BR>Определим макрос <FONT COLOR=#800000 SIZE=+1>
+defdif</FONT> , c помощью
+которого определяются дифференцирующие функции для новых
+действий:
+<pre> <b>
+<FONT COLOR=#008000 SIZE=+2>
+(defmacro defdif (act args body)  
+	`(setf (get ',act 'diff)  
+	'(lambda,args,body)))  
+</FONT>
+</pre> </b>
+ Тогда дифф. функции задаются:
+<pre> <b> <FONT COLOR=#008000 SIZE=+2>
+ (defdif + (l x)  
+	(list '+ (dif1 (first l) x) (dif1 (second l) x)))  
+(defdif * (l x)  
+	(list '+ (list '* (dif1 (first l) x)  
+			  (second l))  
+		 (list '* (dif1 (second l) x)  
+			  (first l))))
+(dif1 '(+ x x) 'x)  
+(defdif - (l x)  
+	(list  '- (dif1 (first l) x)  
+		  (dif1 (second l) x)))  
+  (dif1 '(+ x (* 3 x)) 'x)  
+ (dif1 '(- x (* 3 x)) 'x)  
+(dif1 '(* x ( - x 1)) 'x)  
+</FONT>
+</pre> </b>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.5.2">  9.5.2 Интерфейс программы. </A></H2><P>
+ </FONT>
+
+Дополним программу несколькими функциями,обеспечивающими
+ввод информации:<BR>
+Чтение дифф. списка<BR>
+
+<FONT COLOR=#008000 SIZE=+1>
+(defun read-list () (princ " diff-list ? ") (setq l (read)))<P>
+</FONT>
+Пусть продолжает вычисления до тех пор пока не будет
+введено не d.
+<pre>
+<FONT COLOR=#008000 SIZE=+2>
+<b>(defun d ()  (princ "enter command : d -diff;q - quit") (terpri)
+             (if (eq  (read) 'd)   (progn (read-list)
+                                   (print  (dif1 l 'x ))
+                                   (terpri) (d))
+                                   'end))
+</b></FONT> </pre>
+  Вызов программы теперь  (d)
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION9/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L9.5.3">  9.5.3 Загрузка программы. </A></H2><P>
+ </FONT>
+
+ Можно сразу загружать программу и начать ее выполнение,
+ для этого используют функцию <FONT COLOR=#800000 SIZE=+1>
+load</FONT><BR>
+<FONT COLOR=#008000 SIZE=+1>
+(load <файл>)<P>
+</FONT>
+ Записываются обычным образом,но \\ надо использовать двойные.<BR>
+<FONT COLOR=#800000 SIZE=+1> (load "diff1")</FONT>
+ и сразу начинается выполнение.<P>
+<HR>
+       <CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

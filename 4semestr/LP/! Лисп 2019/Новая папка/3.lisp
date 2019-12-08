@@ -1,0 +1,6 @@
+(defun f3(x1 x2) (if (eq x2 0) 1 0))
+(defun f4(x1 x2) (< x1 x2))
+(defun f9(x1 x2) (eq x1 x2))
+(defun f2(x1 x2) (> x1 x2))
+(defun f1(x1 x2) (if (eq x1 0) 1 0))
+(defun r(x1 x2) (or (f2 x1 (f3 x1 x2)) (f2 (f1 x1 x2) x2)))

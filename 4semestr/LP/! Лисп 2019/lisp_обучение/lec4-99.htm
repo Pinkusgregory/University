@@ -1,0 +1,938 @@
+<HTML>
+<HEAD>
+<TITLE>lec4.htm</TITLE>
+</HEAD>
+<BODY bgcolor="#C7D4EA">
+
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 4.
+<P>
+<FONT COLOR=#100000>
+<CENTER>Логические функции. Управляющие структуры. 
+Простые функции печати. PROGN.</CENTER>
+</FONT>
+<A NAME="SOD"> 
+<P><BR><CENTER>Содержание</CENTER>
+</FONT>
+</H2>
+</FONT><B>
+<FONT SIZE=+1>
+<P>
+<DL>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.1"> 
+    4.1    MEMBER.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.2">
+    4.2    Логические функции.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.2.1">
+        4.2.1  NOT.</A>
+ <DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.2.2">
+    4.2.2  OR.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.2.3">
+    4.2.3  AND.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.3">
+    4.3    Управляющие структуры.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.3.1">
+    4.3.1  COND.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.3.2">
+    4.3.2  Другие условные предложения.
+</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.3.3">
+    4.3.3  Связь между  COND  и логическими функциями.
+</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.4">
+    4.4    Ввод и вывод информации.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.4.1">
+    4.4.1  READ.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.4.2">
+    4.4.2  PRINT.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.5">
+    4.5    PROGN, PROGN1, PROGN2.</A>
+<DD>
+    <IMG SRC="blueball-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/blueball.gif">
+    <A HREF="#L4.5.1">
+    4.5.1  Определение функций с использованием неявного PROGN.</A>
+</DL></A></font></b>
+<P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.1">     4.1    MEMBER.</A></H2></HK><P>
+ </FONT>
+<TABLE BORDER=0 WIDTH=600>
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ><UL><B>
+    Функция проверяет, находится ли первый аргумент
+    внутри списка, представленного вторым аргументом.<BR>
+    Если элемента в списке нет, MEMBER возвращает nil.
+</B></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE>
+<CENTER><TABLE BORDER=0   >
+<TD ALING=CENTER>
+<UL>    Функция <B> MEMBER </B> имеет два аргумента:<BR>
+<P>
+<LI>   Первый аргумент - это <B>s-выражение,<BR></B>
+<LI>   Второй - обязательно <B>список.<BR></UL>
+</A></TD><BR>
+<TR>
+</TABLE></CENTER>
+
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3>  <FONT COLOR=#FF80000 >( MEMBER </FONT> &lt; s-выражение &gt; &lt; список &gt; ) <BR></H3> </A></TD>
+</TABLE>
+</CENTER><BR>
+<IMG SRC="PIC4_1.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_1.GIF">
+<TABLE BORDER=0 >
+<TD ALING=CENTER COLSPAN=2 >
+<TR>
+<TD><B>
+<UL> * (<FONT COLOR=#FF80000 > member</FONT> ' b ' ( c d b a ) )<BR>
+         ( b a )</UL><BR></B>
+</TD><BR>
+<TD><UL>  Если элемент в списке есть, то <B> MEMBER </B>возвращает
+    хвост второго аргумента, начинающийся с этого элемента.
+  </A></TD><BR></UL>
+<TR>
+</TABLE></B>
+
+     Таким образом<B> member</B> в качестве истины возвращает
+     не<B> Т </B> , а величину <B>не-NIL.<BR>
+     <FONT COLOR=#FF80000 >В <B>Лиспе для предикатов значение не-NIL означает
+     истину.<BR></FONT></B>
+
+<TABLE BORDER=0 >
+<TD ALING=CENTER COLSPAN=2 >
+<TR>
+<TD  ><B>
+<UL>* (<FONT COLOR=#FF80000 > member</FONT> ' с ' ( a b ( c ) ) )<BR>
+         NIL</UL><BR></B>
+</A></TD><BR>
+<TD> 
+ Т.к. элемент находится <BR> не на том уровне.  </A></TD><BR>
+<TR>
+</TABLE>
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.2">     4.2    Логические функции.</A></H3></HK><P>
+ </FONT>
+<DL>
+      Для объединения предикатов в сложные выражения
+      и для выделения элементов - NIL в <B> Лиспе</B>
+      используются логические функции 
+<A HREF="#L4.2.3">
+     AND</A>
+,
+<A HREF="#L4.2.2">
+ OR </A>
+и
+<A HREF="#L4.2.1">
+ NOT </A>
+.
+</DL>
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.2.1">    4.2.1  NOT.</A></H3></HK><P>
+ </FONT>
+
+<UL><UL><UL><UL><TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+Функция NOT берет один аргумент и возвращает значение, противоположное
+значению аргумента.
+ Если аргумент NIL,<BR> NOT возвращает Т.
+ Если аргумент любое значение не-NIL,<BR> NOT  возвращает NIL.
+</FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+<P>
+<IMG SRC="PIC4_12.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_12.GIF"></UL></UL></UL></UL>
+<P>
+<CENTER><TABLE BORDER=0   >
+<TD ALING=CENTER><UL>
+     <B> NOT</B> имеет один аргумент, который может быть<BR> любым
+      <B>s-выражением </B>(не только предикатом).
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>
+
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > NOT </FONT> &lt; s-выражение &gt;)  <BR></H3> </A></TD>
+</TABLE></CENTER><BR>
+</UL>
+<B>Примеры:<BR></B>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_4.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_4.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL><UL>
+ <UL>* (<FONT COLOR=#FF80000 > not</FONT > ( zerop 1 ) )<BR>T<BR></UL>
+</B></UL></UL></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PICm4_4.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PICm4_4.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL><UL>
+<UL> * (<FONT COLOR=#FF80000 > not</FONT> nil )<BR>
+     T<BR></UL></UL></UL></UL>
+</B>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_3.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_3.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL><UL>
+ <UL> * (<FONT COLOR=#FF80000 > not</FONT> ' ( a b c ) )<BR>
+     NIL</UL><BR>
+</B></UL></UL></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR></UL>
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.2.2">     4.2.2  OR.</A></H3></HK><P>
+ </FONT>
+<UL><UL><TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+     Логическая функция OR берет один или несколько
+     аргументов. Она выполняет эти аргументы слева
+     направо и возвращает значение первого аргумента,
+     который не NIL.Если все аргументы OR имеют значение NIL, то
+     OR возвращает NIL.
+</FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+<P>
+<IMG SRC="PIC4_13.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_13.GIF"></UL></UL>
+<P>
+<CENTER><TABLE BORDER=0   >
+<TD ALING=CENTER><UL>
+     В <B>OR </B>, аналогично<B> NOT</B>, аргументами могут быть
+     любые выражения.
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3>  ( <FONT COLOR=#FF80000 > OR </FONT> &lt; arg-1 &gt;&lt; arg-2 &gt;&lt; arg-3 &gt; . . . ) <BR></H3> </A></TD>
+</TABLE>
+</CENTER><BR>
+
+<UL><UL><B> Примеры:<BR></B>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_5.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_5.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL>
+<UL> * (<FONT COLOR=#FF80000 > or</FONT>  t  nil )<BR>
+     T</UL>
+</B></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_6.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_6.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL>
+<UL> * (<FONT COLOR=#FF80000 > or </FONT> nil nil )<BR>
+     NIL<BR>
+</B></UL></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_7.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_7.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL>
+<UL> * (<FONT COLOR=#FF80000 > or </FONT> ( atom 1) ( &gt; 3 4 ) '( a b c ) ) )<BR>
+     ( a b c )<BR></UL></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<CENTER><TABLE BORDER=0   >
+<TD  ALING=CENTER>
+  <B>  Таким образом:</B>
+    <P>	
+    <UL><LI> <B>OR</B> возвращает значение<B> не-NIL</B>, если
+    по крайней мере один аргумент не <B>NIL</B>.<BR>
+    <LI><B>OR</B>  используется для выделения первого не пустого
+    элемента в списке.
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER></UL></UL>
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.2.3">     4.2.3 AND.</A></H3></HK><P>
+ </FONT>
+<UL><UL><TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+    Логическая функция AND берет один или несколько
+    аргументов. Она выполняет эти аргументы слева
+    направо. Если она встречает аргумент, значение
+    которого NIL, она возвращает NIL, не продолжая
+    вычисления остальных.
+     Если NIL аргументов не встретилось, то возвращается
+     значение последнего аргумента.
+ </FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+<P>
+<IMG SRC="PIC4_14.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_14.GIF"></UL></UL>
+<P>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > AND </FONT> &lt; arg-1 &gt;&lt; arg-2 &gt;&lt; arg-3 &gt; . . . ) <BR></H3> </A></TD>
+</TABLE>
+</CENTER><BR>
+
+<B> Примеры:</B><BR>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_8.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_8.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL>
+<UL> * (<FONT COLOR=#FF80000 > and </FONT> 5 nil )<BR>
+     NIL<BR></UL></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_9.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_9.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL>
+<UL> * (<FONT COLOR=#FF80000 > and </FONT> ' a ' b )<BR>
+     b<BR></UL></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_10.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_10.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B><UL>
+<UL> * (<FONT COLOR=#FF80000 > and </FONT> ( listp nil ) ( atom nil ) )<BR>
+     T<BR></UL></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+
+<CENTER><TABLE BORDER=0   >
+<TD  ALING=CENTER>
+  <B>  Таким образом:</B> 
+   <P>
+   <UL><LI> <B>AND</B>
+   возвращает <B>NIL</B> значение, если
+   хотя бы один из аргументов <B> NIL</B>, в противном
+   случае возвращается значение последнего аргумента.
+   <P>	
+    <LI><B>AND</B> используется для выделения пустого элемента
+   в списке.
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.3">4.3 Управляющие структуры.</A></H3></HK>
+ </FONT>
+<CENTER><TABLE BORDER=0>
+<TD ALING=CENTER>
+  В обычных языках программирования существуют
+  средства управления  вычислительным процессом:<BR>
+  <B>организация разветвлений и циклов.</B><BR>
+ <P> 
+В <B>Лиспе</B> для этих целей используются управляющие
+  структуры - <B>предложения (clause)</B>.<BR>
+</TD>
+<TD ALING=CENTER>
+  Внешне предложения записываются как вызовы функций:<BR>
+  Первый элемент предложения - <B>имя</B>;<BR> остальные - <B>аргументы</B>.</UL>
+ <P> 
+ В результате вычисления предложения получается значение.
+  Отличие от вызова функции в использовании аргументов.
+</TD>
+</TABLE></CENTER>
+
+<CENTER><TABLE BORDER=0   >
+<TD  ALING=CENTER>
+ Управляющие структуры делятся на группы.
+  Одна из групп - <B>разветвления вычислений.</B><BR>
+  <UL>В нее входят:<BR>
+     <UL> <B> - условные предложения:<BR></B>
+<P>
+<DL>
+<A HREF="#L4.3.1">
+     COND</A>
+<A HREF="#L4.3.2">
+ IF</A>
+<A HREF="#L4.3.2">
+ WHEN</A>
+<A HREF="#L4.3.2">
+ UNLESS</A>
+</DL></UL>
+
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>
+
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.3.1">    4.3.1  COND.</A></H3></HK><P>
+ </FONT>
+
+<UL><UL><UL><UL>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+      Предложение СOND является основным средством
+      организации разветвления вычислений.
+ </FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR></ul></ul></ul></ul>
+<center>     <B> Структура условного предложения :</B><p>
+<TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  align=right BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > COND  </FONT> ( &lt; проверка-1 &gt; &lt; действие-1 &gt; ) <BR>
+( &lt; проверка-2 &gt; &lt; действие-2 &gt; ) <BR>
+............................................................... <BR>
+( &lt; проверка-n &gt; &lt; действие-n &gt; ))</H3> </A></TD></UL></UL>
+</TABLE></b></center>
+<p>
+В качестве аргументов<B> &lt; проверка &gt; </b>и<b> &lt; действие &gt;</B> 
+могут быть произвольные формы.
+<P>
+<CENTER><TABLE BORDER=0>
+<TD  ALING=CENTER>
+  <B>  Значение COND определяется следующим образом:</B>
+    <P>	
+    <UL><LI>    Выражения  <B>&lt; проверка-i &gt;</B>, выполняющие роль
+     предикатов вычисляются последовательно, слева направо,
+      до тех пор, пока не встретится выражение, значением
+      которого не является <B>NIL</B>.<BR>
+<P>
+<LI>
+Вычисляется результирующее выражение, соответствующее этому предикату,
+ и полученное значение возвращается в качестве значения всего 
+предложения <B>COND.</B><BR>
+<P>
+<LI> Если истинного значения нет, то значением <B> COND</B><BR>
+      будет <B>NIL.</B>
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>     
+<P>
+ <UL><UL> Обычно в качестве последнего условия пишется <B>t</B>, соответствующее 
+  ему выражение будет вычислятся в тех случаях, когда ни одно другое
+   условие не выполняется.<BR>
+<P>
+   Последнюю строку можно записать:<B> (<FONT COLOR=#FF80000 > t </FONT> ' atom ) ) )<BR></UL></UL>
+<P>
+ Пример:</B> ( функция проверяет тип аргумента)<BR>
+
+<TABLE BORDER=0   >
+<TD  COLSPAN=2><B>
+          <UL>( defun classify  ( arg )<BR>
+           <UL> (<FONT COLOR=#FF80000 > cond</FONT> <BR>
+                     ( (<FONT COLOR=#FF80000 > null</FONT>  arg )    nil )<BR>
+                     ( (<FONT COLOR=#FF80000 > list </FONT> arg )      'list )<BR>
+                     ( (<FONT COLOR=#FF80000 > numberp </FONT>  arg ) 'number )<BR>
+                     (<FONT COLOR=#FF80000 > t </FONT>     'atom ) )<BR></UL></UL></UL>
+</A></TD><BR></UL></B>
+<TD><UL><B><UL> * (<FONT COLOR=#FF80000 > classify </FONT> 'a )<BR>
+     atom<BR></UL>
+<P>
+<UL> * (<FONT COLOR=#FF80000 > classify </FONT> 5 )<BR>
+     number</UL>
+</A></TD><BR> </B>
+<TR>
+</TABLE>
+<P>
+<B> Еще один пример:</B><BR>
+<TABLE BORDER=0  >
+<TD  COLSPAN=2><B>
+          <UL>( defun double1  ( num )<BR>
+           <UL> (<FONT COLOR=#FF80000 > cond</FONT> <BR>
+                     ( (<FONT COLOR=#FF80000 > numberp </FONT>  num ) ( * num 2 )<BR>
+                     (<FONT COLOR=#FF80000 > t </FONT>     ' не-число ) )<BR></UL></UL></UL>
+</A></TD><BR></UL></B>
+<TD><UL>  Эта функция<BR> гарантировано удваивает<BR>
+      число, отбрасывая<BR> не числовые аргументы.
+</A></TD><BR> </B></UL>
+<TR>
+</TABLE><BR>
+<P>
+<IMG SRC="PIC4_11.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_11.GIF"><BR>
+<P>
+     В <B>COND</B> могут  отсутствовать результирующие
+     выражения для предикатов, а так же присутствовать
+     несколько действий.
+
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > COND  </FONT><BR> ( &lt; проверка-1 &gt; ) <BR>
+( &lt; проверка-2 &gt; &lt; действие-2 &gt; )<BR>
+(&lt; проверка-3 &gt; &lt; дейст.-31 &gt; &lt; дейст.-32 &gt; &lt; дейст.-33 &gt;))<BR> 
+
+</H3> </A></TD></UL></UL>
+</TABLE>
+</CENTER><BR>
+<CENTER><TABLE BORDER=0   >
+<TD  ALING=CENTER>
+    <UL><LI><B> Если нет действия </B>- результат  значение  предиката.<BR>
+<P>
+<LI> <B> Если не одно действие </B>- результат значение последнего
+       аргумента.<BR>
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>     
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.3.2">     4.3.2  Другие условные предложения.</A></H3></HK><P>
+ </FONT>
+     <B>СOND</B> наиболее общее условное предложение.
+       Часто пользуются более простыми условными
+       предложениями.<BR>
+<P>
+<UL><CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > IF  </FONT>  &lt; условие &gt;  
+ &lt; то форма &gt; &lt; иначе форма &gt; )
+</H3> </A></TD></UL>
+</TABLE>
+</CENTER>
+<IMG SRC="PIC4_18.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_18.GIF"><BR></UL>
+<P>
+     <UL><UL><UL> <B> Пример:<BR>
+
+      <UL><UL> (<FONT COLOR=#FF80000 > if </FONT>(<FONT COLOR=#FF80000 > atom </FONT> x )
+      'аtоm    'not - аtom )<BR></B></UL></UL></UL></UL></UL>
+<P>
+<UL>Условные предложения <B>WHEN </B>и <B>UNLESS</B> являются часными случаями 
+  условного предложения <B>IF</B>:<BR>
+<P>   
+  <LI>  Если условие соблюдается, то выполняются формы.<BR>
+ <CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > WHEN  </FONT>  &lt; условие &gt;  <BR>
+ &lt; форма-1 &gt; &lt; форма-2 &gt; &lt; форма-3 &gt; ... )
+</H3> </A></TD></UL></UL>
+</TABLE>
+</CENTER><BR>
+<P>
+   <ul><LI>    Если условие не соблюдается, то выполняются формы.<BR>
+ <CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > UNLESS  </FONT>  &lt; условие &gt;  <BR>
+ &lt; форма-1 &gt; &lt; форма-2 &gt; &lt; форма-3 &gt; ... )
+</H3> </A></TD></UL></UL></UL>
+</TABLE>
+</CENTER><BR></UL>
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.3.3">    4.3.3  Связь между  COND  и логическими функциями.
+</A></H3></HK><P>
+ </FONT>
+
+       Любую логическую функцию можно заменить <B>COND-выражением </B> и наоборот.<BR>
+
+<B> Пример:<BR></b>
+<P>
+<TABLE BORDER=0 width=500>
+<TD>car-функция с проверкой:<br>
+          <UL><B>( defun gcar  ( l )<BR>
+           (<FONT COLOR=#FF80000 > cond</FONT> <BR>
+                     ( (<FONT COLOR=#FF80000 > listp </FONT> l )  (<FONT COLOR=#FF80000 > car </FONT>  l ) )<BR>
+                     (<FONT COLOR=#FF80000 > t </FONT> nil ) ) )</UL></B>
+</TD>
+<TD valign=top>то же через логические функции:<B><br>   
+ <UL>( defun gcar1  ( l )<BR>
+           <UL> (<FONT COLOR=#FF80000 > and </FONT> <BR>
+                      (<FONT COLOR=#FF80000 > listp </FONT> l ) 
+                      (<FONT COLOR=#FF80000 > car </FONT>  l ) ) )<BR>
+                     </UL></UL>
+</TD>
+</TABLE>
+<P><B>
+  * (gcar '(a b)) <BR>
+<p>
+  a<BR>
+<p>
+  * (gcar 'a) <BR>
+<P>
+  nil<BR></B>
+
+
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.4">    4.4    Ввод и вывод информации.</A></H3></HK><P>
+ </FONT>
+
+<CENTER><TABLE BORDER=0  >
+<TD  ALING=CENTER>
+   До сих пор в определяемых функциях ввод и вывод
+   результатов осуществлялись в процессе диалога
+   с интерпретатором.<BR>
+<P>
+     Интерпретатор читал вводимое пользователем
+   выражение, вычислял его значение и возвращал
+   его пользователю.<BR>
+<P>
+    Теперь мы рассмотрим специальные функции ввода
+   и вывода <B>Лиспа</B>.
+</A></TD><BR></UL>
+<TR>
+</TABLE></CENTER>
+   
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.4.1"> 
+    4.4.1  READ.</A></H3></HK><P>
+ </FONT>
+<UL><UL><UL>
+<TABLE BORDER=0>
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+   READ отличается от операторов ввода-вывода других
+   языков пpогpаммиpования, тем что он обрабатывает
+   вводимое выражение  целиком, а не одиночные
+   элементы данных.
+ </FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR></ul>
+    
+  <B>  Вызов функции осуществляется в виде: </B><p>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD BORDER="2"  BGCOLOR=DDFFDD><UL><UL>
+ <H3> ( <FONT COLOR=#FF80000 > READ  </FONT>) <BR></UL></UL>
+</H3>функция без аргументов. 
+</A></TD></UL></UL>
+</TABLE>
+</CENTER><BR>
+</UL></UL></UL>
+
+
+<UL><UL><UL>    Как только интерпретатор встречает <B>READ</B>,
+    вычисления приостанавливаются до тех пор
+    пока пользователь не введет какой-либо
+    символ или выражение.<BR><B>
+<P>
+  <UL>  * ( <FONT COLOR=#FF80000 > READ </FONT>)<BR>
+    new   - </B> выражение пользователя<BR><B>
+    new   - </B>значение функции.<BR></UL></UL></UL></UL>
+<P>
+  <B> READ</B> не указывает на ожидание информации.
+    Если прочитанное выражение необходимо для
+    дальнейшего использования, то <B>READ</B> должен быть
+    аргументом какой либо формы, которая свяжет
+    полученное выражение:<BR><B>
+<P>
+<TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC4_17.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_17.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><B>
+<UL> * (<FONT COLOR=#FF80000 > setq </FONT> x ' (<FONT COLOR=#FF80000 > read </FONT>) )<BR>
+<P>   
+ ( + 1 2 )</B> - вводимое выражение<BR><B>
+<P>
+    ( + 1 2 )</B> - значение   </UL>
+<B>
+<P>
+ <UL> * x<BR>
+    ( + 1 2 )<BR></UL>
+ <P>
+ <UL> * (<FONT COLOR=#FF80000 > eval </FONT> x )<BR> 3 </B></UL></UL></UL></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+<P>
+    Еще один пример:<BR>
+
+<TABLE BORDER=0   >
+<TD  COLSPAN=2><B><UL>
+ <UL>     ( defun  tr ( arg )<BR>
+           ( <FONT COLOR=#FF80000 > list </FONT> (<FONT COLOR=#FF80000 > + </FONT> arg (<FONT COLOR=#FF80000 > read </FONT>) ) (<FONT COLOR=#FF80000 > read </FONT> ) ) ) <BR>
+</A></TD><BR></UL></B></UL>
+<TD><UL><B><UL>
+   <UL> * ( tr 8 )<BR>
+    14<BR>
+    cat <BR>
+   ( 22 cat) </UL><BR>
+</A></TD><BR> </B></UL></UL>
+<TR>
+</TABLE><BR></B>
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.4.2">     4.4.2  PRINT.</A></H3></HK><P>
+ </FONT>
+
+<UL><UL><UL> <TABLE BORDER=0 >
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+     Функция PRINT - это функция с одним аргументом.
+     Она выводит значение аргумента на монитор, а затем возвращает
+     значение аргумента.
+ </FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR>
+<P>   
+     Для вывода выражений можно использовать функцию <B> print</B>.<p>
+
+<CENTER> <TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > PRINT  </FONT> &lt; arg &gt;) 
+</H3> 
+</A></TD>
+</TABLE>
+</CENTER><BR>
+ <UL>  <B>  print </B>перед выводом аргумента переходит на новую строку,<BR>
+     а после него выводит пробел.<BR><B>
+<P>
+    <UL> * (<FONT COLOR=#FF80000 > print </FONT> ( + 2 3 ) )<BR>
+    <P>
+     5 - </B>вывод<BR><B>
+     5 - </B>значение<BR></UL></UL></UL></UL></UL>
+<P>
+   <UL> <B> print и read </B> - псевдофункции, у которых кроме значения есть
+     побочный эффект.<BR>
+    <B> Значение функции </B>- значение ее аргумента.<BR>
+    <B> Побочный эффект </B> - печать этого значения.<BR></UL>
+<P>  
+  Это не значит, что всегда две строки. Только когда <B>print </B>на 
+     высшем уровне, чего практически не бывает.<BR>
+<P>
+<UL><UL><UL><UL><UL><UL> <B>   Пример:<p>
+      * (<FONT COLOR=#FF80000 > setq </FONT> row ' ( x x x ) )<BR>
+     ( x x x )<BR></UL></UL></UL></UL></UL></UL></B></UL>
+<P>
+<TABLE BORDER=0   >
+<TD  COLSPAN=2><B><UL>
+ <UL> * (<FONT COLOR=#FF80000 > print </FONT>( cdr row ) )<BR>
+     ( x x ) - </B>печать<BR><B>
+     ( x x ) - </B>значение<BR>
+</A></TD><BR></UL></UL>
+<TD><UL><B><UL>
+   <UL> * (<FONT COLOR=#FF80000 > cons </FONT> 'o ( <FONT COLOR=#FF80000 >
+print </FONT>(<FONT COLOR=#FF80000 > cdr </FONT> row ) ) )<BR>
+     ( x x ) -</B> печать<BR><B>
+     ( o x x ) - </B>значение<BR>
+</A></TD></UL></UL>
+<TR>
+</TABLE><BR>   
+  
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.5">    4.5    PROGN, PROG1, PROG2.</A></H3></HK><P>
+ </FONT>
+
+<UL><UL><UL>
+<TABLE BORDER=0>
+<TD ALIGN=TOP  VALIGN=TOP  ROWSPAN=0  COLSPAN=2>
+<IMG ALIGN=TOP SRC="PIC0.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC0.GIF"  ALT="" BORDER=0 SPACE=0></IMG>
+<TD ALIGN=LEFT><UL><FONT COLOR=#800080 ><B>
+     Функции PROGN, PROG1, PROG2 относятся к управляющим структурам,
+      к группе объединяющей последовательные вычисления.
+ </FONT></UL>
+</B></UL>
+</A>
+</TD>
+<TR>
+</TABLE><BR></ul></ul></ul>
+    
+  Предложения <B>PROGN, PROG1, PROG2</B> позволяют работать
+    с несколькими вычисляемыми формами:<p>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"   >
+<TD BORDER="2"  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > PROGN  </FONT> &lt; форма-1 &gt; &lt; форма-2 &gt; ...... &lt; форма-n &gt;) <BR>
+ ( <FONT COLOR=#FF80000 > PROG1  </FONT> &lt; форма-1 &gt; &lt; форма-2 &gt; ...... &lt; форма-n &gt;) <BR>
+ ( <FONT COLOR=#FF80000 > PROG2  </FONT> &lt; форма-1 &gt; &lt; форма-2 &gt; ...... &lt; форма-n &gt;) <BR></H3>
+</A></TD>
+</TABLE>
+</CENTER><BR>
+</UL></UL></UL></UL>
+<P>
+    У этих предложений переменное число аргументов,
+    которые они последовательно вычисляют:<BR>
+<P>
+<P>
+<IMG SRC="PIC4_16.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_16.GIF"><BR>
+<P>
+<P>
+ <UL><UL><UL><B>    Пример:<p>
+    <UL> * (<FONT COLOR=#FF80000 > progn </FONT> ( setq x 2 ) ( setq y ( * 3 2 ) ) )<BR>
+     6<BR></UL>
+<P>
+    <UL> * (<FONT COLOR=#FF80000 > prog1 </FONT> ( setq x 2 ) ( setq  y ( * 3 2 ) ) )<BR>
+     2<BR></UL>
+<P>
+   <UL> * y<BR>
+     6<BR></UL></UL></UL></UL></b>
+<P>
+    В <B>Лиспе </B>часто используется так называемый <B>неявный PROGN </B> ,
+    т.е вычисляется последовательность форм, а в качестве
+    значения берется значение последней формы.
+
+ <P>
+<IMG SRC="line2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/line2.GIF">
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L4.5.1">  4.5.1  Определение функций с использованием неявного PROGN.</A></H3></HK><P>
+ </FONT>
+
+  При определении функций может использоваться
+  <B>неявный  PROGN </B>.<BR>
+<P>
+<CENTER><TABLE BORDER="2" CELLPADDING="8" CELLSPACING="8"  >
+<TD BORDER="2"  BGCOLOR=DDFFDD>
+ <H3> ( <FONT COLOR=#FF80000 > defun <BR> </FONT>&lt; имя функции &gt;<BR> 
+ &lt; список параметров &gt; <BR>  &lt; форма1 форма2 .... формаN &gt; )
+</H3></A></TD></UL>
+</TABLE>
+</CENTER><BR><UL>
+<P>
+<IMG SRC="PIC4_15.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION4/PIC4_15.GIF"><BR>
+<P>
+  <LI>Тело функции состоит из последовательности форм
+  отражающих,<BR>  последовательность действий.<BR>
+
+  <LI>В качестве значения функции принимается значение
+  последней формы.<BR></UL>
+<P>
+ <B> Пример:</B><BR>
+  Определим функцию,  которая печатает список, вводит
+  два числа, и печатает их сумму.<BR>
+<P>
+<TABLE BORDER=0>
+<TD><B>
+          <UL>( defun print-sum  (  )</B> ; функция без аргументов<B><BR>
+                     ( <FONT COLOR=#FF80000 > print </FONT> ' ( type two number ) )<BR>
+                     ( <FONT COLOR=#FF80000 > print </FONT> ( + (<FONT COLOR=#FF80000 > read </FONT>)
+ (<FONT COLOR=#FF80000 > read </FONT>) ) ) )<BR>
+                 </UL></UL></UL>
+</TD></UL></B>
+<TD><B>
+ <UL>*(<FONT COLOR=#FF80000 > print-sum </FONT>)<BR>
+ ( type two number ) 3 4<BR>
+ 7<BR>
+ 7<BR>
+</TD></B>
+</TABLE><BR>
+<P>
+
+<CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+</CENTER>
+<BR>
+<P>  
+</body>
+</html>

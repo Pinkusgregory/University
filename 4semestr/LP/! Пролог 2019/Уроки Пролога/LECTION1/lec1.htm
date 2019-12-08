@@ -1,0 +1,1853 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="lec1.files/filelist.xml">
+<link rel=Edit-Time-Data href="lec1.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Логическое и функциональное программирование. Лекция 1</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>DimonD</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>7</o:TotalTime>
+  <o:Created>2009-07-30T09:47:00Z</o:Created>
+  <o:Pages>5</o:Pages>
+  <o:Words>1599</o:Words>
+  <o:Characters>9115</o:Characters>
+  <o:Company>Grizli777</o:Company>
+  <o:Lines>75</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>10693</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="lec1.files/themedata.thmx">
+<link rel=colorSchemeMapping href="lec1.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627400839 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"Arial CYR";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536881799 -2147483648 8 0 511 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610611985 1073750091 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+pre
+	{mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	color:black;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Стандартный HTML";
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Consolas;
+	color:black;}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;
+	color:black;}
+span.body8
+	{mso-style-name:body8;
+	mso-style-unhide:no;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:558833031;
+	mso-list-template-ids:-10980464;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1
+	{mso-list-id:1669480015;
+	mso-list-template-ids:-205631654;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:1716004759;
+	mso-list-template-ids:117582076;}
+@list l2:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l3
+	{mso-list-id:1804957255;
+	mso-list-template-ids:-877077196;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor="#C7D4EA" lang=RU link=blue vlink=purple style='tab-interval:
+35.4pt' alink="#0000FF">
+
+<div class=Section1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=10 style='width:6.0pt;background:#8181C0;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width="65%" style='width:65.0%;background:#8181C0;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><i><span style='font-size:13.5pt;mso-fareast-font-family:
+  "Times New Roman";color:#C6C6FF'>Лекция 1</span></i></b><span
+  style='mso-fareast-font-family:"Times New Roman"'> <o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:12.0pt'>
+<!-- Row 2 -->
+  <td width=10 style='width:6.0pt;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'></td>
+  <td width="65%" style='width:65.0%;background:#A3A3D1;padding:.75pt .75pt .75pt .75pt;
+  height:12.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><i><span
+  style='font-size:18.0pt;mso-fareast-font-family:"Times New Roman";color:#004080'>Общий
+  обзор языка Пролог.</span></i></b><span style='font-size:18.0pt;mso-fareast-font-family:
+  "Times New Roman";color:#004080'> </span><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+  <td style='background:#C7D4EA;padding:.75pt .75pt .75pt .75pt;height:12.0pt'></td>
+ </tr>
+</table>
+
+</div>
+
+<h2><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman";color:#004080'><!--center>
+  <font face="Times New Roman Cyr"><img src="lec1.gif" tppabs="http://www.marstu.mari.ru:8101/mmlab/home/prolog/LECTION1/lec1.gif"  heigh="300" width="90%"></font>
+  </center -->Cодержание
+</span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img width=14
+height=14 id="_x0000_i1067" src=blueball.gif></span><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.1">1.1 Пример программы: родственные отношения.</a> </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1066" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.2">1.2 Факты. </a></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1065" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.3">1.3 Вопросы. </a></span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1064" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.4">1.4 Переменные.</a> </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1063" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.5">1.5 Конъюнкция целей.</a> </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1062" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.6">1.6 Правила. </a></span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1061" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.7">1.7 Конъюнкция в правилах.</a> </span><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1060" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.8">1.8 Переменные в теле правила. </a></span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img border=0
+width=14 height=14 id="_x0000_i1059" src=blueball.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><a
+href="#Lec1.9">1.9 Cтруктура пролог-программы.</a> </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1058"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="85%"
+ style='width:85.0%;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+<!-- Row 1 -->
+  <td width="25%" valign=top style='width:25.0%;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><i><span style='font-size:24.0pt;mso-fareast-font-family:
+  "Times New Roman";color:#970000'>Пролог - </span></i></b><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><i><span style='font-size:18.0pt;mso-fareast-font-family:
+  "Times New Roman";color:#3F007D'>это язык программирования, используемый для
+  решения задач, в которых действуют объекты и отношения между этими объектами.</span></i></b><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p><i><span style='font-size:13.5pt;font-family:"Arial CYR","sans-serif"'>Программа
+на прологе состоит из предложений, которые могут быть фактами, правилами или
+вопросами.</span></i><o:p></o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!-- IMG SRC="opredel.gif" --><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1057"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><a name=Lec1.1></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+color:navy'>1.1 Пример программы: родственные отношения. </span><span
+style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1056"
+src=saqual.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Рассмотрим
+<b>дерево родственных отношений :</b> <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=253 height=266 id="_x0000_i1055"
+src=alltree.gif alt=tree></span><a name=Lec1.2></a><span style='font-family:
+"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";mso-no-proof:
+yes'><img border=0 width=600 height=8 id="_x0000_i1054" src=saqual.gif></span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.2 Факты.</span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1053"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Введем </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>отношение</span></b><b><span
+style='font-family:"Arial CYR","sans-serif"'> -родитель- (parent)</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> между объектами.<br>
+<b>parent (tom, bob).</b> <br>
+Это факт, определяющий , что <b>Том</b> является родителем <b>Боба</b>. <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>parent</span></b><span
+style='font-family:"Arial CYR","sans-serif"'> - имя отношения, <b>tom, bob</b>
+- его аргументы. Теперь можно записать программу, описывающую все дерево
+родственных отношений. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+ style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:13.8pt'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt;height:13.8pt'></td>
+  <td width=204 style='width:122.4pt;padding:.75pt .75pt .75pt .75pt;
+  height:13.8pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>parent (pam, bob).<br>
+  parent (tom, bob).<br>
+  parent (tom, liz).<br>
+  parent (bob, ann).<br>
+  parent (bob, pat).<br>
+  parent (mary, ann).<br>
+  parent (pat, juli).</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+  <td width=138 valign=top style='width:82.8pt;padding:.75pt .75pt .75pt .75pt;
+  height:13.8pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  border=0 width=130 height=90 id="_x0000_i1052" src=tree1.gif></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><br style='mso-special-character:
+  line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>&nbsp;<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Эта программа состоит из
+семи <b>предложений (утверждений), clause(клоз).</b><br>
+Каждый клоз записан фактом в виде отношения <b>parent.</b><br>
+При записи фактов надо соблюдать следующие </span><b><span style='font-family:
+"Arial CYR","sans-serif";color:purple'>правила</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>: <o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Имена
+     всех отношений и объектов с маленькой буквы. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>Сначала
+     записывается имя отношения, затем в круглых скобках через запятую объекты.
+     <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo3;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>В
+     конце ставится точка. <o:p></o:p></span></li>
+</ul>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Еще пример факта: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20 --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>like
+  (bob, pam).</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+  <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Совокупность фактов в
+прологе называют </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>базой даннах</span></b><span style='font-family:"Arial CYR","sans-serif"'>.
+<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.3></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1051"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.3 Вопросы.</span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1050"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>К составленной базе
+данных можно задать </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>вопросы.</span></b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'> </span><span style='font-family:"Arial CYR","sans-serif"'>. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Вопрос в обычном прологе
+начинается с </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:#800010'>?-</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+<br>
+Вопрос записывается также, как и факт.<br>
+Например: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=900
+ style='width:540.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=300 valign=top style='width:180.0pt;padding:.75pt .75pt .75pt .75pt'></td>
+  <td width=300 style='width:180.0pt;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>? - </span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>parent
+  (bob, pat). <o:p></o:p></span></b></p>
+  <p><b>yes </b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=37 height=160 id="_x0000_i1049"
+  src="bob_pat.gif"></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Когда пролог получает
+вопрос, он пытается сопоставить его с базой данных. Такой факт находится,
+ответ:<b> да (yes).</b> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>На вопрос <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>parent
+  (bob,mary). <o:p></o:p></span></b></p>
+  <p><b>no </b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=39 height=118 id="_x0000_i1048"
+  src=onlybob.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Ответ будет <b>нет (no)</b>,
+так как такого факта в базе данных нет. <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.4></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1047"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.4 Переменные.</span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1046"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Можно задать вопрос и
+узнать кто родитель <b>liz</b>: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>parent
+  (X, liz). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>X= tom </span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=50 height=158 id="_x0000_i1045"
+  src="tom_liz.gif"></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Здесь <b>X</b> - </span><b><span
+style='font-family:"Arial CYR","sans-serif";color:purple'>переменная</span></b><span
+style='font-family:"Arial CYR","sans-serif"'>. Ее величина неизвестна и она
+может принимать значения. В данном случае ее значением будет объект, для
+которого это утверждение истинно. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Вопрос : <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>parent
+  (X, bob). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>X=tom <br>
+  X=pam </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  border=0 width=153 height=144 id="_x0000_i1044" src="bobxx_1.gif"></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-fareast-font-family:"Times New Roman";mso-no-proof:yes'><img
+  border=0 width=153 height=144 id="_x0000_i1043" src="bobxx_2.gif"></span><span
+  style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Можно задать вопрос, кто
+является чьим родителем.<br>
+Или найти такие <b>X</b> и <b>Y</b>, что <b>X</b> является родителем <b>Y</b>. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>parent
+  (X, Y). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>X= pam <br>
+  Y= bob <br>
+  Y= tom <br>
+  X= bob <br>
+  </span>и</b><b><span style='mso-ansi-language:EN-US'> </span>т</b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>.</span>д</b><b><span lang=EN-US
+  style='mso-ansi-language:EN-US'>. </span></b><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=253 height=266 id="_x0000_i1042"
+  src=alltree.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.5></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1041"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.5 Конъюнкция целей.</span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1040"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Можно задать более общий
+вопрос: Кто является родителем родителя <b>juli</b>. Так как нет отношения <b>grandparent</b>,
+то можно разбить на <b>два вопроса:</b> <o:p></o:p></span></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo6;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>кто
+     родитель <b>juli</b>. Предположим- <b>Y</b>. <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo6;tab-stops:list 36.0pt'><span style='font-family:
+     "Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'>кто
+     родитель <b>Y</b>. Предположим- <b>X</b>. <o:p></o:p></span></li>
+</ol>
+
+<p class=MsoNormal><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><br>
+Тогда составной вопрос: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>parent
+  (Y, juli), parent (X, Y). <br>
+  X=bob <br>
+  Y=pat</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=168 height=199 id="_x0000_i1039"
+  src=juli.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>При поиске решения
+сначала находится <b>Y</b> , а затем по второму условию <b>Х</b>.<br>
+<b>Вопрос: </b>Кто внуки тома?: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>parent
+  (tom, Y), parent (Y, X). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>Y=bob <br>
+  X=ann <br>
+  Y=bob <br>
+  X=pat </span></b><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=153 height=190 id="_x0000_i1038"
+  src="tom_bob.gif"></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>И наконец, есть ли у <b>ann</b>
+и <b>pat</b> общий родитель? <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>parent
+  (Y, ann), parent(Y, pat). <o:p></o:p></span></b></p>
+  <p><b>Y=bob </b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=146 height=150 id="_x0000_i1037"
+  src=sister.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.6></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1036"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.6 Правила.</span><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1035"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Введем отношение peбенок <b>child</b>,
+обратное к <b>parent</b> &quot;родитель&quot;. <br>
+Можно было бы определить аналогично: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20 --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman"'>child
+  (liz, tom).</span></b><span style='mso-fareast-font-family:"Times New Roman"'>
+  <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Но можно использовать,
+что отношение <b>child</b> обратно к <b>parent</b> и записать в виде
+утверждения- </span><b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'>правила</span></b><span style='font-family:"Arial CYR","sans-serif";
+color:purple'> </span><span style='font-family:"Arial CYR","sans-serif"'>: <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"  ALT="" BORDER=0 SPACE=20 --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>child(Y, X):-parent (X, Y).</span></b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Правило читается так: <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>Для всех X и Y <br>
+Y -child X, если<br>
+X -parent Y.</span></b><span style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Правило отличается от
+факта тем, что факт всегда истина, а правило описывает утверждение, которое
+будет истинной, если выполнено некоторое условие. Поэтому в правиле выделяют:
+заключение условие <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+ style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre style='text-align:center'><span style='mso-spacerun:yes'>           </span><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><br style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]><o:p></o:p></span></pre><pre style='text-align:center'><span
+  style='font-size:12.0pt;font-family:"Times New Roman","serif";mso-fareast-font-family:
+  "Times New Roman"'><span style='mso-spacerun:yes'>  </span><o:p></o:p></span></pre><pre
+  style='text-align:center'><span style='font-size:12.0pt;font-family:"Times New Roman","serif";
+  mso-fareast-font-family:"Times New Roman"'><span style='mso-spacerun:yes'>  </span></span></pre></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'><span style='mso-spacerun:yes'>                   </span>child(Y, X)
+  :- parent (X, Y).</span></b><span lang=EN-US style='mso-fareast-font-family:
+  "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  <table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+   style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+   0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal align=center style='text-align:center'><b><span
+    style='mso-fareast-font-family:"Times New Roman"'>голова</span></b><b><span
+    style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> <span
+    lang=EN-US><o:p></o:p></span></span></b></p>
+    <pre style='text-align:center'><b><span lang=EN-US style='mso-ansi-language:
+    EN-US'><span style='mso-spacerun:yes'>        </span><o:p></o:p></span></b></pre>
+    <p class=MsoNormal align=center style='text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+    lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+    EN-US'>head</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+    mso-ansi-language:EN-US'><br style='mso-special-character:line-break'>
+    <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+    <![endif]><o:p></o:p></span></p>
+    </td>
+    <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US
+    style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       </span><span style='mso-spacerun:yes'> </span><o:p></o:p></span></pre></td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+    style='mso-fareast-font-family:"Times New Roman"'>тело</span></b><b><span
+    style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> <span
+    lang=EN-US><o:p></o:p></span></span></b></p>
+    <pre><b><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        </span><o:p></o:p></span></b></pre>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+    lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+    EN-US'>body</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+    mso-ansi-language:EN-US'><br style='mso-special-character:line-break'>
+    <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+    <![endif]><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:
+EN-US'>&nbsp;<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Если условие <b>parent
+(X, Y)</b><span style='mso-spacerun:yes'>  </span>выполняется, то логическим
+следствием из него будет утверждение <b>child(Y, X)</b>. <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif";color:purple'>Как
+правило используется прологом :</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Зададим вопрос <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>child(liz,
+  tom). </span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=50 height=158 id="_x0000_i1034"
+  src="tom_liz.gif"></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>В программе нет данных о <b>child</b>.<br>
+Но есть правило, которое верно для всех <b>X Y</b>, в том числе для <b>liz</b>
+и <b>tom</b>.<br>
+Мы должны применить правило для этих значений.<br>
+Для этого надо подставить в правило вместо <b>X</b>- <b>tom</b>, a вместо <b>Y</b>
+- <b>liz</b>. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Говорят, что переменные
+будут связаны, а операция будет называться </span><span style='font-family:
+"Arial CYR","sans-serif";color:navy'>подстановкой. </span><span
+style='font-family:"Arial CYR","sans-serif"'><br>
+Получаем конкретный случай для правила <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>child(liz,
+tom):-parent (tom, liz).</span></b><span style='font-family:"Arial CYR","sans-serif"'>
+<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Условная часть приняла
+вид <br>
+<b>parent (tom, liz).</b> <br>
+Теперь надо выяснить выполняется ли это условие. Исходная цель <b>child(liz,tom)</b>
+заменяется подцелью <b>parent (tom, liz).</b>, которая выполняется, поэтому
+пролог ответит <b>&quot;yes&quot;.</b> <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.7></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1033"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.7 Конъюнкция в
+правилах.</span><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1032"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Добавим еще одно
+отношение в базу данных, унарное, определяющее пол. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"   ALT="" BORDER=0 SPACE=20 --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>male(tom).<br>
+  male(bob).<br>
+  male(jim).<br>
+  female(liz).<br>
+  female(pam).<br>
+  female(pat).<br>
+  female(ann).</span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Теперь определим
+отношение <b>mother</b>. Оно описывается следующим образом: <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>Для</span></b><b><span
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'> </span></b><b><span
+style='font-family:"Arial CYR","sans-serif"'>всех</span></b><b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>
+X Y <br>
+X -mother Y, if <br>
+X- parent Y </span></b><b><span style='font-family:"Arial CYR","sans-serif"'>и</span></b><b><span
+lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'>
+<br>
+X -female.</span></b><span lang=EN-US style='font-family:"Arial CYR","sans-serif";
+mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Таким образом правило будет
+<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'><!-- IMG SRC="yellow.gif"   ALT="" BORDER=0 SPACE=20 --></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>mother(X, Y):-parent(X, Y), female(X). </span></b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Запятая между двумя
+условиями означает конъюнкцию целей. Это означает, что два условия должны быть
+выполнены одновремено. <br>
+Как система ответит на вопрос? <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span style='mso-fareast-font-family:"Times New Roman";
+  color:#800010'>?-</span></b><b><span style='mso-fareast-font-family:"Times New Roman"'>mother
+  (pam, bob). <o:p></o:p></span></b></p>
+  <p><b>yes </b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=39 height=182 id="_x0000_i1031"
+  src="pam_bob.gif"></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Находится правило <b>mother</b>,
+производится подстановка <o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>X=pam <br>
+Y=bob</span></b><span style='font-family:"Arial CYR","sans-serif"'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Получаем</span><span
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'> </span><span
+style='font-family:"Arial CYR","sans-serif"'>правило</span><span
+style='font-family:"Arial CYR","sans-serif";mso-ansi-language:EN-US'> <span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p><b><span lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:
+EN-US'>mother(pam, bob):- <br>
+<span style='mso-spacerun:yes'>                                 
+</span>parent(pam, bob), <br>
+<span style='mso-spacerun:yes'>                                 
+</span>female(pam).</span></b><span lang=EN-US style='font-family:"Arial CYR","sans-serif";
+mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Сначала удовлетворяются <b>parent</b>
+, а затем <b>female</b> <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Пролог отвечает: <b>yes</b>
+<br>
+Вопрос : <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>mother
+  (X, bob). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>X=pam </span></b><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=135 height=182 id="_x0000_i1030"
+  src=mother.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.8></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1029"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.8 Переменные в теле
+правила.</span><span style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:
+"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1028"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Определим отношение <b>sister</b>
+<o:p></o:p></span></p>
+
+<p><b><span style='font-family:"Arial CYR","sans-serif"'>Для любых X и Y <br>
+X sister Y, if <br>
+у X и Y есть общий родитель, <br>
+и X female </span></b><span style='font-family:"Arial CYR","sans-serif"'><o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Запишем правило на
+прологе <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+ style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG ALIGN=CENTER SRC="yellow.gif" -->
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><br
+  style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>sister (X, Y):- parent(Z,X),</span></b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'> <o:p></o:p></span></p>
+  <table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+   style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+   0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US
+    style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>             </span><o:p></o:p></span></pre></td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+    lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+    EN-US'>parent(Z,Y), <br>
+    female(X). </span></b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+    mso-ansi-language:EN-US'><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US style='font-family:"Arial CYR","sans-serif";mso-ansi-language:
+EN-US'>&nbsp;<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Здесь <b>Z</b>-общий
+родитель. <b>Z</b>-некоторый, любой. <br>
+Можно спросить <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=600
+ style='width:360.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span lang=EN-US
+  style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>sister(ann,
+  pat). <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='mso-ansi-language:EN-US'>yes <o:p></o:p></span></b></p>
+  <p><b><span lang=EN-US style='color:#800010;mso-ansi-language:EN-US'>?-</span></b><b><span
+  lang=EN-US style='mso-ansi-language:EN-US'>sister(pat, pat). <o:p></o:p></span></b></p>
+  <p><b>yes </b></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+  mso-no-proof:yes'><img border=0 width=146 height=150 id="_x0000_i1027"
+  src=sister.gif></span><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>&nbsp;<o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Ответ будет <b>&quot;yes&quot;</b>.
+Так как мы не потребовали, чтобы <b>X</b> и <b>Y</b> были разные. <o:p></o:p></span></p>
+
+<p><span style='font-family:"Arial CYR","sans-serif"'>Добавим отношение <b>different
+(X, Y)</b>, которое указывает ,что <b>X</b> и <b>Y</b> разные. <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+ style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><!-- IMG ALIGN=CENTER SRC="yellow.gif" -->
+  <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><br
+  style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]><o:p></o:p></span></p>
+  </td>
+  <td style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
+  mso-ansi-language:EN-US'>sister (X, Y):- parent(Z,X),</span></b><span
+  lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+  EN-US'> <o:p></o:p></span></p>
+  <table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=450
+   style='width:270.0pt;mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:
+   0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+    <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US
+    style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>             </span><o:p></o:p></span></pre></td>
+    <td style='padding:.75pt .75pt .75pt .75pt'>
+    <p class=MsoNormal style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+    lang=EN-US style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+    EN-US'>parent(Z,Y), <br>
+    female(X), <br>
+    different (X, Y).</span></b><span lang=EN-US style='mso-fareast-font-family:
+    "Times New Roman";mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><a name=Lec1.9></a><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1026"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<h2 align=center style='text-align:center'><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman";color:navy'>1.9 Cтруктура
+пролог-программы.</span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></h2>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-no-proof:yes'><img border=0 width=600 height=8 id="_x0000_i1025"
+src=saqual.gif></span><span style='font-family:"Arial CYR","sans-serif";
+mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0
+ style='mso-cellspacing:1.5pt;mso-yfti-tbllook:1184;mso-padding-alt:6.0pt 6.0pt 6.0pt 6.0pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+<!-- Row 1 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>предложение</span></b><span style='mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>- </span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>факт,</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>правило,</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>вопрос</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+<!-- Row 2 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>clause</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>fact,</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>rule,</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>goal</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+<!-- Row 3 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>состав</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>head</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>head</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+<!-- Row 4 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>.</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>..</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>?</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+<!-- Row 5 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>|</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>|</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+<!-- Row 6 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>body</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>body</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+<!-- Row 6 -->
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'></td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>.</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td style='padding:6.0pt 6.0pt 6.0pt 6.0pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-family:"Arial CYR","sans-serif";mso-fareast-font-family:"Times New Roman";
+  color:#970000'>.</span></b><span style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=500
+ style='width:300.0pt;mso-cellspacing:0cm;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:4.8pt'>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td width=95 rowspan=3 style='width:57.0pt;padding:0cm 0cm 0cm 0cm;
+  height:4.8pt'></td>
+  <td width=95 rowspan=3 style='width:57.0pt;padding:0cm 0cm 0cm 0cm;
+  height:4.8pt'></td>
+  <td width=95 rowspan=3 style='width:57.0pt;padding:0cm 0cm 0cm 0cm;
+  height:4.8pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:4.8pt'>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes;height:4.8pt'>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+  <td style='padding:0cm 0cm 0cm 0cm;height:4.8pt'></td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

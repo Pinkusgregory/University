@@ -1,0 +1,652 @@
+
+<HTML>
+<HEAD>
+<TITLE>lek6.htm</TITLE>
+</HEAD>
+<BODY BGCOLOR="#C7D4EA">
+<!-- PUT BODY OF HTML DOCUMENT BELOW HERE -->
+
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 6.
+<P>
+<FONT COLOR=#100000>
+<CENTER> 
+РЕКУРСИЯ.
+</CENTER>
+</FONT>
+
+<B>
+<FONT SIZE=+1>
+<DL>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+<A NAME="SOD">
+    <A HREF="#L6."> 
+      6.    Р Е К У Р С И Я.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.1">
+      6.1   Численная рекурсия.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.2">
+      6.2   Как работает рекурсивная функция.</A>
+ <DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.2.1">
+      6.2.1   Трасса.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.2.2">
+    6.2.2 Правила записи рекурсивной функции.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.3">
+      6.3   Как писать рекурсивные функции.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.4">
+      6.4   CDR рекурсия.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.4.1">
+      6.4.1 Вычисление  (list-sum '(2 5 3)).</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.5">
+      6.5   Несколько терминальных ветвей.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.6">
+      6.6 Несколько рекурсивных ветвей.</A>
+<DD>
+    <IMG SRC="blueball-9.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/blueball.gif">
+    <A HREF="#L6.7">
+      6.7 Общая форма.</A>
+</DL>
+</FONT>
+</B>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.">       6.    Р Е К У Р С И Я</A></H2><P>
+ </FONT>
+    Функция является <FONT COLOR=#FF80000 SIZE=+1 >рекурсивной</FONT>, если в ее определении
+    содержится вызов самой этой функции.<P>
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER>
+<TABLE BORDER=0 >
+<TR>
+<TD>   <IMG SRC="l6k_1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_1.gif">  </TD>
+
+</TABLE>
+</CENTER>
+</FONT>
+
+<P>     Рекурсия основной и самый эффективный способ организации
+    повторяющихся вычислений в функциональном программировании
+    и в лиспе.
+<P>
+<B>    ПРИМЕР.</B>
+    Определим функцию <FONT COLOR=#008000 SIZE=+1> MEMBER</FONT>
+<P>
+
+<TABLE BORDER=0 >
+<TR>
+<TD>   <IMG SRC="example.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/example.gif">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+    (defun MEMBER (item list)<BR>
+         (cond ((null list) nil)<BR>
+                ((eql (car list) item) list)<BR>
+                (t (MEMBER item (cdr list)))))<BR>
+ </FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.1">             6.1   Численная рекурсия</A></H2><P>
+ </FONT>
+
+      Предположим, что необходимо написать функцию
+      <FONT COLOR=#008000 SIZE=+1> sumall</FONT>, которая имеет один аргумент, целое
+      положительное число и возвращает сумму всех целых чисел между нулем и этим числом.
+<P>
+     Например <FONT COLOR=#008000 SIZE=+1>(sumall 9) </FONT> должно вернуть 
+<FONT COLOR=#008000 SIZE=+1>45  </FONT><P>
+
+     Это можно решить циклически; мы решим рекурсивно.<P>
+     Отметим два факта:<BR>
+
+<BR>
+ 1. Если  <FONT COLOR=#008000 SIZE=+1>n=0</FONT>,  сумма чисел между
+<FONT COLOR=#008000 SIZE=+1>0</FONT>  и  <FONT COLOR=#008000 SIZE=+1>n</FONT>  
+равна <FONT COLOR=#008000 SIZE=+1> 0</FONT>.
+<BR>
+ 2. Если  <FONT COLOR=#008000 SIZE=+1>n>0</FONT>, сумма чисел между 
+ <FONT COLOR=#008000 SIZE=+1>0</FONT>  и  <FONT COLOR=#008000 SIZE=+1>n </FONT>
+ равна <FONT COLOR=#008000 SIZE=+1> n </FONT>плюс  сумма чисел между
+ <FONT COLOR=#008000 SIZE=+1> 0 </FONT>  и <FONT COLOR=#008000 SIZE=+1> n-1</FONT>.
+
+
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER><TABLE BORDER=0 >
+<TR>
+<TD  >   <IMG SRC="l6k_5.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_5.gif">  </TD>
+
+</TABLE>
+</CENTER>
+</FONT>
+
+     Эти два факта переводятся непосредственно в
+     определение функции:<P>
+<TABLE BORDER=0 >
+<TR>
+<TD  >   <IMG SRC="example.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/example.gif">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+       (defun sumall (n)<BR>
+             (cond ((zerop n) 0)<BR>
+                    (t (+ n (sumall (- n 1))))))</FONT><P>
+</TD>
+</CENTER>
+</TABLE>
+
+     Производится проверка  <FONT COLOR=#008000 SIZE=+1> n </FONT>: равно нулю или нет.<BR>
+     Если значение  <FONT COLOR=#008000 SIZE=+1> n=0</FONT>,  то функция возвращает
+    <FONT COLOR=#008000 SIZE=+1> 0 </FONT>.<BR>
+     В противном случае , функция вызывает сама себя для вычисления суммы чисел между 
+      <FONT COLOR=#008000 SIZE=+1>0</FONT>  и  <FONT COLOR=#008000 SIZE=+1>n-1</FONT> и
+     и добавляет  <FONT COLOR=#008000 SIZE=+1>n</FONT>  к этой сумме.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.2">            6.2   Как работает рекурсивная функция.</A></H2><P>
+</FONT>
+
+
+     Посмотрим как работает рекурсивная функция.
+     Проследим за несколькими вызовами.<P>
+     Как работает <FONT COLOR=#008000 SIZE=+1>(sumall 0) </FONT>все ясно. Функция возвращает
+    <FONT COLOR=#008000 SIZE=+1>0.</FONT><BR>
+     Эта ветвь в cond называется <FONT COLOR=Maroon SIZE=+1>терминальной (terminating)
+     завершающей</FONT>, так как функция дает значение без
+     рекурсивного вызова.<P>
+     Если <FONT COLOR=#008000 SIZE=+1>(sumall 1)</FONT>,  то идет расчет по второй ветке,<BR>
+     которая называется <FONT COLOR=Maroon SIZE=+1>рекурсивной</FONT>, так как идет вызов самой
+     себя. <BR>
+     В этом случае <FONT COLOR=#008000 SIZE=+1>(+ 1 (sumall 0)</FONT> и значение 
+     <FONT COLOR=#008000 SIZE=+1>1</FONT>.<P>
+     Если <FONT COLOR=#008000 SIZE=+1>(sumall 2)</FONT> , то по рекурсивной ветке
+     <FONT COLOR=#008000 SIZE=+1>(+ 2 (sumall 1))</FONT> и возвращает 
+     <FONT COLOR=#008000 SIZE=+1> 3</FONT>.<P>
+
+      Если посмотреть,<P>
+     <FONT COLOR=#008000 SIZE=+1>(sumall 3) </FONT> вызывает
+      <FONT COLOR=#008000 SIZE=+1> (sumall 2)<BR>
+      (sumall 1)</FONT> вызывает <FONT COLOR=#008000 SIZE=+1>(sumall 0)</FONT>.<P>
+      После того как <FONT COLOR=#008000 SIZE=+1>(sumall 0)</FONT> вернет
+       <FONT COLOR=#008000 SIZE=+1> 0,<BR>
+      (sumall 1) </FONT>вернет <FONT COLOR=#008000 SIZE=+1> 1,<BR>
+      (sumall 2)</FONT> вернет <FONT COLOR=#008000 SIZE=+1> 3,<BR>
+      (sumall 3) </FONT>это вызов верхнего уровня даст значение
+      <FONT COLOR=#008000 SIZE=+1>6.</FONT>
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.2.1">              6.2.1   Трасса.</A></H2><P>
+</FONT>
+
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER><TABLE BORDER=0 >
+<TR>
+<TD >   <IMG SRC="l6k_6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_6.gif">  </TD>
+
+</TABLE>
+</CENTER>
+</FONT>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.2.2">    6.2.2 Правила записи рекурсивной функции.</A></H2><P>
+</FONT>
+
+       Этот простой случай иллюстрирует несколько <BR>
+правил в записи рекурсивной функции.<P>
+
+
+<CENTER><TABLE BORDER=0>
+<TR>
+<TD> 1. Терминальная ветвь необходима для окончания вызова.
+ Без терминальной ветви рекурсивный вызов был бы бесконечным. 
+ Терминальная ветвь возвращает результат, который является базой 
+ для вычисления результатов рекурсивных  вызовов.
+</TD>
+<TD > <IMG SRC="l6k_7.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_7.gif">  </TD>
+<TR>
+<TD> 2. После каждого вызова функцией самой себя,  мы должны
+ приближаться к терминальной ветви. В нашем случае вызовы уменьшали  
+<FONT COLOR=#008000 SIZE=+1>n </FONT> и  и была гарантия,
+что на некотором шаге будет вызов  <FONT COLOR=#008000 SIZE=+1>(sumall 0)</FONT>.
+Всегда должна быть уверенность, что рекурсивные вызовы  ведут к терминальной ветви.
+</TD>
+<TD>   <IMG SRC="l6k_8.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_8.gif">  </TD>
+</TABLE>
+</CENTER>
+</FONT>
+<P>
+       3. Проследить вычисления в рекурсии чрезвычайно сложно.
+          Очень трудно  мысленно проследить за действием рекурсивных функций. Это практически 
+          невозможно для функций более сложных, чем  <FONT COLOR=#008000 SIZE=+1>sumall</FONT>.
+<P>
+          Таким образом мы должны уметь писать рекурсивные  функции, без того чтобы представлять точно порядок
+          вычисления.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.3">6.3   Как писать рекурсивные функции.</A></H2><P>
+</FONT>
+      
+
+    При написании рекурсивных функций мы должны
+    планировать терминальные и рекурсивные ветви.<P>
+<UL>
+<CENTER>
+   <B>Таблица.</B> Рекурсивная функция  <FONT COLOR=#008000 SIZE=+1> SUMALL</FONT><P>
+</CENTER>
+<LI>
+    Шаг 1. Завершение  (Терминальная ветвь)<BR>
+          <FONT COLOR=#008000 SIZE=+1>  n=0 </FONT> - аргумент<BR>
+           <FONT COLOR=#008000 SIZE=+1> (sumall 0) = 0 </FONT>- значение
+<LI>
+    Шаг 2. Рекурсивная ветвь<BR>
+    Рекурсивные отношения между  <FONT COLOR=#008000 SIZE=+1>(sumall n)</FONT> и
+     <FONT COLOR=#008000 SIZE=+1> (sumall(- n 1 ) </FONT>
+<UL>
+<LI>
+    2а. Примеры рекурсии<BR>
+      <FONT COLOR=#008000 SIZE=+1>
+<table border cellspacing=10> <tr>   <td>   <FONT COLOR=#008000 SIZE=+1>
+ (sumall n)  </FONT> </td>        <td>    <FONT COLOR=#008000 SIZE=+1>
+               (sumall(- n 1)</FONT> </td> </tr> 
+     <tr>    <td> <FONT COLOR=#008000 SIZE=+1>
+ (sumall 5)=15  </FONT>  </td>  <td>      <FONT COLOR=#008000 SIZE=+1>
+              (sumall 4)=10 </td> </tr> </FONT>
+     <tr>   <td>  <FONT COLOR=#008000 SIZE=+1>
+ (sumall 1)=1  </FONT> </td>  <td>   <FONT COLOR=#008000 SIZE=+1>
+                    (sumall 0)=0  </FONT></td> </tr> </table></FONT>
+<LI>
+    2b. Характеристическое рекурсивное отношение<BR>
+        <FONT COLOR=#008000 SIZE=+1>(sumall n) </FONT> может быть получена из 
+  <FONT COLOR=#008000 SIZE=+1>(sumall (- n 1)</FONT>
+       прибавлением  <FONT COLOR=#008000 SIZE=+1> N</FONT><P>
+</UL>
+</UL>
+   1. Планирование терминальной ветви.<BR>
+      При написании рекурсивной функции мы должны решить,
+      когда функция может вернуть значение без рекурсивного вызова.<P>
+   2. Планирование рекурсивной ветви.<BR>
+      В этом случае мы вызываем функцию рекурсивно с упрощенным аргументом и используем результат
+      для расчета значения при текущем аргументе.<P>
+      Таким образом мы должны решить:<BR>
+      1. Как упрощать  аргумент, приближая его шаг за шагом к конечному  значению.<BR>
+      2. Кроме этого необходимо построить форму, называемую
+      <FONT COLOR=Maroon SIZE=+1>рекурсивным отношением</FONT>, которая связывает правильное
+      значение текущего вызова со значением рекурсивного вызова.<BR>
+      В нашем случае это  <FONT COLOR=#008000 SIZE=+1>(sumall n)</FONT> и  
+      <FONT COLOR=#008000 SIZE=+1>(sumall (- n 1))</FONT>.<BR>
+      Иногда просто найти  это отношение,  а если не получается
+      надо выполнить следующую последовательность шагов.<BR>
+     a. Определить значение некоторого простого вызова
+         функции и ее соответствующего рекурсивного вызова.<BR>
+     b. Определить соотношение между парой этих функций.<P>
+     <B>Пример.</B> Определим функцию  <FONT COLOR=#008000 SIZE=+1>power</FONT>.
+     Она берет два численных  аргумента m и n вычисляет значение m в степени n.<P>
+      <FONT COLOR=#008000 SIZE=+1>  (power 2 3)      </FONT> возвращает 
+      <FONT COLOR=#008000 SIZE=+1>8      </FONT><P>
+
+            Вначале составим рекурсивную таблицу.<P>
+<UL>
+<LI>
+       Шаг 1. Завершение  (Терминальная ветвь)<BR> <FONT COLOR=#008000 SIZE=+1> n=0</FONT> - аргумент<BR> 
+ <FONT COLOR=#008000 SIZE=+1> (power 2 0) = 1 </FONT>- значение
+<LI>
+       Шаг 2. Рекурсивная ветвь<BR>
+    Рекурсивные отношения между<BR> 
+ <FONT COLOR=#008000 SIZE=+1> (power m n)</FONT> и 
+ <FONT COLOR=#008000 SIZE=+1> (power m (- n 1 ))</FONT>
+<UL>
+<LI>
+    2а. Примеры рекурсии<BR>
+      <FONT COLOR=#008000 SIZE=+1> 
+   (power 5 3) =125             (power 5 2) = 25 <BR>
+
+    (power 3 1)=3                (power 3 0 )=1<BR>      </FONT>
+<LI>
+    2b. Характеристическое рекурсивное отношение<BR>
+        <FONT COLOR=#008000 SIZE=+1>(power m n)</FONT> может быть получена из 
+ <FONT COLOR=#008000 SIZE=+1>(power m (- n 1)</FONT>
+       умножением на m <FONT COLOR=#008000 SIZE=+1></FONT><P>
+</UL>
+</UL>
+<TABLE BORDER=0>
+<TR>
+<TD  >   <IMG SRC="example.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/example.gif">  
+</TD>
+<TD>
+ <pre>     <FONT COLOR=#008000 SIZE=+1> <b>
+        (defun power  (m n)
+              (cond ((zerop n) 1)
+              (t (* m (power  m (- n 1))))))
+</FONT> </b> </pre>     
+</TD>
+</CENTER>
+</TABLE>
+
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif"  >  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.4">      6.4   CDR рекурсия.</A></H2><P>
+</FONT>
+
+
+        Рассмотрена рекурсивная обработка чисел.
+       Когда информация представлена в виде списка,
+       то появляется необходимость рекурсивной обработки
+       списков. Основная рекурсия над списками
+       <FONT COLOR=Maroon SIZE=+1>CDR рекурсия</FONT>.<BR>
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER><TABLE BORDER=0 >
+<TR>
+  <IMG SRC="l6k_2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_2.gif">  
+</TR>
+</TABLE>
+</CENTER>
+</FONT>
+<P>
+
+         Логика и структура <FONT COLOR=Maroon> СDR рекурсии </FONT>сходна с
+       численной рекурсией.<P>
+
+       <B>Пример.</B> Написать функцию  <FONT COLOR=#008000 SIZE=+1>list-sum</FONT>
+ которая берет один аргумент, список чисел,  и возвращает сумму этих чисел.<P>
+       Последовательно упрощающимся аргументом в этом случае
+       будет список. Упрощение списка  <FONT COLOR=#008000 SIZE=+1>(cdr lis)</FONT>. Последнее
+       значение аргумента <FONT COLOR=#008000 SIZE=+1> nil</FONT>.<P>
+       Составим рекурсивную таблицу для  <FONT COLOR=#008000 SIZE=+1> (list-sum  lis)</FONT><P>
+<UL>
+<LI>       Шаг 1. Завершение  (Терминальная ветвь)<BR>
+       <FONT COLOR=#008000 SIZE=+1>       (list-sum nil) = 0</FONT> -  значение
+<LI>
+       Шаг 2. Рекурсивная ветвь<BR>
+    Рекурсивные отношения между<BR>
+      <FONT COLOR=#008000 SIZE=+1>
+    (list-sum lis) и               (list-sum  (cdr lis))
+      </FONT>
+<UL>
+<LI>
+    2а. Примеры рекурсии<BR>
+      <FONT COLOR=#008000 SIZE=+1>
+    (list-sum '(2 5 3)) =10       (list-sum '(5 3)) = 8<BR>
+    (list-sum '(3))  =3           (list-sum nil )=0<BR>
+      </FONT>
+<LI>
+    2b. Характеристическое рекурсивное отношение
+    <FONT COLOR=#008000 SIZE=+1> (list-sum lis) </FONT> может быть получена из 
+ <BR><FONT COLOR=#008000 SIZE=+1>(list-sum  (cdr lis))</FONT>
+      сложением с  <FONT COLOR=#008000 SIZE=+1>(car lis)</FONT>.<P>
+</UL>
+</UL>
+      Текст функции.
+<TABLE BORDER=0 >
+<TR>
+<TD  >   <IMG SRC="example.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/example.gif">  
+</TD>
+<TD>
+      <FONT COLOR=#008000 SIZE=+1>
+      <pre><b>(defun list-sum (lis )
+            (cond ((null lis) 0)
+            (t (+ (car lis) (list-sum (cdr lis))))))</b> </pre>
+      </FONT>
+</TD>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif" align = middle>  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.4.1">      6.4.1 Вычисление  (list-sum '(2 5 3)).</A></H2></FONT>
+       
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER><TABLE BORDER=0 >
+<TR>
+<TD  >   <IMG SRC="l6k_3.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_3.gif">  </TD>
+
+</TABLE>
+</CENTER>
+</FONT>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.5">      6.5   Несколько терминальных ветвей.</A></H2><P>
+</FONT>
+
+
+     Мы рассмотрели случай рекурсии с одной терминальной
+     и одной рекурсивной ветвью.<BR>
+     Однако в определении рекурсивной функции может быть
+     несколько терминальных ветвей.<BR>
+      Две терминальные ветви будут в том случае, когда
+      ведется поиск цели в последовательности
+      значений и мы желаем получить результат, как только цель
+      найдена.<BR>
+<UL>
+<LI>
+      Ветвь 1. Цель найдена и надо вернуть ответ<BR>
+<LI>
+      Ветвь 2. Цель не найдена и нет больше элементов.<P>
+</UL>
+
+<FONT COLOR=#008000 SIZE=+1>
+<CENTER><TABLE BORDER=0 >
+<TR>
+<TD  >   <IMG SRC="l6k_4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/l6k_4.gif">  </TD>
+
+</TABLE>
+</CENTER>
+</FONT>
+
+      <B>Пример.</B> Написать функцию  <FONT COLOR=#008000 SIZE=+1>greaternum</FONT>.
+<BR>
+      Она имеет два  аргумента : список чисел и заданное число. Функция
+      возвращает первое число в списке превышающее заданное.
+      Если этого числа нет - возвращается заданное число.<P>
+
+      Программа.
+<TABLE BORDER=0 >
+<TR>
+<TD  >   <IMG SRC="example.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/example.gif">  
+</TD>
+<TD>
+      <FONT COLOR=#008000 SIZE=+1>
+        (defun greaternum  (lis num)<BR>
+                (cond ((null lis) num)<BR>
+                       ((> (car lis) num) (car lis))<BR>
+                       (t (greaternum (cdr lis) num))))<P>
+      </FONT>
+</TD>
+</CENTER>
+</TABLE>
+      Порядок ветвей в рекурсионном определении существенен.
+<BR>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.6">      6.6 Несколько рекурсивных ветвей.</A></H2><P>
+</FONT>
+
+
+       Несколько рекурсивных ветвей может понадобиться, если
+       функция обрабатывает все элементы в структуре, но
+       использует некоторые элементы отлично от других.<BR>
+
+        В этом случае составляются два рекурсионных отношения.<P>
+
+<B>       Пример.</B> Напишите функцию  <FONT COLOR=#008000 SIZE=+1>negnums</FONT>,
+       которая получает список чисел и возвращает список, который содержит
+       только отрицательные числа (0 положителен).<BR>
+      <FONT COLOR=#008000 SIZE=+1>   (negnums '(-1 5 -6 0 2))      </FONT> возвращает 
+      <FONT COLOR=#008000 SIZE=+1>(-1 -2)      </FONT><P>
+
+<UL>
+<LI>
+     Шаг 1. Завершение  (Терминальная ветвь)<BR>
+ <FONT COLOR=#008000 SIZE=+1>             (negnums nil) = nil</FONT>
+<LI>
+       Шаг 2. Рекурсивная ветвь<BR>
+    Рекурсивные отношения между
+         <FONT COLOR=#008000 SIZE=+1> (negnums l)</FONT> и  <FONT COLOR=#008000 SIZE=+1>
+(negnums  (cdr l))</FONT><BR>
+<UL>
+<LI>
+    1. <FONT COLOR=#008000 SIZE=+1>(car l ) &lt; 0</FONT>
+<UL>
+<LI>
+    2а. Примеры рекурсии<BR>
+      <FONT COLOR=#008000 SIZE=+1>      (negnums '(-5 3)) =(-5)  <BR>    (negnums '(3)) = nil<BR>
+      (negnums '(-5 3 -6 0 )) =(-5 -6)<BR>
+      (negnums '( 3 -6 0 )) =(-6)      </FONT>
+<LI>
+    2b. Характеристическое рекурсивное отношение
+        <FONT COLOR=#008000 SIZE=+1>(negnums l)</FONT> может быть получена из
+ <FONT COLOR=#008000 SIZE=+1> (negnums (cdr l))</FONT>
+ <FONT COLOR=#008000 SIZE=+1> (cons (car l)  (negnums (cdr l))</FONT><BR>
+</UL>
+<LI>
+    2. <FONT COLOR=#008000 SIZE=+1> (car l ) >= 0</FONT>
+<UL>
+<LI>
+    2а. Примеры рекурсии<BR>
+      <FONT COLOR=#008000 SIZE=+1>
+       (negnums '(1 -5 3 -6 0 )) =(-5 -6)<BR>
+       (trace negnums) '(- 5 3 -6 0 )) = (-5 -6)
+      </FONT>
+<LI>
+    2b. Характеристическое рекурсивное отношение
+ <FONT COLOR=#008000 SIZE=+1>       (negnums l) </FONT>может быть получена из
+ <FONT COLOR=#008000 SIZE=+1> (negnums (cdr l))<BR>
+        (negnums l) = (negnums (cdr l) </FONT>
+</UL>
+</UL>
+</UL>
+
+      Программа<P>
+<TABLE BORDER=0 >
+<TR>
+<TD >   <IMG SRC="example.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/example.gif">  
+</TD>
+<TD>
+      <FONT COLOR=#008000 SIZE=+1>
+       (defun negnums (l)<BR>
+              (cond ((null l) nil)<BR>
+                    ((< (car l) 0) (cons (car l) (negnums (cdr l))))<BR>
+                    (t (negnums (cdr l)))))<BR>
+      </FONT>     
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L6.7">          6.7 Общая форма.</A></H2><P>
+</FONT>
+
+
+     Общая форма определения рекурсионной функции
+<FONT COLOR=Maroon SIZE=+1>
+<P>
+     (defun &lt;имя&gt; &lt;параметры&gt;<BR>
+          (cond (терминальная ветвь1)<BR>
+                 (терминальная ветвь2)<BR>
+                   ...................<BR>
+                 (терминальная ветвьn)<BR>
+                 (рекурсивная ветвь1)<BR>
+                 (рекурсивная ветвь2)<BR>
+                 ....................<BR>
+                 (рекурсивная ветвьn)))<BR>
+</FONT>
+<BR>
+<P>
+ <IMG SRC="line2-4.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION6/line2.gif">  
+<BR>
+<CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+
+<BR>
+<P>  
+</body>
+</html>

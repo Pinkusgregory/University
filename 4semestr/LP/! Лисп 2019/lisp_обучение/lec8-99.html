@@ -1,0 +1,969 @@
+
+<HTML>
+<HEAD>
+
+<TITLE>lec8-99.htm</TITLE>
+</HEAD>
+<BODY bgcolor="#C7D4EA">
+
+<FONT COLOR=#100080>
+<H2> ЛЕКЦИЯ 8.
+<P>
+<FONT COLOR=#100000>
+<CENTER>
+ВНУТРЕННЕЕ ПРЕДСТАВЛЕНИЕ СПИСКОВ. ПРИМЕНЯЮЩИЕ ФУНКЦИОНАЛЫ
+</CENTER>
+</FONT>
+<P> <BR> <CENTER> Содержание  </CENTER>
+</FONT>
+</H2>
+</FONT>
+
+<A NAME="SOD">
+<B>
+<FONT SIZE=+1>
+<DL>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1"> 
+    8.1   Внутреннее представление списков. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.1">
+    8.1.1 Структура памяти. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.2">
+    8.1.2 Представление списков через списочную ячейка. </A>
+ <DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.3">
+    8.1.3 Представление списков через точечные пары. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.4">
+    8.1.4 Списочная ячейка и базовые функции. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.5">
+    8.1.5 Переменные и списки. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.6">
+    8.1.6 EQ и EQUAL. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.1.7">
+    8.1.7 Cборка мусора. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.2">
+    8.2   Обработка списков без разрушения. Append. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.3">
+    8.3   Разрушающие функции. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.3.1">
+    8.3.1 NCONC. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.3.2">
+    8.3.2 RPLACA, RPLACD. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.3.3">
+    8.3.3 Использование разрушающих функций. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.4">
+    8.4   Применяющие функционалы. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.4.1">
+    8.4.1 APPLY. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.4.2">
+    8.4.2 Cочетание apply, nconc, mapcar - mapcan. </A>
+<DD>
+    <IMG SRC="blueball-6.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/blueball.gif">
+    <A HREF="#L8.4.3">
+    8.4.3 Функционал  FUNCALL. </A>
+</DL>
+</FONT>
+</B>
+</A>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1">   8.1   Внутреннее представление списков </A></H2><P>
+</FONT>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.1">     8.1.1 Структура памяти </A></H2><P>
+ </FONT>
+
+   Каждый атом занимает ячейку.
+<TABLE BORDER=0 >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_10.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_10.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+   <FONT COLOR=800000 SIZE=+1>Списки,</FONT> являются совокупностью атомов,
+   и связываются  вместе специальными элементами памяти, называемыми
+   <FONT color=800000 SIZE=+1>списочными ячейками</FONT> или <FONT color=800000 SIZE=+1>
+cons-ячейки.</FONT><BR>
+   Каждая списочная ячейка состоит из двух частей, полей.<BR>
+  Первое поле - <FONT color=800000 SIZE=+1>CAR</FONT>,  второе <FONT color=800000 SIZE=+1>CDR</FONT><BR>
+<TABLE BORDER=0   >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_1.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_1.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+  Поля типа списочная ячейка содержат  указатели на другие ячейки, или <FONT COLOR=#008000 SIZE=+1>nil</FONT>.<BR>
+  Если обе ячейки содержат указатели на атомы, то  можно записать проще <P>
+<TABLE BORDER=0   >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_9.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_9.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+  Этому случаю соответствует структура
+<FONT COLOR=#008000 SIZE=+1> (a.b)</FONT>
+  которая называется <FONT color=800000 SIZE=+1>точечной парой.</FONT>
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.2">  8.1.2 Представление списков через списочную ячейку. </A></H2><P>
+ </FONT>
+
+  Список  из одного атома, представляется,
+  как
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_6.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_6.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+<FONT COLOR=#008000 SIZE=+1> NIL</FONT>  указывает на конец списка.<BR>
+ Вместо <FONT COLOR=#008000 SIZE=+1>nil</FONT> пишут  -   <FONT COLOR=#008000 SIZE=+1>\</FONT>.
+<BR>
+
+ Список получается как операция <FONT COLOR=#008000 SIZE=+1> (cons 'a nil)</FONT><BR>
+
+ Список из двух элементов <FONT COLOR=#008000 SIZE=+1>(b a)</FONT>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_11.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_11.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+ Правое поле указывает на <FONT color=800000 SIZE=+1>cdr</FONT> списка <FONT color=800000 SIZE=+1>(хвост).</FONT><BR>
+ Левое поле, на <FONT color=800000 SIZE=+1>саr </FONT>
+списка<FONT color=800000 SIZE=+1>(голову).</FONT><BR>
+<P>
+ Каждому элементу списка соответствует списочная ячейка.
+<P>
+ Список <FONT COLOR=#008000 SIZE=+1>(a b c d)</FONT> будет представлен как :<P>
+
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8k_7a.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8k_7a.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+ Если список не одного уровня <FONT COLOR=#008000 SIZE=+1>(a (b c) d)</FONT>, то
+ каждому элементу списка соответствует списочная ячейка.<BR>
+
+   Причем <FONT color=800000 SIZE=+1>саr поле </FONT>второй списочной ячейки указывает на
+вложенный список.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="l8-8s.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/l8-8s.gif">  
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.3">  8.1.3 Представление списков через точечные пары. </A></H2><P>
+ </FONT>
+
+   Любой список можно записать в точечной нотации.
+<TABLE>
+<TD> <FONT COLOR=#008000 SIZE=+1>   (a) <=> (a.nil)</FONT></TD>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_12.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_12.GIF">  
+</TD>
+</CENTER >
+</TABLE>
+<FONT COLOR=#008000 SIZE=+1>    (a b c)  <=>    (a.(b.(c.nil)))</FONT>
+<P>
+  Выражение представленное в точечной нотации можно привести
+  к списочной если <FONT color=800000 SIZE=+1>cdr поле </FONT>является списком.<P>
+<FONT COLOR=#008000 SIZE=+1>
+    (a.(b c))    &lt;=&gt; (a b c)<BR>
+    (a.(b.c))    &lt;=&gt; (a b.c)<P>
+</FONT>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.4">  8.1.4 Списочная ячейка и базовые функции.</A></H2><P>
+ </FONT>
+
+   Результатом действия функции <FONT color=800000 SIZE=+1>car</FONT>
+   будет значение левого поля первой списочной ячейки<P>
+<FONT COLOR=#008000 SIZE=+1>
+  * (сar '(a (b c) d)<BR>
+   a<P>
+</FONT>
+   Результатом действия функции <FONT color=800000 SIZE=+1>cdr</FONT>
+   будет значение правого поля первой
+   списочной ячейки.<P>
+<FONT COLOR=#008000 SIZE=+1>
+  * (сdr '(a (b c) d)<BR>
+   ((b c) d)<P>
+</FONT>
+<FONT color=800000 SIZE=+1>   CONS </FONT>создает новую списочную ячейку,
+<FONT color=800000 SIZE=+1>car поле</FONT> которой
+указывает на первый элемент, а <FONT color=800000 SIZE=+1>cdr </FONT>на второй
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER > <FONT COLOR=#008000 SIZE=+1>
+   (cons 'x '(a b c))<P>
+</FONT>
+  </TD>
+
+</CENTER ></TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_13.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_13.GIF">  
+</TD>
+</CENTER ></TABLE>
+    или
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_14.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_14.GIF">  
+</TD>
+</CENTER ></TABLE>
+
+<FONT color=800000 SIZE=+1>    LIST</FONT>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER > <FONT COLOR=#008000 SIZE=+1>
+   * (list 'a '(b c))    (a (b c))
+</FONT>
+  </TD>
+
+</CENTER ></TABLE>
+    этот список представляется
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_15.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_15.GIF">  
+</TD>
+</CENTER ></TABLE>
+    Получается следующим образом:<BR>
+
+    1. Создается списочная ячейка для каждого аргумента функции<BR>
+
+    2. В <FONT color=800000 SIZE=+1>car поле</FONT> ставится указатель на соответствующий
+элемент<BR>
+    3. В <FONT color=800000 SIZE=+1>cdr поле</FONT> ставится указатель на следующую
+списочную ячейку
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.5">  8.1.5 Переменные и списки. </A></H2><P>
+ </FONT>
+
+
+   Рассмотрим выражение<P>
+<FONT COLOR=#008000 SIZE=+1>
+     (setq y '(a b c))
+<P>
+</FONT>
+    Переменная Y будет иметь значение '(a b c)
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >  <IMG SRC="L8K_16.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_16.GIF">  
+</TD>
+</СENTER ></TABLE>
+     Использование переменной , в функции обеспечивает
+     доступ к структуре
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+        (setq x (cons 'd y))
+</FONT>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_17.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_17.GIF">  
+</TD>
+</CENTER ></TABLE>
+<FONT color=800000 SIZE=+1> CONS</FONT> не изменяя структуры,  увеличивает список.<P>
+
+       Если в функции присвоения список задается явно,
+       то под него отводятся новые списочные ячейки.т.е.
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+     (setq z '(a b c))
+<P>
+</FONT>
+      Переменная<FONT COLOR=#008000 SIZE=+1> z</FONT> будет иметь значение <FONT COLOR=#008000 SIZE=+1>'(a b c)</FONT>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_18.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_18.GIF">  
+</TD>
+<CENTER ></TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.6">  8.1.6 EQ и EQUAL. </A></H2><P>
+ </FONT>
+
+
+<FONT color=800000 SIZE=+1> EQ</FONT> проверяет физическое равенство списков,
+ и <FONT color=800000 SIZE=+1>EQUAL</FONT> -логическое, т.е. для
+<FONT color=800000 SIZE=+1>EQ </FONT>необходимо, чтобы
+ списки имели одинаковую стpуктуpу, а для <FONT color=800000 SIZE=+1>EQUAL </FONT>одинаковые
+ элементы. (Структура списка определяется списочными ячейками).
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_3.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_3.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+ *(setq lis1 '(a b))
+<P>
+* (setq lis2 '(a b))  </FONT><P>
+Другая структура списка<BR>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+* (setq lis3 lis1)<BR>
+* (equal lis1 lis2)<BR>
+t<BR>
+* (equal lis1 lis3)<BR>
+t<BR>
+* (eql lis1 lis2)<BR>
+nil<BR>
+* (eql lis1 lis3)<BR>
+t<BR>
+* (eq lis1 lis2)<BR>
+nil<BR>
+* (eq lis1 lis3)<BR>
+t
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+  Однако для отдельного атома это не  выполняется,
+  т.е. новые ячейки не отводятся.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+    * (setq m 'abc)<BR>
+    * (setq n 'abc)<BR>
+    * (eq m n)<BR>
+     t
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.1.7">  8.1.7 Cборка мусора </A></H2><P>
+ </FONT>
+
+   В результате вычислений в памяти могут возникнуть структуры,
+   на которые нельзя ссылаться.
+   Это происходит, когда вычисляемая структура не сохраняется с
+   помощью <FONT color=800000 SIZE=+1>setq</FONT>, или когда теряются ссылки на старое значение.<P>
+   <B>Например</B><BR>
+<TABLE>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+   (setq l1 '((a) b c))<BR>
+   (setq l1 (cdr l1))
+</FONT>
+</TD>
+<TD>   <IMG SRC="L8K_19A.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_19A.gif">  </TD>
+
+</TABLE>
+<IMG SRC="L8K_19B.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_19B.GIF">
+<P>
+     Для повторного использования ставшей мусором памяти в
+     лисп системах предусмотрен специальный сборщик мусора,
+     <FONT color=800000 SIZE=+1>(garbage collector) GC</FONT>,
+    который автоматически запускается
+     когда в памяти остается мало места.<BR>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_2.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_2.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+     Сборщик мусора перебирает все ячейки и собирает ставшие
+     мусором ячейки в область свободной памяти для использования.
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.2">  8.2   Обработка списков без разрушения. Append. </A></H2><P>
+ </FONT>
+
+ Обычные функции производят операции над списками, не
+ внося изменений в указатели списочных ячеек. В том случае когда,
+ возникает такая необходимость, создается копия списочной ячейки
+ с новым содержанием полей.<P>
+
+ <B>Пример</B>, для функции <FONT color=800000 SIZE=+1>APPEND</FONT> рассмотрим следующую
+ последовательность действий.<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+ * (setq first '(a b))<BR>
+  (a b)<BR>
+ * (setq second '(c d))<BR>
+  (c d)<BR>
+  * (setq both (append first second))<BR>
+  (a b c d)
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >  Эти действия, показывает диаграмма    </TD>
+
+</CENTER ></TABLE>
+
+
+
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_20.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_20.GIF">  
+</TD>
+</CENTER ></TABLE>
+
+<FONT color=800000 SIZE=+1>   APPEND </FONT>cоздает копии всех списочных ячеек для  каждого
+элемента во  всех  аргументов, исключая последний аргумент, в то время как 
+<FONT color=800000 SIZE=+1>cons </FONT>   создает только одну списочную ячейку.<BR>
+  Если складывают два списка в 1000 и 1 элемент, то будет создано 1000 копий списочных ячеек, 
+вместо того  чтобы исправить один указатель.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.3">  8.3   Разрушающие функции </A></H2><P>
+ </FONT>
+
+   В лиспе есть несколько функций, которые изменяют содержимое
+   указателей, вместо того чтобы создавать новые списочные ячейки.
+   Эти функции называют <FONT color=800000 SIZE=+1> разрушающими </FONT>,
+   т.к. указатель заменяется и  исходная структура разрушается.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.3.1">  8.3.1 NCONC. </A></H2><P>
+ </FONT>
+
+
+   Функция  <FONT color=800000 SIZE=+1> nconc  </FONT> позволяет
+   соединить два списка изменением указателя.
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER > <FONT COLOR=#008000 SIZE=+1>
+   (setq new (nconc first second))
+</FONT >
+  </TD>
+
+</CENTER ></TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_21.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_21.GIF">  
+</TD>
+</CENTER ></TABLE>
+  Список не копируется. Вместо этого <FONT COLOR=#008000 SIZE=+1>nil</FONT> в последней
+  списочной ячейке меняется
+  на указатель к первой списочной ячейке второго списка.
+<P>
+  Как побочный эффект<P>
+<FONT COLOR=#008000 SIZE=+1>
+  * both<BR>
+ (a b c d) <BR>
+  * first<BR>
+   (a b c d) </FONT>cписок first разрушен.
+
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.3.2">  8.3.2 RPLACA, RPLACD </A></H2><P>
+ </FONT>
+
+
+ Другие две функции изменяют структуру своих аргументов.<BR>
+<FONT color=800000 SIZE=+1> rplaca -"replace the car"</FONT>
+ имеет два аргумента , причем первый должен быть списком. Функция заменяет car первого
+ аргумента на второй. Т.е. указатель car первой списочной
+ ячейки меняется на указатель ко второму аргументу.<BR>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER ><!--A HREF="ani\replaca.flc" ><!--IMG SRC="icon.GIF"> </A> </TD>
+</CENTER ></TABLE>
+
+ Аналогично<BR>
+<FONT color=800000 SIZE=+1> replacd - "replace the cdr"</FONT>, но заменяется cdr указатель.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER ><!--A HREF="ani\replacd.flc" ><!--IMG SRC="icon.GIF"> </A> </TD>
+</CENTER ></TABLE>
+<BR>
+ Рассмотрим следующую последовательность действий:<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+ * (setq lis1 '(a b c))<BR>
+  * (setq lis2 '(a b c))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_22.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_22.GIF">  
+</TD>
+</CENTER ></TABLE>
+Проведем следующие действия
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+ * (rplaca lis1 'd)<BR>
+  (d b c )<BR>
+ *  (rplacd lis2 '(e f))<BR>
+  (a e f)
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_23.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_23.GIF">  
+</TD>
+</CENTER ></TABLE>
+Можно представить через <FONT COLOR=#008000 SIZE=+1>setf</FONT>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+  (rplaca x y) <=> (setf (car x) y)<BR>
+  (rplacd x y) <=> (setf (cdr x) y)<P>
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+Можно использовать для замены элементов.<P>
+<B>Например</B>, рассмотрим функцию,<FONT COLOR=#008000 SIZE=+1> replace-item</FONT>,
+ которая имеет три элемента: первый элемент должен быть списком.
+Функция разрушающе замещает первое местоположение второго
+аргумента в списке на третий аргумент.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+(defun replace-iteme (lis old new)<BR>
+       (rplaca (member old lis) new).
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.3.3">  8.3.3 Использование разрушающих функций.</A></H2><P>
+ </FONT>
+
+Разрушающие функции необходимо использовать при
+работе с большими списками, чтобы не увеличивать
+расход памяти, например использовать<FONT COLOR=#008000 SIZE=+1> nconc</FONT> вместо
+<FONT COLOR=#008000 SIZE=+1>append</FONT>.<BR>
+Однако использование разрушающих функций приводит
+к побочным эффектам.<BR>
+<P>
+Можно получить бесконечные списки:
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+  * (setq v1 '(a b c))<BR>
+   (a b c)<BR>
+   * (setq v2 v1)<BR>
+   (a b c)<BR>
+   * (setq v2 (nconc v1 v2))<P>
+(a b c a b c....)
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_24.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_24.GIF">  
+</TD>
+</CENTER ></TABLE>
+Поэтому использование разрушающих функций требует осторожности.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.4">  8.4   Применяющие функционалы. </A></H2><P>
+ </FONT>
+
+
+   Одним из видов функционалов,  используемых в лиспе
+   являются <FONT color=800000 SIZE=+1>применяющие  функционалы</FONT>.  Они применяют
+   функциональный аргумент к его параметрам.<BR>
+   Так как применяющие функционалы вычисляют значение
+   функции,  в этом смысле они аналогичны функции 
+  <FONT color=800000 SIZE=+1>EVAL,</FONT>
+   вычисляющей значение выражения.
+
+<BR>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.4.1">  8.4.1 APPLY. </A></H2><P>
+ </FONT>
+
+
+    Предположим мы хотим объединить в один список несколько
+   вложенных списков,  т.е.   из <FONT COLOR=#008000 SIZE=+1>
+((a b c) (d e f) (k l))</FONT> получить <FONT COLOR=#008000 SIZE=+1>(a b c d e f k l)</FONT>.<BR>
+    Для этой задачи используем функцию <FONT color=800000 SIZE=+1> apply</FONT>.
+<FONT color=800000 SIZE=+1>   APPLY </FONT>имеет два аргумента:  имя функции и список,  и применяет
+   названную функцию к элементам списка,  как к аргументам функции.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8k_4k.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8k_4k.gif">  
+</TD>
+</CENTER>
+</TABLE>
+
+    Определим функцию,  которая рассчитывает среднее списка чисел
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+    (defun list-mean (lis)<BR>
+          (/ (apply '+ '(lis) (length lis)))<P>
+    * (list-mean '(1 2 3 4))<BR>
+    2.5<P>
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<P>
+    Часто <FONT color=800000 SIZE=+1>apply</FONT> используют вместе c
+<FONT color=800000 SIZE=+1>марсаr</FONT>.<BR>
+    Мы хотим найти общее число элемент в списках<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+    (countall '((a b c) (d e f) (k l)))
+<P>
+    (defun countall (lis)<BR>
+     (apply '+ (mapcar 'length lis)))<P>
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+   Можно определить более сложную функцию<FONT COLOR=#008000 SIZE=+1> countatom</FONT>,
+   которая считает элементы на в любом списке.<P>
+   Например<P>
+<FONT COLOR=#008000 SIZE=+1>
+  * (countatom '(a (a (b) c) (d) e (f g)))<BR>
+   8
+</FONT>
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  
+</TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+   (defun countatom (lis)<BR>
+                   (cond ((null lis) 0)<BR>
+                         ((atom lis) 1)<BR>
+                         (t (apply '+ (mapcar 'countatom lis)))))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.4.2">  8.4.2 Cочетание apply, nconc, mapcar - mapcan.</A></H2><P>
+ </FONT>
+
+
+    Построить функцию<FONT COLOR=#008000 SIZE=+1> list-last</FONT>,  образующую список из хвостов
+    списков.<P>
+      <B>Например</B><P>
+<FONT COLOR=#008000 SIZE=+1>
+    * (list-last '((a b) (b c) (c d))) </FONT> возвращает <FONT COLOR=#008000 SIZE=+1>(b c d)</font>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF"> </TD>
+<TD>
+          (defun list-last (lis)<BR>
+                 (apply 'append (mapcar 'last lis)))
+
+</TD>
+</CENTER>
+</TABLE>
+<FONT color=800000 SIZE=+1>     APPEND</FONT> работает медленно и оставляет много мусора.<BR>
+     Можно это сделать через<FONT color=800000 SIZE=+1> nconc</FONT>:<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  </TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+          (defun list-last (lis)<BR>
+                 (apply 'nconc (mapcar 'last lis)))<P>
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+     В лиспе имеется отображающий функционал <FONT color=800000 SIZE=+1> mapcan </FONT>
+<P>
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  </TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+        (mapcan fn x1 x2 ... xN) <=><BR>
+        (apply 'nconc (mapcar fn x1 x2 ... xN))<P>
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+     T.е.<FONT color=800000 SIZE=+1> mapcan </FONT>объединяет результаты в один список,
+     используя функцию <FONT color=800000 SIZE=+1>nconc</FONT>.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  </TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1>
+          (defun list-last (lis)<BR>
+                 (mapcan 'last lis))
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+<FONT COLOR=#100080>
+<H2><A NAME="L8.4.3">  8.4.3 Функционал  FUNCALL. </A></H2><P>
+ </FONT>
+
+
+   Применяющий функционал  <FONT color=800000 SIZE=+1>FUNCALL </FONT>
+   аналогичен <FONT color=800000 SIZE=+1>APPLY</FONT>,  но аргументы он
+
+   принимает,  не в списке,  а по отдельности:<P>
+<FONT COLOR=#008000 SIZE=+1>
+   (funcall fn x1 x2 ... xN) <=> (fn  x1 x2 ... xN)
+<P>
+</FONT>
+   Здесь <FONT COLOR=#008000 SIZE=+1>fn</FONT> - функция с <FONT COLOR=#008000 SIZE=+1>n 
+</FONT> aргументами.
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="L8K_5.GIF" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/L8K_5.GIF">  
+</TD>
+</CENTER>
+</TABLE>
+
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  </TD>
+<TD>
+   Например,<P>
+<FONT COLOR=#008000 SIZE=+1>
+   * (funcall '+ 1 2)     <=> * (+ 1 2)<BR>
+   3
+<P>
+   * (funcall (car '(+ - / *)) 1 2)<BR>
+   3
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+
+   <B>Пример</B>.<P>
+ Рассмотрим использование <FONT COLOR=#008000 SIZE=+1>funcall</FONT> для построения функции
+<FONT COLOR=#008000 SIZE=+1> map2</FONT>,  которая действует аналогично 
+<FONT color=800000 SIZE=+1>mapcar</FONT>,  но берет в
+качестве   аргументов два элемента из списка,  а не один.
+<P>
+     Например:
+<P>
+<FONT COLOR=#008000 SIZE=+1>
+   *  (map2 'list '(A Christie V Nabokov K Vonnegut))<P>
+</FONT>   дает<FONT COLOR=#008000 SIZE=+1> ((A Christie) (V Nabokov) (K Vonnegut))</FONT>
+<P>
+    Эта функция имеет вид:
+<TABLE BORDER=0  >
+<TR>
+<TD ALIGN=CENTER >   <IMG SRC="EXAMPLE-1.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/EXAMPLE.GIF">  </TD>
+<TD>
+<FONT COLOR=#008000 SIZE=+1><BR>
+     (defun map2 (f2 lst)<BR>
+         (if (null lst)<BR>
+             nil<BR>
+             (cons (funcall f2 (car lst) (cadr lst))<BR>
+                   (map2 f2 (cddr lst)))))<P>
+
+</FONT>
+</TD>
+</CENTER>
+</TABLE>
+<BR>
+<P>
+ <IMG SRC="LINE2-2.gif" tppabs="http://www.marstu.mari.ru/mmlab/home/lisp/LECTION8/LINE2.GIF">  
+<BR>
+<P>  
+
+<CENTER>
+<TABLE CELLSPACING=0 BORDER=0>
+<TR><TD VALIGN="MIDDLE">
+<P><A HREF="#SOD"><B><U><FONT FACE="Times New Roman" COLOR="#0000ff">Содержание</B></U></FONT></A></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P>
+<BR>
+
+
+
