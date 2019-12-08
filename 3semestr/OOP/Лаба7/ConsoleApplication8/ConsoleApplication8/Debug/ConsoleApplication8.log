@@ -1,0 +1,9 @@
+﻿  ConsoleApplication8.cpp
+c:\users\nikit\source\repos\consoleapplication8\consoleapplication8\consoleapplication8.cpp(45): warning C4101: j: неиспользованная локальная переменная
+c:\users\nikit\source\repos\consoleapplication8\consoleapplication8\consoleapplication8.cpp(10): warning C4101: j: неиспользованная локальная переменная
+  c:\users\nikit\source\repos\consoleapplication8\consoleapplication8\consoleapplication8.cpp(57): note: выполняется компиляция ссылки на экземпляр шаблон функции "T **Replace<int>(T **,int)"
+          with
+          [
+              T=int
+          ]
+  ConsoleApplication8.vcxproj -> C:\Users\Nikit\source\repos\ConsoleApplication8\Debug\ConsoleApplication8.exe

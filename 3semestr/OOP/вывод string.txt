@@ -1,0 +1,15 @@
+string OutputMat() {
+		int i, j;
+		string str;
+		for (i = 0; i < x; i++) {
+			for (j = 0; j < y; j++) {
+				ostringstream ss;
+				string str1;
+				ss << m[i][j];
+				str1 = ss.str();
+				str += str1 + " ";
+			}
+			str += "\n";
+		}
+		return str;
+	};

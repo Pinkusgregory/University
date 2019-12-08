@@ -1,0 +1,5 @@
+﻿  ConsoleApplication7.cpp
+c:\users\nikit\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(115): warning C4172: возвращение адреса локальной или временной переменной
+c:\users\nikit\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(118): warning C4172: возвращение адреса локальной или временной переменной
+c:\users\nikit\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(49): warning C4172: возвращение адреса локальной или временной переменной : z
+  ConsoleApplication7.vcxproj -> C:\Users\Nikit\source\repos\ConsoleApplication7\Debug\ConsoleApplication7.exe
