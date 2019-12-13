@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainFrame extends JFrame {
 
@@ -28,6 +30,11 @@ public class MainFrame extends JFrame {
 	private JTextField textFieldAddAmounfOfPages;
 	private JTextField textFieldAddPublishingHouse;
 	private JTextField textFieldDeleteAuthor;
+	private JTextField textFieldChangeAuthor;
+	private JTextField textFieldChangeYearOfPublishing;
+	private JTextField textFieldChangeAmountOfPages;
+	private JTextField textFieldChangePublishingHouse;
+	private int rowNumber;
 
 	/**
 	 * Launch the application.
@@ -51,17 +58,33 @@ public class MainFrame extends JFrame {
 	public MainFrame() {
 		setTitle("Lab4");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 514, 420);
+		setBounds(100, 100, 565, 420);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 0, 498, 211);
+		scrollPane.setBounds(0, 0, 549, 157);
 		contentPane.add(scrollPane);
 		
 		BookTable Table = new BookTable();
+		Table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount() == 2) {
+					int row = Table.rowAtPoint(e.getPoint());
+					if (row > -1) {
+						int realRow = Table.convertRowIndexToModel(row);
+						textFieldChangeAuthor.setText(Table.getValueAt(realRow, 0).toString());
+						textFieldChangeYearOfPublishing.setText(Table.getValueAt(realRow, 1).toString());
+						textFieldChangeAmountOfPages.setText(Table.getValueAt(realRow, 2).toString());
+						textFieldChangePublishingHouse.setText(Table.getValueAt(realRow, 3).toString());
+						rowNumber = realRow;
+					}
+				}
+			}
+		});
 		scrollPane.setViewportView(Table);
 
 		JButton btnAddButton = new JButton("Add");
@@ -74,7 +97,7 @@ public class MainFrame extends JFrame {
 				textFieldAddPublishingHouse.setText("");
 			}
 		});
-		btnAddButton.setBounds(399, 256, 89, 23);
+		btnAddButton.setBounds(450, 256, 89, 23);
 		contentPane.add(btnAddButton);
 		
 		JButton btnDeleteButton = new JButton("Delete");
@@ -93,7 +116,7 @@ public class MainFrame extends JFrame {
 				Table.sort();
 			}
 		});
-		btnSortButton.setBounds(399, 222, 89, 23);
+		btnSortButton.setBounds(450, 219, 89, 23);
 		contentPane.add(btnSortButton);
 		
 		JButton btnAddFileButton = new JButton("Add from file");
@@ -135,39 +158,39 @@ public class MainFrame extends JFrame {
 		contentPane.add(textFieldAddAuthor);
 		textFieldAddAuthor.setColumns(10);
 		
-		JLabel labelAddAuthor = new JLabel("\u0410\u0432\u0442\u043E\u0440");
+		JLabel labelAddAuthor = new JLabel("Author");
 		labelAddAuthor.setLabelFor(textFieldAddAuthor);
 		labelAddAuthor.setBounds(21, 239, 46, 14);
 		contentPane.add(labelAddAuthor);
 		
 		textFieldAddYearOfPublishing = new JTextField();
 		textFieldAddYearOfPublishing.setColumns(10);
-		textFieldAddYearOfPublishing.setBounds(96, 257, 86, 20);
+		textFieldAddYearOfPublishing.setBounds(96, 257, 115, 20);
 		contentPane.add(textFieldAddYearOfPublishing);
 		
-		JLabel labelAddYearOfPublishing = new JLabel("\u0413\u043E\u0434 \u0438\u0437\u0434\u0430\u043D\u0438\u044F");
+		JLabel labelAddYearOfPublishing = new JLabel("Year of publishing");
 		labelAddYearOfPublishing.setLabelFor(textFieldAddYearOfPublishing);
-		labelAddYearOfPublishing.setBounds(96, 239, 86, 14);
+		labelAddYearOfPublishing.setBounds(96, 239, 115, 14);
 		contentPane.add(labelAddYearOfPublishing);
 		
 		textFieldAddAmounfOfPages = new JTextField();
 		textFieldAddAmounfOfPages.setColumns(10);
-		textFieldAddAmounfOfPages.setBounds(192, 257, 101, 20);
+		textFieldAddAmounfOfPages.setBounds(221, 259, 101, 20);
 		contentPane.add(textFieldAddAmounfOfPages);
 		
-		JLabel labelAddAmounfOfPages = new JLabel("\u041A\u043E\u043B-\u0432\u043E \u0441\u0442\u0440\u0430\u043D\u0438\u0446");
+		JLabel labelAddAmounfOfPages = new JLabel("Amount of pages");
 		labelAddAmounfOfPages.setLabelFor(textFieldAddAmounfOfPages);
-		labelAddAmounfOfPages.setBounds(192, 239, 101, 14);
+		labelAddAmounfOfPages.setBounds(221, 241, 101, 14);
 		contentPane.add(labelAddAmounfOfPages);
 		
 		textFieldAddPublishingHouse = new JTextField();
 		textFieldAddPublishingHouse.setColumns(10);
-		textFieldAddPublishingHouse.setBounds(303, 257, 86, 20);
+		textFieldAddPublishingHouse.setBounds(332, 259, 111, 20);
 		contentPane.add(textFieldAddPublishingHouse);
 		
-		JLabel labelAddPublishingHouse = new JLabel("\u0418\u0437\u0434\u0430\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E");
+		JLabel labelAddPublishingHouse = new JLabel("Publishing house");
 		labelAddPublishingHouse.setLabelFor(textFieldAddPublishingHouse);
-		labelAddPublishingHouse.setBounds(303, 239, 86, 14);
+		labelAddPublishingHouse.setBounds(332, 241, 111, 14);
 		contentPane.add(labelAddPublishingHouse);
 		
 		textFieldDeleteAuthor = new JTextField();
@@ -175,9 +198,58 @@ public class MainFrame extends JFrame {
 		textFieldDeleteAuthor.setBounds(202, 308, 138, 20);
 		contentPane.add(textFieldDeleteAuthor);
 		
-		JLabel labelDeleteAuthor = new JLabel("\u0410\u0432\u0442\u043E\u0440");
+		JLabel labelDeleteAuthor = new JLabel("Author");
 		labelDeleteAuthor.setLabelFor(textFieldDeleteAuthor);
 		labelDeleteAuthor.setBounds(223, 290, 117, 14);
 		contentPane.add(labelDeleteAuthor);
+		
+		textFieldChangeAuthor = new JTextField();
+		textFieldChangeAuthor.setColumns(10);
+		textFieldChangeAuthor.setBounds(0, 186, 86, 20);
+		contentPane.add(textFieldChangeAuthor);
+		
+		JLabel labelChangeAuthor = new JLabel("Author");
+		labelChangeAuthor.setBounds(21, 168, 46, 14);
+		contentPane.add(labelChangeAuthor);
+		
+		textFieldChangeYearOfPublishing = new JTextField();
+		textFieldChangeYearOfPublishing.setColumns(10);
+		textFieldChangeYearOfPublishing.setBounds(96, 186, 115, 20);
+		contentPane.add(textFieldChangeYearOfPublishing);
+		
+		JLabel labelChangeYearOfPublishing = new JLabel("Year of publishing");
+		labelChangeYearOfPublishing.setBounds(96, 168, 115, 14);
+		contentPane.add(labelChangeYearOfPublishing);
+		
+		textFieldChangeAmountOfPages = new JTextField();
+		textFieldChangeAmountOfPages.setColumns(10);
+		textFieldChangeAmountOfPages.setBounds(221, 188, 101, 20);
+		contentPane.add(textFieldChangeAmountOfPages);
+		
+		JLabel labelChangeAmountOfPages = new JLabel("Amount of pages");
+		labelChangeAmountOfPages.setBounds(221, 170, 101, 14);
+		contentPane.add(labelChangeAmountOfPages);
+		
+		textFieldChangePublishingHouse = new JTextField();
+		textFieldChangePublishingHouse.setColumns(10);
+		textFieldChangePublishingHouse.setBounds(332, 188, 111, 20);
+		contentPane.add(textFieldChangePublishingHouse);
+		
+		JLabel labelChangePublishingHouse = new JLabel("Publishing house");
+		labelChangePublishingHouse.setBounds(332, 170, 111, 14);
+		contentPane.add(labelChangePublishingHouse);
+		
+		JButton btnChange = new JButton("Change");
+		btnChange.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Table.setRow(new Book(textFieldChangeAuthor.getText(), Integer.valueOf(textFieldChangeYearOfPublishing.getText()), Integer.valueOf((textFieldChangeAmountOfPages.getText())), textFieldChangePublishingHouse.getText()),rowNumber);
+				textFieldChangeAuthor.setText("");
+				textFieldChangeYearOfPublishing.setText("");
+				textFieldChangeAmountOfPages.setText("");
+				textFieldChangePublishingHouse.setText("");
+			}
+		});
+		btnChange.setBounds(450, 185, 89, 23);
+		contentPane.add(btnChange);
 	}
 }

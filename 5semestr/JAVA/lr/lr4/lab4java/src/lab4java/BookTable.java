@@ -30,6 +30,10 @@ public class BookTable extends JTable{
 		bookTableModel.deleteRow(authorField);
 	}
 	
+	public void setRow(Book book, int rowIndex) {
+		bookTableModel.setRow(book, rowIndex);
+	}
+	
 	public void write(File file) {
 		int ColC = this.getColumnCount();
 		int ItemC = this.getRowCount();

@@ -102,6 +102,15 @@ public class BookTableModel extends AbstractTableModel {
 		}
 
 	}
+	
+	public void setRow(Book book, int rowIndex) {
+		setValueAt(book.getAuthor(), rowIndex, 0);
+		setValueAt(book.getYearOfPublishing(), rowIndex, 1);
+		setValueAt(book.getAmountOfPages(), rowIndex, 2);
+		setValueAt(book.getPublishingHouse(), rowIndex, 3);
+		fireTableDataChanged();
+		fireTableStructureChanged();
+	}
 
 	public void addRow(Book book) {
 		books.add(book);
