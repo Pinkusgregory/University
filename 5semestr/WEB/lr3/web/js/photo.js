@@ -7,10 +7,11 @@ window.onload = function() {
     var container = document.getElementById("gallery");
     var i = 1;
     gallery_elements.forEach(photo => {
-        var img = document.createElement('img');
-        img.setAttribute('src', photo);
-        img.setAttribute('alt', 'Photo' + i++);
-        container.appendChild(img);
+        var a = document.createElement('a');
+        a.setAttribute('href', photo);
+        a.setAttribute('data-lightbox', 'myphotos');
+        a.innerHTML = ' <img src=" '+ photo + ' "> ';
+        container.appendChild(a);
     });
 }
  

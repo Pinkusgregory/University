@@ -15,6 +15,7 @@
             <li><a href="photo.html">Фотоальбом</a></li>
             <li><a href="contact.html">Контакт</a></li>
             <li><a href="test.html">Тест</a></li>
+            <li><a href="history.html">История</a></li>
           </ul>
     </div>
 
@@ -25,14 +26,17 @@
           <div class="feedback-form-group">
             <label for="fullname">ФИО:</label>
             <input type="text" name="fullname" id="fullname">
+            <div class="validation-error" id="errorFIO"></div>
           </div>
           <div class="clearfix feedback-form-group">
               <label for="email">Электронная почта:</label>
               <input type="text" name="email" id="email">
+              <div class="validation-error" id="errorEmail"></div>
           </div>
           <div class="clearfix feedback-form-group">
               <label for="phone">Номер телефона:</label>
               <input type="text" name="phone" id="phone">
+              <div class="validation-error" id="errorPhone"></div>
           </div>
           <div class="radio-area">
             <label>
@@ -43,6 +47,7 @@
               <input type="radio" id="Choice2" name="subscription" value="Woman">
               Женщина
             </label>
+            <div class="validation-error" id="error"></div>
           </div>
           <div class="feedback-form-group">
             <label for="topic">Возраст</label>
@@ -54,10 +59,17 @@
           <div class="feedback-form-group">
             <label for="message">Текст обращения:</label>
             <textarea name="message" id="message"></textarea>
+            <div class="validation-error" id="errorText"></div>
+          </div>
+          <div class="feedback-form-group calendar">
+            <label for="birthDate">Дата рождения:</label><br>
+            <input type="text" name="birthDate" id="calendar-text">
+            <select id="calendar-year"></select>
+            <select id="calendar-month"></select>
+            <table id="calendar-table" class="table"></table>
           </div>
           <button type="submit" class="btn">Отправить</button>
           <button type="change" class="btn">Очистить</button>
-          <div class="validation-error" id="error"></div>
         </form>
       </div>
     </div>
@@ -71,5 +83,6 @@
     </div>
     
     <script type="text/javascript" src="js/contact.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
 </body>
 </html>
