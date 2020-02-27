@@ -9,14 +9,14 @@ public class Solver {
 		int k = 0;
 		int k1 = 1;
 		while (count > 0) {
-			for (int j = 0; j < array.length; j++) {
+			for (int i = 0; i < array.length; i++) {
 				int sum = 0;
-				for (int i = 0; i < array.length; i++) {
+				for (int j = 0; j < array.length; j++) {
 					sum += array[i][j];
 				}
 				if (sum == 0) {
 					k += 1;
-					maxR[k] = j;
+					maxR[k] = i;
 					System.out.print(maxR[k] + 1 + " ");
 				}
 			}
@@ -25,13 +25,13 @@ public class Solver {
 
 			for (int q = k1; q <= k; q++) {
 				for (int j = 0; j < array.length; j++) {
-					array[maxR[q]][j] = 0;
+					array[maxR[q]][j] = 1;
 				}
 			}
 
 			for (int q = k1; q <= k; q++) {
 				for (int i = 0; i < array.length; i++) {
-					array[i][maxR[q]] = 1;
+					array[i][maxR[q]] = 0;
 				}
 			}
 
