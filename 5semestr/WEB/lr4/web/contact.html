@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Контакт</title>
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 </head>
 <body>
 	<div class="page-header">
@@ -23,17 +24,20 @@
       <div class="container">
         <h2 class="section-title">Контакт</h2>
         <form id="form" name ="contact-form" class="feedback-form" action="#" method="GET">
-          <div class="feedback-form-group">
+          <div class="feedback-form-group popup" onclick="popupFunction(1)">
+            <span class="popuptext" id="myPopup1">Обязательно 3 слова</span>
             <label for="fullname">ФИО:</label>
             <input type="text" name="fullname" id="fullname">
             <div class="validation-error" id="errorFIO"></div>
           </div>
-          <div class="clearfix feedback-form-group">
+          <div class="clearfix feedback-form-group popup " onclick="popupFunction(2)">
+              <span class="popuptext" id="myPopup2">Не должно быть пустым</span>
               <label for="email">Электронная почта:</label>
               <input type="text" name="email" id="email">
               <div class="validation-error" id="errorEmail"></div>
           </div>
-          <div class="clearfix feedback-form-group">
+          <div class="clearfix feedback-form-group popup" onclick="popupFunction(3)">
+              <span class="popuptext" id="myPopup3">11 цифр и начинается с +7</span>
               <label for="phone">Номер телефона:</label>
               <input type="text" name="phone" id="phone">
               <div class="validation-error" id="errorPhone"></div>
@@ -49,14 +53,16 @@
             </label>
             <div class="validation-error" id="error"></div>
           </div>
-          <div class="feedback-form-group">
+          <div class="feedback-form-group popup" onclick="popupFunction(4)">
+            <span class="popuptext" id="myPopup4">Выберете что то одно</span>
             <label for="topic">Возраст</label>
             <select name="topic" id="topic">
               <option value="1">Достиг совершеннолетия(>18)</option>
               <option value="2">Не достиг совершеннолетия(<18)</option>
             </select>
           </div>
-          <div class="feedback-form-group">
+          <div class="feedback-form-group popup" onclick="popupFunction(5)">
+            <span class="popuptext" id="myPopup5">Напишите что то</span>
             <label for="message">Текст обращения:</label>
             <textarea name="message" id="message"></textarea>
             <div class="validation-error" id="errorText"></div>
@@ -82,9 +88,14 @@
       </div>
     </div>
     
+    
     <script type="text/javascript" src="js/contact.js"></script>
     <script type="text/javascript" src="js/calendar.js"></script>
     <script>
+      function popupFunction(i) {
+        var popup = document.getElementById("myPopup"+i);
+        popup.classList.toggle("show");
+      }
       window.onload = function saveLocalHistory(){
         function resetLocalStorage(){
           localStorage.clear();
