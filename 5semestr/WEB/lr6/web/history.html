@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>История</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-header">
+          <ul class="header-nav clearfix">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">Обо мне</a></li>
+            <li><a href="interests.html">Интересы</a></li>
+            <li><a href="study.html">Учеба</a></li>
+            <li><a href="photo.html">Фотоальбом</a></li>
+            <li><a href="contact.html">Контакт</a></li>
+            <li><a href="test.html">Тест</a></li>
+            <li><a href="history.html">История</a></li>
+          </ul>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <h2 class="section-title">История</h2>
+        <h3 class="bigtext">Посещений страниц за этот сеанс</h3>
+        <table id="history-local" class="table" ></table>
+        <h3 class="bigtext">Посещение страниц за все время</h3>
+        <table class="table" id="history-cookies"></table>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="container">
+        <div class="clearfix">
+          <h3>Черняев ЛР1 &copy; 2019</h3>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="js/history.js"></script>
+  <script>
+    window.onload = function saveLocalHistory(){
+      function resetLocalStorage(){
+        localStorage.clear();
+        localStorage.setItem("Интересы","0");
+        localStorage.setItem("Учеба","0");
+        localStorage.setItem("Контакт","0");
+        localStorage.setItem("Фотоальбом","0");
+        localStorage.setItem("Тест","0");
+        localStorage.setItem("История","0");
+     }
+
+      function resetSessionStorage(){
+        sessionStorage.clear();
+        sessionStorage.setItem("Интересы","0");
+        sessionStorage.setItem("Учеба","0");
+        sessionStorage.setItem("Контакт","0");
+        sessionStorage.setItem("Фотоальбом","0");
+        sessionStorage.setItem("Тест","0");
+        sessionStorage.setItem("История","0");
+      }
+
+      if (isNaN(localStorage.getItem(window.document.title)) || localStorage.getItem(window.document.title) == null) {
+        resetLocalStorage();
+      }
+      if (isNaN(sessionStorage.getItem(window.document.title)) || sessionStorage.getItem(window.document.title) == null) {
+        resetSessionStorage();
+      }
+      localStorage.setItem(window.document.title, (parseInt(localStorage.getItem(window.document.title))+1).toString());
+      sessionStorage.setItem(window.document.title, (parseInt(sessionStorage.getItem(window.document.title))+1).toString());
+    }
+  </script>
+</body>
+</html>
