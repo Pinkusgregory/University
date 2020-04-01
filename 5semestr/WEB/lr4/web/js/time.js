@@ -5,7 +5,7 @@ function checkTime(i) {
   return i;
 }
 
-function startTime() {
+$(function startTime() {
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
@@ -17,10 +17,9 @@ function startTime() {
   // add a zero in front of numbers<10
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-  document.getElementById('date').innerHTML = dd + "." + mm + "." + yyyy;
+  $('#time').html(h + ":" + m + ":" + s);
+  $('#date').html(dd + "." + mm + "." + yyyy);
   t = setTimeout(function() {
     startTime()
   }, 500);
-}
-startTime();
+});

@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ЛР1</title>
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="page-header">
@@ -44,24 +45,6 @@
         </div>
       </div>
     </div>
-  <script type="text/javascript" src="js/history.js"></script>
-  <script>
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("myBtn");
-    var span = document.getElementsByClassName("close-modal")[0];
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-    </script>
+    <script type="text/javascript" src="js/modal.js"></script>
 </body>
 </html>

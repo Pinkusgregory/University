@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Тест</title>
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="page-header">
@@ -70,8 +71,8 @@
                 <option value="7">Ответ 7</option>
               </select>
             </div>
-            <button type="submit" class="btn">Отправить</button>
-            <button type="change" class="btn">Очистить</button>
+            <button id="submitBtn" type="submit" class="btn">Отправить</button>
+            <button id="changeBtn" type="change" class="btn">Очистить</button>
             <div class="validation-error" id="error"></div>
         </form>
       </div>
@@ -86,37 +87,6 @@
     </div>
 
     <script type="text/javascript" src="js/test.js"></script>
-    <script>
-      window.onload = function saveLocalHistory(){
-        function resetLocalStorage(){
-          localStorage.clear();
-          localStorage.setItem("Интересы","0");
-          localStorage.setItem("Учеба","0");
-          localStorage.setItem("Контакт","0");
-          localStorage.setItem("Фотоальбом","0");
-          localStorage.setItem("Тест","0");
-          localStorage.setItem("История","0");
-       }
-
-        function resetSessionStorage(){
-          sessionStorage.clear();
-          sessionStorage.setItem("Интересы","0");
-          sessionStorage.setItem("Учеба","0");
-          sessionStorage.setItem("Контакт","0");
-          sessionStorage.setItem("Фотоальбом","0");
-          sessionStorage.setItem("Тест","0");
-          sessionStorage.setItem("История","0");
-        }
-
-        if (isNaN(localStorage.getItem(window.document.title)) || localStorage.getItem(window.document.title) == null) {
-          resetLocalStorage();
-        }
-        if (isNaN(sessionStorage.getItem(window.document.title)) || sessionStorage.getItem(window.document.title) == null) {
-          resetSessionStorage();
-        }
-        localStorage.setItem(window.document.title, (parseInt(localStorage.getItem(window.document.title))+1).toString());
-        sessionStorage.setItem(window.document.title, (parseInt(sessionStorage.getItem(window.document.title))+1).toString());
-      }
-    </script>
+    <script type="text/javascript" src="js/historyForEachPage.js"></script>
 </body>
 </html>
