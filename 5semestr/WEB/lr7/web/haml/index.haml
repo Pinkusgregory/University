@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = Haml::Engine.new(File.read("partials/headTemp.haml")).render
+    %title ЛР1
+  %body
+    = Haml::Engine.new(File.read("partials/navTemp.haml")).render
+    .main
+      .container
+        %h2.section-title Главная
+        %img{:alt => "Мое фото", :height => "300", :src => "images/3.png", :title => "Мое фото", :width => "300"}/
+        %h3.bigtext Черняев Никита Георгиевич
+        %h3.bigtext ИС-17-2
+        %p Лабораторная работа №1 "Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS" по дисциплине "Веб-технологии"
+        #date
+        #time
+    = Haml::Engine.new(File.read("partials/footerTemp.haml")).render
+    %script{:src => "js/time.js", :type => "text/javascript"}

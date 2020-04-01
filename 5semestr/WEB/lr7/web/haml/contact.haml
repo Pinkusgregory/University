@@ -1,0 +1,64 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = Haml::Engine.new(File.read("partials/headTemp.haml")).render
+    %title Контакт
+    %script{:src => "http://code.jquery.com/jquery-1.11.0.min.js"}
+  %body
+    = Haml::Engine.new(File.read("partials/navTemp.haml")).render
+    .main
+      .container
+        %h2.section-title Контакт
+        %form#form.feedback-form{:action => "#", :method => "GET", :name => "contact-form"}
+          .feedback-form-group.popup{:onclick => "popupFunction(1)"}
+            %span#myPopup1.popuptext Обязательно 3 слова
+            %label{:for => "fullname"} ФИО:
+            %input#fullname{:name => "fullname", :type => "text"}/
+            #errorFIO.validation-error
+          .clearfix.feedback-form-group.popup{:onclick => "popupFunction(2)"}
+            %span#myPopup2.popuptext Не должно быть пустым
+            %label{:for => "email"} Электронная почта:
+            %input#email{:name => "email", :type => "text"}/
+            #errorEmail.validation-error
+          .clearfix.feedback-form-group.popup{:onclick => "popupFunction(3)"}
+            %span#myPopup3.popuptext 11 цифр и начинается с +7
+            %label{:for => "phone"} Номер телефона:
+            %input#phone{:name => "phone", :type => "text"}/
+            #errorPhone.validation-error
+          .radio-area
+            %label
+              %input#Choice1{:name => "subscription", :type => "radio", :value => "Man"}/
+              Мужчина
+            %label
+              %input#Choice2{:name => "subscription", :type => "radio", :value => "Woman"}/
+              Женщина
+            #error.validation-error
+          .feedback-form-group.popup{:onclick => "popupFunction(4)"}
+            %span#myPopup4.popuptext Выберете что то одно
+            %label{:for => "topic"} Возраст
+            %select#topic{:name => "topic"}
+              %option{:value => "1"} Достиг совершеннолетия(&gt;18)
+              %option{:value => "2"} Не достиг совершеннолетия(&lt;18)
+          .feedback-form-group.popup{:onclick => "popupFunction(5)"}
+            %span#myPopup5.popuptext Напишите что то
+            %label{:for => "message"} Текст обращения:
+            %textarea#message{:name => "message"}
+            #errorText.validation-error
+          .feedback-form-group.calendar
+            %label{:for => "birthDate"} Дата рождения:
+            %br/
+            %input#calendar-text{:name => "birthDate", :type => "text"}/
+            %select#calendar-year
+            %select#calendar-month
+            %table#calendar-table.table
+          %button.btn{:type => "submit"} Отправить
+          %button.btn{:type => "change"} Очистить
+    = Haml::Engine.new(File.read("partials/footerTemp.haml")).render
+    %script{:src => "js/contact.js", :type => "text/javascript"}
+    %script{:src => "js/calendar.js", :type => "text/javascript"}
+    %script{:src => "js/historyForEachPage.js", :type => "text/javascript"}
+    :javascript
+      function popupFunction(i) {
+        var popup = document.getElementById("myPopup"+i);
+        popup.classList.toggle("show");
+      }
