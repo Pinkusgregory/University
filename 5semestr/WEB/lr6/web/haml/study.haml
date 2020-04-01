@@ -1,0 +1,34 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = Haml::Engine.new(File.read("partials/headTemp.haml")).render
+    %title Учеба
+  %body
+    = Haml::Engine.new(File.read("partials/navTemp.haml")).render
+    .main
+      .container
+        %h2.section-title Учеба
+        %h3.bigtext Севастопольский государственный университет
+        %h3.bigtext Кафедра Информационных систем
+        %table.table
+          %tr.table-top
+            %th{:colspan => "4"} Дисциплины
+          %tr
+            %td 1 курс
+            %td
+              %a{:href => "test.html"} Предмет 1
+            %td{:rowspan => "3"} Предмет 2
+            %td Предмет 3
+          %tr
+            %td 2 курс
+            %td{:rowspan => "2"} Предмет 4
+            %td Предмет 5
+          %tr
+            %td 3 курс
+            %td{:rowspan => "2"} Предмет 6
+          %tr
+            %td 4 курс
+            %td Предмет 7
+            %td Предемет 8
+    = Haml::Engine.new(File.read("partials/footerTemp.haml")).render
+    %script{:src => "js/historyForEachPage.js", :type => "text/javascript"}

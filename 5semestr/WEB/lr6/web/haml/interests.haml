@@ -1,0 +1,52 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = Haml::Engine.new(File.read("partials/headTemp.haml")).render
+    %title Интересы
+  %body
+    = Haml::Engine.new(File.read("partials/navTemp.haml")).render
+    .main
+      .container
+        %h2.section-title Интересы
+        .interest-dropdown
+          %button.interest-dropbtn Hobbie
+          .interest-dropdown-content
+            %a{:href => "#Hobbie1"} Hobbie 1
+            %a{:href => "#Hobbie2"} Hobbie 2
+            %a{:href => "#Hobbie3"} Hobbie 3
+            %a{:href => "#Hobbie4"} Hobbie 4
+            %a{:href => "#Hobbie5"} Hobbie 5
+        .interest-dropdown
+          %button.interest-dropbtn Book
+          .interest-dropdown-content
+            %a{:href => "#Book1"} Book 1
+            %a{:href => "#Book2"} Book 2
+            %a{:href => "#Book3"} Book 3
+            %a{:href => "#Book4"} Book 4
+            %a{:href => "#Book5"} Book 5
+        %h3#hobbies.bigtext Хобби
+        %ul#Hobbies
+          %li#Hobbie1
+            %p Hobbie 1
+          %li#Hobbie2
+            %p Hobbie 2
+          %li#Hobbie3
+            %p Hobbie 3
+          %li#Hobbie4
+            %p Hobbie 4
+          %li#Hobbie5
+            %p Hobbie 5
+        %h3#books.bigtext Книги
+        %ul#Books
+          %li#Book1
+            %p Book 1
+          %li#Book2
+            %p Book 2
+          %li#Book3
+            %p Book 3
+          %li#Book4
+            %p Book 4
+          %li#Book5
+            %p Book 5
+    = Haml::Engine.new(File.read("partials/footerTemp.haml")).render
+    %script{:src => "js/historyForEachPage.js", :type => "text/javascript"}
