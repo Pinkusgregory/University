@@ -3,7 +3,7 @@ for(var i=1;i<=9;i++) {
     gallery_elements.push('images/' + i + '.jpg');
 }
   
-window.onload = function() { 
+$(function() { 
     var container = document.getElementById("gallery");
     var i = 1;
     gallery_elements.forEach(photo => {
@@ -13,5 +13,5 @@ window.onload = function() {
         a.innerHTML = ' <img src=" '+ photo + ' "> ';
         container.appendChild(a);
     });
-}
+});
  

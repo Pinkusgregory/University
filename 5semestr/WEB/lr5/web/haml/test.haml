@@ -1,0 +1,54 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = Haml::Engine.new(File.read("partials/headTemp.haml")).render
+    %title Тест
+  %body
+    = Haml::Engine.new(File.read("partials/navTemp.haml")).render
+    .main
+      .container
+        %h2.section-title Тест
+        %form#form.test-form{:action => "#", :method => "post"}
+          .feedback-form-group
+            %label{:for => "fullname"} ФИО:
+            %input#fullname{:name => "fullname", :type => "text"}/
+          .test-form-group
+            %label{:for => "topic"} Группа
+            %select#topic{:name => "topic"}
+              %option{:value => "1"} 1 курс 1 группа
+              %option{:value => "2"} 1 курс 2 группа
+              %option{:value => "3"} 2 курс 1 группа
+              %option{:value => "4"} 2 курс 2 группа
+              %option{:value => "5"} 3 курс 1 группа
+              %option{:value => "6"} 3 курс 2 группа
+              %option{:value => "7"} 4 курс 1 группа
+          .test-form-group
+            %label{:for => "1st-question"} 1 вопрос
+            %input#1st-question{:name => "1st-question", :type => "text"}/
+          .checkbox-area
+            %label{:for => ""} 2 вопрос
+            %label
+              %input#Choice1{:name => "subscription", :type => "checkbox", :value => "2nd-question-1st-answer"}/
+              Ответ 1
+            %label
+              %input#Choice2{:name => "subscription", :type => "checkbox", :value => "2nd-question-2nd-answer"}/
+              Ответ 2
+            %label
+              %input#Choice3{:name => "subscription", :type => "checkbox", :value => "2nd-question-3rd-answer"}/
+              Ответ 3
+          .test-form-group
+            %label{:for => "topic"} Вопрос 3
+            %select#topic{:name => "topic"}
+              %option{:value => "1"} Ответ 1
+              %option{:value => "2"} Ответ 2
+              %option{:value => "3"} Ответ 3
+              %option{:value => "4"} Ответ 4
+              %option{:value => "5"} Ответ 5
+              %option{:value => "6"} Ответ 6
+              %option{:value => "7"} Ответ 7
+          %button.btn{:type => "submit"} Отправить
+          %button.btn{:type => "change"} Очистить
+          #error.validation-error
+    = Haml::Engine.new(File.read("partials/footerTemp.haml")).render
+    %script{:src => "js/test.js", :type => "text/javascript"}
+    %script{:src => "js/historyForEachPage.js", :type => "text/javascript"}
