@@ -21,6 +21,7 @@ form.addEventListener('submit', (e) => {
 	let phoneReg = /^[+][7|3]\d{8,10}$/g;
 	let FIORegEng = /[A-Za-z]+ [A-Za-z]+ [A-Za-z]+/;
 	let FIORegRus = /[А-ЯЁа-яё]+ [А-ЯЁа-яё]+ [А-ЯЁа-яё]+/;
+	let emailReg = /\.ru$/;
 
 	if (FIO.value === '' || FIO.value == null) {
 		FIO.focus();
@@ -33,6 +34,9 @@ form.addEventListener('submit', (e) => {
 	if (email.value === '' || email.value == null) {
 		email.focus();
 		messages.push('Поле Емаил не заполнено');
+	} else if (emailReg.test(email.value) == false && emailReg.test(email.value) == false) {
+		email.focus();
+		messages.push('.ru');
 	}
 
 	if (phone.value === '' || phone.value == null) {
@@ -57,3 +61,35 @@ form.addEventListener('submit', (e) => {
 	}
 
 })
+
+function checkForm(form) {
+
+	var inputs = form.elements;
+
+	for (i = 0; i < inputs.length; i++){
+		if (inputs[i].nodeName === "INPUT" && inputs[i].type === "text") {
+			if (checkTextNull(inputs[i])) {
+				
+			}
+		  }
+		if (inputs[i].nodeName === "INPUT" && inputs[i].type === "checkbox") {
+			if (!checkCheckBox(inputs[i])) {
+
+			}	
+		}
+		if (inputs[i].nodeName === "INPUT" && inputs[i].type === "radio") {
+			if (!checkRadio(inputs[i])) {
+				
+			}
+		}
+	}
+
+	function checkTextNull(input) {
+		return input.value == null;
+	}
+
+	function checkCheckBox(input){
+		return input.checked;
+	}
+
+}
