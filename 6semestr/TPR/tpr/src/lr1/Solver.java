@@ -43,11 +43,13 @@ public class Solver {
 
     public static void main(String[] args) {
 
-        int[][] matr1 = { { 0, 1, 1, 0, 1 },
+        int[][] matr1 = {
+                { 0, 1, 1, 0, 1 },
                 { 0, 0, 1, 1, 0 },
                 { 0, 0, 0, 1, 1 },
                 { 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0 } };
+                { 0, 0, 0, 0, 0 }
+        };
 
         int[][] matr2 = {
                 { 0, 1, 1, 0, 0, 0, 0 },
