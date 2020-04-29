@@ -1,4 +1,5 @@
-const FIO = document.getElementById('fullname');
+$(function() {
+	const FIO = document.getElementById('fullname');
 const email = document.getElementById('email');
 const phone	 = document.getElementById('phone');
 const form = document.getElementById('form');
@@ -86,14 +87,39 @@ textArea.addEventListener('blur', (e) => {
 	}
 })
 
-form.addEventListener('submit', (e) => {
-	let messages = [];
 
-	if (is_checked() == false) {
-		messages.push('Пол не выбран');
+
+});
+
+// form.addEventListener('submit', (e) => {
+// 	let messages = [];
+
+// 	if (is_checked() == false) {
+// 		messages.push('Пол не выбран');
+// 	}
+// 	if (messages.length > 0) {
+// 		e.preventDefault();
+// 		errorElement.innerText = messages.join(', ');
+// 	}
+//})
+
+function showModal(str, myFunc) {
+	$('#id01').css('display','block');
+	var modal = $('#id01');
+
+	var message = $('<p>' + str + '</p>');
+	$(".container-modal").find("div").first().empty().prepend(message);
+	$(".yesbtn").click(myFunc());
+
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.css('display','none');
 	}
-	if (messages.length > 0) {
-		e.preventDefault();
-		errorElement.innerText = messages.join(', ');
-	}
-})
+}
+};
+
+function myFunc(){
+	$("#form").submit(function(e) {
+
+	})
+}

@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Фотоальбом</title>
-	<link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/lightbox.min.css">
-  <script type="text/javascript" src="js/lightbox-plus-jquery.min.js"></script>
-  <script type="text/javascript" src="js/photo.js"></script>
+  <title>Фотоальбом</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/photo.css">
+  <script type="text/javascript" src="js/photo.js"></script>
 </head>
 <body>
 	<div class="page-header">
@@ -27,7 +26,85 @@
       <div class="container">
         <h2 class="section-title">Фотоальбом</h2>
         <div class="photo-wrap" id="gallery">
+          <div class="row">
+            <div class="column">
+                <img src="images/1.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="images/2.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="images/3.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <img src="images/4.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="images/5.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="images/6.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <img src="images/7.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="images/8.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+              <img src="images/9.jpg" style="width:100%" class="hover-shadow cursor">
+            </div>
+          </div>
+        <div id="myModal" class="modal">
+          <span class="close cursor" >&times;</span>
+          <div class="modal-content">
+        
+            <div class="mySlides">
+              <img src="images/1.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+              <img src="images/2.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+              <img src="images/3.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+              <img src="images/4.jpg" style="width:100%">
+            </div>
 
+            <div class="mySlides">
+              <img src="images/5.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+              <img src="images/6.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides">
+              <img src="images/7.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides">
+              <img src="images/8.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <img src="images/9.jpg" style="width:100%">
+            </div>
+        
+
+            
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        
+          </div>
         </div>
       </div>
     </div>
