@@ -1,21 +1,15 @@
+pages = ['Интересы', 'Учеба', 'Контакт', 'Фотоальбом', 'Тест', 'История']
+
 resetLocalStorage = ->
   localStorage.clear()
-  localStorage.setItem 'Интересы', '0'
-  localStorage.setItem 'Учеба', '0'
-  localStorage.setItem 'Контакт', '0'
-  localStorage.setItem 'Фотоальбом', '0'
-  localStorage.setItem 'Тест', '0'
-  localStorage.setItem 'История', '0'
+  for page in pages
+    localStorage.setItem page, '0'
   return
 
 resetSessionStorage = ->
   sessionStorage.clear()
-  sessionStorage.setItem 'Интересы', '0'
-  sessionStorage.setItem 'Учеба', '0'
-  sessionStorage.setItem 'Контакт', '0'
-  sessionStorage.setItem 'Фотоальбом', '0'
-  sessionStorage.setItem 'Тест', '0'
-  sessionStorage.setItem 'История', '0'
+  for page in pages
+    sessionStorage.setItem page, '0'
   return
 
 $ ->
