@@ -119,7 +119,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties External="false" Constant="false" Array="false">
-						<Formula><![CDATA[0.1]]></Formula>
+						<Formula><![CDATA[1]]></Formula>
 						<Value><![CDATA[0]]></Value>
 						<Color/>
 					</Properties>
@@ -127,8 +127,38 @@
 				</Variable>
 				<Variable Class="AuxVariable">
 					<Id>1588356649529</Id>
-					<Name><![CDATA[c]]></Name>
+					<Name><![CDATA[g]]></Name>
 					<X>180</X><Y>190</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[9.8]]></Formula>
+						<Value><![CDATA[0]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1588570781596</Id>
+					<Name><![CDATA[m]]></Name>
+					<X>120</X><Y>190</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[1]]></Formula>
+						<Value><![CDATA[0]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1588570783862</Id>
+					<Name><![CDATA[r]]></Name>
+					<X>50</X><Y>190</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -169,7 +199,7 @@
 					<EquationStyle>custom</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<Expression><![CDATA[-x*c-k*V]]></Expression>
+						<Expression><![CDATA[g-(r*g*V/m)-(k*x/m)]]></Expression>
 						<InitialValue><![CDATA[0]]></InitialValue>
 						<Color/>
 					</Properties>
@@ -226,8 +256,38 @@
 					<PolarityPosition>0.95</PolarityPosition>
 					<Direction><X>40</X><Y>-90</Y></Direction>
 					<Id>1588356692890</Id>
-					<Name><![CDATA[c - V]]></Name>
+					<Name><![CDATA[g - V]]></Name>
 					<X>180</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1588570783862" TargetId="1588355848246" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>170</X><Y>-90</Y></Direction>
+					<Id>1588571642685</Id>
+					<Name><![CDATA[r - V]]></Name>
+					<X>50</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1588570781596" TargetId="1588355848246" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>-90</Y></Direction>
+					<Id>1588571644575</Id>
+					<Name><![CDATA[m - V]]></Name>
+					<X>120</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
