@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af4f851d-8619-47b2-a51a-24ed18929e44" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../IAD/Свои Данные ЛР4.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../IAD/Свои Данные ЛР4.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/1/LR1-LS-FreqCharacter.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/1/LR1-LS-FreqCharacter.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/2/AM-Spectr.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/2/AM-Spectr.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/2/FM-spectr.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/2/FM-spectr.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/3/SPD-AM.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/3/SPD-AM.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/4/Reg-Strob.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ISIS/ISiS/ISiS/4/Reg-Strob.pdsprj.DESKTOP-4DURQNB.nik4e.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MS/Lab1/ЛР1_Черняев_ИС-17-2.alp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MS/Lab1/ЛР1_Черняев_ИС-17-2.alp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MS/Lab2/ЛР2_Черняев_ИС-17-2.alp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MS/Lab2/ЛР2_Черняев_ИС-17-2.alp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3-1_Черняев_ИС-17-2.alp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3-1_Черняев_ИС-17-2.alp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3-2_Черняев_ИС-17-2.alp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3-2_Черняев_ИС-17-2.alp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3-3_Черняев_ИС-17-2.alp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3-3_Черняев_ИС-17-2.alp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3_Черняев_ИС-17-2.alp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MS/Lab3/ЛР3_Черняев_ИС-17-2.alp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Practice/дневник.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Practice/дневник.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/androidTest/java/com/example/lab1/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/androidTest/java/com/example/lab1/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/java/com/example/lab1/FirstFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/java/com/example/lab1/FirstFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/java/com/example/lab1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/java/com/example/lab1/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/java/com/example/lab1/SecondFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/java/com/example/lab1/SecondFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/fragment_first.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/fragment_first.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/fragment_second.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/layout/fragment_second.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/menu/menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/menu/menu_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/test/java/com/example/lab1/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/app/src/test/java/com/example/lab1/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/hs_err_pid16044.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/hs_err_pid16044.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/hs_err_pid17308.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/hs_err_pid17308.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/replay_pid17308.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/replay_pid17308.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab1/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab1/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/androidTest/java/com/example/lab2/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/androidTest/java/com/example/lab2/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/java/com/example/lab2/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/java/com/example/lab2/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/test/java/com/example/lab2/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/app/src/test/java/com/example/lab2/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab2/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab2/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/androidTest/java/com/example/lab3/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/androidTest/java/com/example/lab3/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/java/com/example/lab3/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/java/com/example/lab3/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/drawable/insets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/drawable/insets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/test/java/com/example/lab3/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/app/src/test/java/com/example/lab3/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab3/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab3/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/androidTest/java/com/example/lab4/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/androidTest/java/com/example/lab4/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/java/com/example/lab4/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/java/com/example/lab4/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/test/java/com/example/lab4/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/app/src/test/java/com/example/lab4/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab4/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab4/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/androidTest/java/com/example/lab5/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/androidTest/java/com/example/lab5/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/java/com/example/lab5/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/java/com/example/lab5/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/test/java/com/example/lab5/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/app/src/test/java/com/example/lab5/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/hs_err_pid10812.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/hs_err_pid10812.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/hs_err_pid3284.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/hs_err_pid3284.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/replay_pid10812.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/replay_pid10812.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RMP/Lab5/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RMP/Lab5/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/src/lr1/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/src/lr1/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/src/lr2/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/src/lr2/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TPR/tpr/tpr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TPR/tpr/tpr.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ЛР1_Черняев_ИС-17-2.docx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/d11wtq/boris" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/classpreloader/classpreloader" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/ircmaxell/password-compat" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/jeremeamia/superclosure" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/vendor/stack/builder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/patchwork/utf8" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1jqNAtZAGb28GGbbX5axNDruVLI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af4f851d-8619-47b2-a51a-24ed18929e44" name="Default Changelist" comment="" />
+      <created>1604527521672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604527521672</updated>
+      <workItem from="1604527522689" duration="736000" />
+      <workItem from="1604595347015" duration="45000" />
+      <workItem from="1604596320261" duration="68000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
