@@ -1,4 +1,4 @@
-﻿(defun main ()
+(defun main ()
   (defvar *db* nil)
   
   (insert "Севастополь" "Москва" "1")
@@ -83,3 +83,5 @@
       (print rows)
    )
   )
+
+(main)
