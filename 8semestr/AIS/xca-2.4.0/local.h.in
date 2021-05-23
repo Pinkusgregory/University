@@ -1,0 +1,8 @@
+/* Filled in version number from the VERSION file + commit iterator */
+#undef XCA_VERSION
+
+/* usually "xca" */
+#undef PACKAGE_TARNAME
+
+/* usually "X Certificate and Key management" */
+#undef PACKAGE_NAME
